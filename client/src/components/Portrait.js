@@ -19,6 +19,7 @@ class Customers extends Component {
     fetch('/api/portrait')
       .then(res => res.text())
       .then(res => {
+        console.log(res)
         this.setState({
           portraitSvg: res
         })
