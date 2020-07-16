@@ -5,6 +5,8 @@ class Customers extends Component {
     super();
 
     this.state = {
+      name: null,
+      artist: null,
       portraitSvg: null
     };
 
@@ -17,11 +19,12 @@ class Customers extends Component {
 
   fetchPortrait() {
     fetch('/api/portrait')
-      .then(res => res.text())
+      .then(res => res.json())
       .then(res => {
-        console.log(res)
         this.setState({
-          portraitSvg: res
+          name: res.name,
+          artist: res.artist,
+          portraitSvg: res.file
         })
       })
   }
@@ -29,6 +32,7 @@ class Customers extends Component {
   render() {
     return (
       <div>
+        <h1>{this.state.name} by {this.state.artist}</h1>
         <div dangerouslySetInnerHTML={{ __html: this.state.portraitSvg }} />
       </div>
     );

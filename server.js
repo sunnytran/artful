@@ -7,7 +7,7 @@ app.get('/api/portrait', (req, res) => {
   portraits = [
     {
       name: 'American Gothic',
-      arist: 'Grant Wood',
+      artist: 'Grant Wood',
       file: 'amgoth.svg'
     },
     {
@@ -19,11 +19,10 @@ app.get('/api/portrait', (req, res) => {
 
   filePrefix = __dirname + '/data/'
   var portrait = portraits[Math.floor(Math.random() * portraits.length)]
-  var portraitSvg = fs.readFileSync(filePrefix + portrait.file)
+  var portraitSvg = fs.readFileSync(filePrefix + portrait.file, "utf8")
   portrait.file = portraitSvg
 
   res.json(portrait)
-  // res.sendFile(__dirname + '/data/' + portraits[Math.floor(Math.random() * portraits.length)].file)
 });
 
 const port = 5000;
