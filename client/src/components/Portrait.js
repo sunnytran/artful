@@ -15,7 +15,6 @@ class Customers extends Component {
   }
 
   componentDidMount() {
-    console.log("IN DID MOUNT")
     fetch('/api/portraits')
       .then(res => res.json())
       .then(res => {
