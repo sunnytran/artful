@@ -50,3 +50,10 @@ class Customers extends Component {
 }
 
 export default Customers;
+
+{/* <div style={{transform:`scale(0.5)`}}>
+<svg width="82" height="82">
+      <rect x="1" y="1" width="100" height="100" stroke="black" stroke-width="2" fill="white"/>
+      <text fill="black" x="10" y="30">FooBarBaz</text>
+</svg>
+</div> */}
