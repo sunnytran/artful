@@ -3,7 +3,9 @@ const fs = require("fs");
 
 const app = express();
 
-app.get('/api/portrait', (req, res) => {
+app.get('/api/portraits', (req, res) => {
+  filePrefix = __dirname + '/data/'
+
   portraits = [
     {
       name: 'American Gothic',
@@ -17,12 +19,10 @@ app.get('/api/portrait', (req, res) => {
     }
   ]
 
-  filePrefix = __dirname + '/data/'
-  var portrait = portraits[Math.floor(Math.random() * portraits.length)]
-  var portraitSvg = fs.readFileSync(filePrefix + portrait.file, "utf8")
-  portrait.file = portraitSvg
+  for (var i = 0; i < portraits.length; i++)
+    portraits[i].file = fs.readFileSync(filePrefix + portraits[i].file, "utf8")
 
-  res.json(portrait)
+  res.json(portraits)
 });
 
 const port = 5000;
