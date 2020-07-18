@@ -1,8 +1,17 @@
 working on
-scale the svg
-get art facts!!! wikiart.org
+
 generate color numbers schemes and stuff
+color option generation
+
+componentwillmount workaround
+
+get art facts!!! wikiart.org
+
 amgoth resize is eh
+scale the svg
+
+==================================================
 
 done
 fetch portrait no dupes
+global colors???

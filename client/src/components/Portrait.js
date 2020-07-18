@@ -13,6 +13,7 @@ class Customers extends Component {
     }
 
     this.getNewPortrait = this.getNewPortrait.bind(this)
+    this.shuffle = this.shuffle.bind(this)
   }
 
   componentDidMount() {
@@ -28,16 +29,40 @@ class Customers extends Component {
       })
   }
 
+  shuffle(array) {
+    let i = array.length;
+    while (i--) {
+      const ri = Math.floor(Math.random() * (i + 1));
+      [array[i], array[ri]] = [array[ri], array[i]];
+    }
+    return array;
+  }
+
   getNewPortrait() {
     var portrait = this.state.portraits[Math.floor(Math.random() * this.state.portraits.length)]
     while (this.state.svg && this.state.name === portrait.name)
       portrait = this.state.portraits[Math.floor(Math.random() * this.state.portraits.length)]
 
+    console.log(this.props.colors)
+    console.log(portrait.colors)
+
+    var colorsMap = {}
+    var shuffledColors = this.shuffle(portrait.colors)
+    for (var i = 0; i < shuffledColors.length; i++)
+      colorsMap[shuffledColors[i]] = (i+1)
+
+    if (!portrait.colors.includes('black'))
+      portrait.colors.push('black')
+    if (!portrait.colors.includes('white'))
+      portrait.colors.push('white')
+    
+    console.log(portrait.colors)
+
     // automatically include black and white for brightening and darkening colors
     // this should be last, number everything and stuff before this
-    portrait.colors.black = '#000000'
-    portrait.colors.white = '#ffffff'
-    console.log(portrait.colors)
+    // portrait.colors.black = this.props.colors.black
+    // portrait.colors.white = this.props.colors.white
+    // console.log(portrait.colors)
 
     this.setState({
       name: portrait.name,

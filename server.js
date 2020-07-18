@@ -3,6 +3,119 @@ const fs = require("fs");
 
 const app = express();
 
+app.get('/api/colors', (req, res) => {
+  colors = {
+    'black': {
+      'hex': '#000000',
+      'mixOf': null
+    },
+    'white': {
+      'hex': '#ffffff',
+      'mixOf': null
+    },
+    'gray': {
+      'hex': '#808080',
+      'mixOf': null
+    },
+    'light gray': {
+      'hex': '#bababa',
+      'mixOf': [
+        'gray',
+        'white'
+      ]
+    },
+    'dark gray': {
+      'hex': '#a9a9a9',
+      'mixOf': [
+        'gray',
+        'black'
+      ]
+    },
+    'red': {
+      'hex': '#ff3333',
+      'mixOf': null
+    },
+    'pink': {
+      'hex': '#ffc0cb',
+      'mixOf': [
+        'red',
+        'white'
+      ]
+    },
+    'orange': {
+      'hex': '#ffa500',
+      'mixOf': [
+        'red',
+        'yellow'
+      ]
+    },
+    'brown': {
+      'hex': '#8b4513',
+      'mixOf': null
+    },
+    'light brown': {
+      'hex': '#e08b3e',
+      'mixOf': [
+        'brown',
+        'white'
+      ]
+    },
+    'dark brown': {
+      'hex': '#785027',
+      'mixOf': [
+        'brown',
+        'black'
+      ]
+    },
+    'yellow': {
+      'hex': '#ffea00',
+      'mixOf': null
+    },
+    'cream': {
+      'hex': '#ffe6d0',
+      'mixOf': [
+        'yellow',
+        'white'
+      ]
+    },
+    'peach': {
+      'hex': '#ffe5b4',
+      'mixOf': [
+        'red',
+        'white',
+        'yellow'
+      ]
+    },
+    'green': {
+      'hex': '#1d771d',
+      'mixOf': [
+        'blue',
+        'yellow'
+      ]
+    },
+    'blue': {
+      'hex': '#1a1aff',
+      'mixOf': null
+    },
+    'light blue': {
+      'hex': '#c1e1ec',
+      'mixOf': [
+        'blue',
+        'white'
+      ]
+    },
+    'dark blue': {
+      'hex': '#000058',
+      'mixOf': [
+        'blue',
+        'black'
+      ]
+    },
+  }
+
+  res.json(colors)
+})
+
 app.get('/api/portraits', (req, res) => {
   filePrefix = __dirname + '/data/'
 
@@ -11,153 +124,41 @@ app.get('/api/portraits', (req, res) => {
       name: 'American Gothic',
       artist: 'Grant Wood',
       file: 'amgoth.svg',
-      colors: {
-        'black': {
-          'hex': '#000000',
-          'mixOf': null
-        },
-        'yellow': {
-          'hex': '#ffea00',
-          'mixOf': null
-        },
-        'cream': {
-          'hex': '#ffe6d0',
-          'mixOf': [
-            'yellow',
-            'white'
-          ]
-        },
-        'gray': {
-          'hex': '#808080',
-          'mixOf': null
-        },
-        'light gray': {
-          'hex': '#bababa',
-          'mixOf': [
-            'gray',
-            'white'
-          ]
-        },
-        'dark gray': {
-          'hex': '#a9a9a9',
-          'mixOf': [
-            'gray',
-            'black'
-          ]
-        },
-        'red': {
-          'hex': '#ff3333',
-          'mixOf': null
-        },
-        'brown': {
-          'hex': '#8b4513',
-          'mixOf': null
-        },
-        'light brown': {
-          'hex': '#e08b3e',
-          'mixOf': [
-            'brown',
-            'white'
-          ]
-        },
-        'dark brown': {
-          'hex': '#785027',
-          'mixOf': [
-            'brown',
-            'black'
-          ]
-        },
-        'blue': {
-          'hex': '#1a1aff',
-          'mixOf': null
-        },
-        'light blue': {
-          'hex': '#c1e1ec',
-          'mixOf': [
-            'blue',
-            'white'
-          ]
-        },
-        'peach': {
-          'hex': '#ffe5b4',
-          'mixOf': [
-            'white',
-            'red',
-            'yellow'
-          ]
-        },
-        'green': {
-          'hex': '#1d771d',
-          'mixOf': null
-        }
-      }
+      colors: [
+        'black',
+        'yellow',
+        'cream',
+        'gray',
+        'light gray',
+        'dark gray',
+        'red',
+        'brown',
+        'light brown',
+        'dark brown',
+        'blue',
+        'light blue',
+        'peach',
+        'green'
+      ]
     },
     {
       name: 'Girl with a Pearl Earring',
       artist: 'Johannes Vermeer',
       file: 'girlpearl.svg',
-      colors: {
-        'cream': {
-          'hex': '#ffe6d0',
-          'mixOf': null
-        },
-        'blue': {
-          'hex': '#1a1aff',
-          'mixOf': null
-        },
-        'light blue': {
-          'hex': '#c1e1ec',
-          'mixOf': [
-            'blue',
-            'white'
-          ]
-        },
-        'dark blue': {
-          'hex': '#000058',
-          'mixOf': [
-            'blue',
-            'black'
-          ]
-        },
-        'yellow': {
-          'hex': '#ffea00',
-          'mixOf': null
-        },
-        'peach': {
-          'hex': '#ffe5b4',
-          'mixOf': null
-        },
-        'pink': {
-          'hex': '#ffc0cb',
-          'mixOf': null
-        },
-        'black': {
-          'hex': '#000000',
-          'mixOf': null
-        },
-        'brown': {
-          'hex': '#8b4513',
-          'mixOf': null
-        },
-        'light brown': {
-          'hex': '#c1e1ec',
-          'mixOf': [
-            'brown',
-            'white'
-          ]
-        },
-        'dark brown': {
-          'hex': '#785027',
-          'mixOf': [
-            'brown',
-            'black'
-          ]
-        },
-        'gray': {
-          'hex': '#808080',
-          'mixOf': null
-        }
-      }
+      colors: [
+        'cream',
+        'blue',
+        'light blue',
+        'dark blue',
+        'yellow',
+        'peach',
+        'pink',
+        'black',
+        'brown',
+        'light brown',
+        'dark brown',
+        'gray'
+      ]
     }
   ]
 
