@@ -10,12 +10,36 @@ app.get('/api/portraits', (req, res) => {
     {
       name: 'American Gothic',
       artist: 'Grant Wood',
-      file: 'amgoth.svg'
+      file: 'amgoth.svg',
+      colors: [
+        'black',
+        'cream',
+        'light gray',
+        'red',
+        'dark brown',
+        'light blue',
+        'peach',
+        'green',
+        'light brown',
+        'dark gray'
+      ]
     },
     {
       name: 'Girl with a Pearl Earring',
       artist: 'Johannes Vermeer',
-      file: 'girlpearl.svg'
+      file: 'girlpearl.svg',
+      colors: [
+        'cream',
+        'dark blue',
+        'yellow',
+        'peach',
+        'light blue',
+        'pink',
+        'black',
+        'dark brown',
+        'light brown',
+        'gray'
+      ]
     }
   ]
 
