@@ -8,6 +8,7 @@ class Customers extends Component {
       portraits: [],
       name: '',
       artist: '',
+      colors: {},
       svg: null
     }
 
@@ -32,10 +33,17 @@ class Customers extends Component {
     while (this.state.svg && this.state.name === portrait.name)
       portrait = this.state.portraits[Math.floor(Math.random() * this.state.portraits.length)]
 
+    // automatically include black and white for brightening and darkening colors
+    // this should be last, number everything and stuff before this
+    portrait.colors.black = '#000000'
+    portrait.colors.white = '#ffffff'
+    console.log(portrait.colors)
+
     this.setState({
       name: portrait.name,
       artist: portrait.artist,
-      svg: portrait.file
+      svg: portrait.file,
+      colors: portrait.colors
     })
   }
 

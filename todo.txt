@@ -2,6 +2,7 @@ working on
 scale the svg
 get art facts!!! wikiart.org
 generate color numbers schemes and stuff
+amgoth resize is eh
 
 done
 fetch portrait no dupes
