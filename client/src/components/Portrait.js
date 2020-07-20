@@ -56,6 +56,7 @@ class Customers extends Component {
       portrait.colors.push('white')
 
     // 20% chance of breaking down a color to is components for a challenge :)
+    // what if theres light brown but theres no brown in the list?
     for (var i = 0; i < portrait.colors.length; i++) {
       const currentColor = portrait.colors[i]
       const itsComponentColors = this.props.colors[currentColor].mixOf
@@ -64,12 +65,12 @@ class Customers extends Component {
           if (!portrait.colors.includes(itsComponentColors[j]))
             portrait.colors.push(itsComponentColors[j])
         }
-        portrait.colors.splice(i, i + 1);
-        --i;
+        // portrait.colors.splice(i, i + 1);
+        // --i;
         console.log(currentColor + " HAS BEEN BROKEN DOWN TO " + this.props.colors[currentColor].mixOf )
       }
     }
-    // portrait.colors = this.shuffle(portrait.colors)
+    portrait.colors = this.shuffle(portrait.colors)
 
     console.log(portrait.colors)
 

@@ -129,16 +129,12 @@ app.get('/api/portraits', (req, res) => {
       file: 'amgoth.svg',
       colors: [
         'black',
-        'yellow',
         'cream',
-        'gray',
         'light gray',
         'dark gray',
         'red',
-        'brown',
         'light brown',
         'dark brown',
-        'blue',
         'light blue',
         'peach',
         'green'
@@ -150,14 +146,12 @@ app.get('/api/portraits', (req, res) => {
       file: 'girlpearl.svg',
       colors: [
         'cream',
-        'blue',
         'light blue',
         'dark blue',
         'yellow',
         'peach',
         'pink',
         'black',
-        'brown',
         'light brown',
         'dark brown',
         'gray'
