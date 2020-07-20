@@ -2,6 +2,7 @@ working on
 
 generate color numbers schemes and stuff
 color option generation
+number the cells
 
 componentwillmount workaround
 

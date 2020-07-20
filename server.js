@@ -15,7 +15,10 @@ app.get('/api/colors', (req, res) => {
     },
     'gray': {
       'hex': '#808080',
-      'mixOf': null
+      'mixOf': [
+        'black',
+        'white'
+      ]
     },
     'light gray': {
       'hex': '#bababa',

@@ -8,7 +8,8 @@ class Customers extends Component {
       portraits: [],
       name: '',
       artist: '',
-      colors: {},
+      key: {},
+      palette: [],
       svg: null
     }
 
@@ -43,9 +44,6 @@ class Customers extends Component {
     while (this.state.svg && this.state.name === portrait.name)
       portrait = this.state.portraits[Math.floor(Math.random() * this.state.portraits.length)]
 
-    console.log(this.props.colors)
-    console.log(portrait.colors)
-
     var colorsMap = {}
     var shuffledColors = this.shuffle(portrait.colors)
     for (var i = 0; i < shuffledColors.length; i++)
@@ -55,20 +53,22 @@ class Customers extends Component {
       portrait.colors.push('black')
     if (!portrait.colors.includes('white'))
       portrait.colors.push('white')
-    
-    console.log(portrait.colors)
 
-    // automatically include black and white for brightening and darkening colors
-    // this should be last, number everything and stuff before this
-    // portrait.colors.black = this.props.colors.black
-    // portrait.colors.white = this.props.colors.white
-    // console.log(portrait.colors)
+    for (var i = 0; i < portrait.colors.length; i++) {
+      // console.log(portrait.colors[i] + " | " + this.props.colors[portrait.colors[i]].mixOf)
+      const currentColor = portrait.colors[i]
+      if (this.props.colors[currentColor].mixOf) {
+        console.log(currentColor + " | " + this.props.colors[currentColor].mixOf + " | " + Math.floor(Math.random() * 5 + 1) )
+      }
+    }
 
     this.setState({
       name: portrait.name,
       artist: portrait.artist,
       svg: portrait.file,
-      colors: portrait.colors
+      colors: portrait.colors,
+      key: colorsMap,
+      palette: portrait.colors
     })
   }
 
