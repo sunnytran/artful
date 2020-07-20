@@ -49,18 +49,29 @@ class Customers extends Component {
     for (var i = 0; i < shuffledColors.length; i++)
       colorsMap[shuffledColors[i]] = (i+1)
 
+    // and black and white, which are very important for shading and mixing colors
     if (!portrait.colors.includes('black'))
       portrait.colors.push('black')
     if (!portrait.colors.includes('white'))
       portrait.colors.push('white')
 
+    // 20% chance of breaking down a color to is components for a challenge :)
     for (var i = 0; i < portrait.colors.length; i++) {
-      // console.log(portrait.colors[i] + " | " + this.props.colors[portrait.colors[i]].mixOf)
       const currentColor = portrait.colors[i]
-      if (this.props.colors[currentColor].mixOf) {
-        console.log(currentColor + " | " + this.props.colors[currentColor].mixOf + " | " + Math.floor(Math.random() * 5 + 1) )
+      const itsComponentColors = this.props.colors[currentColor].mixOf
+      if (itsComponentColors && Math.floor(Math.random() * 5 + 1) == 5) {
+        for (var j = 0; j < itsComponentColors.length; j++) {
+          if (!portrait.colors.includes(itsComponentColors[j]))
+            portrait.colors.push(itsComponentColors[j])
+        }
+        portrait.colors.splice(i, i + 1);
+        --i;
+        console.log(currentColor + " HAS BEEN BROKEN DOWN TO " + this.props.colors[currentColor].mixOf )
       }
     }
+    // portrait.colors = this.shuffle(portrait.colors)
+
+    console.log(portrait.colors)
 
     this.setState({
       name: portrait.name,
