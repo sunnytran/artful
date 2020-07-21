@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import Portrait from './components/Portrait';
+import PortraitGenerator from './utils/PortraitGenerator';
 
 class App extends Component {
 
@@ -8,21 +9,39 @@ class App extends Component {
     super(props)
 
     this.state = {
-      colors: {}
+      colors: {},
+      portraits: [],
+      currentPortrait: null
     }
-
-    this.portraitRef = React.createRef()
 
     this.handleNewPortrait = this.handleNewPortrait.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch('/api/colors')
     .then(res => res.json())
     .then(res => {
       this.setState({
         colors: res
       })
+    })
+
+    fetch('/api/portraits')
+    .then(res => res.json())
+    .then(res => {
+      this.setState({
+        portraits: res
+      })
+    })
+    .then(() => {
+      this.getNewPortrait()
+    })
+  }
+
+  getNewPortrait() {
+    var portrait = PortraitGenerator.generatePortrait(this.state.colors, this.state.portraits, this.state.currentPortrait)
+    this.setState({
+      currentPortrait: portrait
     })
   }
 
@@ -34,12 +53,13 @@ class App extends Component {
     return (
       <div>
         <h1>artful</h1>
-        <Portrait colors={this.state.colors} ref={this.portraitRef} />
-        <button type="button" onClick={this.handleNewPortrait}>New portrait</button>
+        <Portrait colors={this.state.colors} portrait={this.state.currentPortrait} />
       </div>
     );
   }
 
 }
+
+{/* <button type="button" onClick={this.handleNewPortrait}>New portrait</button> */}
 
 export default App;
