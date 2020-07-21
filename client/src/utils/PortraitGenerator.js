@@ -1,7 +1,4 @@
 
-import React, { Component } from 'react';
-import Portrait from '../components/Portrait';
-
 export default class PortraitGenerator {
     static shuffle(array) {
         let i = array.length;
@@ -17,7 +14,7 @@ export default class PortraitGenerator {
         //console.log(portrait.name + "<--")
         while (currentPortrait && currentPortrait.name === portrait.name)
           portrait = portraits[Math.floor(Math.random() * portraits.length)]
-    
+
         var colorsMap = {}
         var shuffledColors = PortraitGenerator.shuffle(portrait.colors)
         for (var i = 0; i < shuffledColors.length; i++)
@@ -46,7 +43,7 @@ export default class PortraitGenerator {
             newColors.push(currentColor)
         }
         newColors = PortraitGenerator.shuffle(newColors)
-        portrait.colors = newColors
+        portrait.palette = newColors
     
         //console.log(colorsMap)
         //console.log(portrait.colors)
