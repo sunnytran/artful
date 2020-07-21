@@ -1,7 +1,5 @@
 working on
 
-generate color numbers schemes and stuff
-color option generation
 number the cells
 
 componentwillmount workaround
@@ -16,3 +14,5 @@ scale the svg
 done
 fetch portrait no dupes
 global colors???
+color option generation
+generate color numbers schemes and stuff

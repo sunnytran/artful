@@ -49,7 +49,7 @@ class Customers extends Component {
     for (var i = 0; i < shuffledColors.length; i++)
       colorsMap[shuffledColors[i]] = (i+1)
 
-    console.log(portrait.colors)
+    // console.log(portrait.colors)
 
     // and black and white, which are very important for shading and mixing colors
     if (!portrait.colors.includes('black'))
@@ -58,7 +58,6 @@ class Customers extends Component {
       portrait.colors.push('white')
 
     // 20% chance of breaking down a color to is components for a challenge :)
-    // what if theres light brown but theres no brown in the list?
     var newColors = []
     for (var i = 0; i < portrait.colors.length; i++) {
       const currentColor = portrait.colors[i]
@@ -75,6 +74,7 @@ class Customers extends Component {
     newColors = this.shuffle(newColors)
     portrait.colors = newColors
 
+    console.log(colorsMap)
     console.log(portrait.colors)
 
     this.setState({
@@ -97,10 +97,3 @@ class Customers extends Component {
 }
 
 export default Customers;
-
-{/* <div style={{transform:`scale(0.5)`}}>
-<svg width="82" height="82">
-      <rect x="1" y="1" width="100" height="100" stroke="black" stroke-width="2" fill="white"/>
-      <text fill="black" x="10" y="30">FooBarBaz</text>
-</svg>
-</div> */}
