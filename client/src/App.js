@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   handleNewPortrait() {
-    this.portraitRef.current.getNewPortrait()
+    this.getNewPortrait()
   }
 
   render() {
@@ -54,12 +54,12 @@ class App extends Component {
       <div>
         <h1>artful</h1>
         <Portrait colors={this.state.colors} portrait={this.state.currentPortrait} />
+        <button type="button" onClick={this.handleNewPortrait}>New portrait</button>
       </div>
     );
   }
 
 }
 
-{/* <button type="button" onClick={this.handleNewPortrait}>New portrait</button> */}
 
 export default App;
