@@ -54,7 +54,7 @@ class App extends Component {
   renderPalette() {
     return (
       <div>
-        <h2>Your colors</h2>
+        <h2>Your palette</h2>
         <ul>
           {
             this.state.currentPortrait.palette.map(i => {
@@ -77,7 +77,7 @@ class App extends Component {
           Object
             .keys(keyData)
             .map(function(k) {
-              return <li>{k} : {keyData[k]}</li>
+              return <li>{keyData[k]} : {k}</li>
             })
         }
         </ul>
