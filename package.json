@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "concurrently": "^3.6.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-svgmt": "^1.1.11"
   }
 }
