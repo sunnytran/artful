@@ -124,39 +124,18 @@ app.get('/api/portraits', (req, res) => {
 
   portraits = [
     {
-      name: 'American Gothic',
-      artist: 'Grant Wood',
-      file: 'amgoth.svg',
+      name: 'Composition A',
+      artist: 'Piet Mondrian',
+      file: 'compa.svg',
       colors: [
         'black',
-        'cream',
+        'yellow',
         'light gray',
-        'dark gray',
         'red',
-        'light brown',
-        'dark brown',
-        'light blue',
-        'peach',
-        'green'
+        'blue',
+        'light blue'
       ]
     },
-    {
-      name: 'Girl with a Pearl Earring',
-      artist: 'Johannes Vermeer',
-      file: 'girlpearl.svg',
-      colors: [
-        'cream',
-        'light blue',
-        'dark blue',
-        'yellow',
-        'peach',
-        'pink',
-        'black',
-        'light brown',
-        'dark brown',
-        'gray'
-      ]
-    }
   ]
 
   for (var i = 0; i < portraits.length; i++)
@@ -168,3 +147,38 @@ app.get('/api/portraits', (req, res) => {
 const port = 5000;
 
 app.listen(port, () => `Server running on port ${port}`);
+
+// {
+//   name: 'American Gothic',
+//   artist: 'Grant Wood',
+//   file: 'amgoth.svg',
+//   colors: [
+//     'black',
+//     'cream',
+//     'light gray',
+//     'dark gray',
+//     'red',
+//     'light brown',
+//     'dark brown',
+//     'light blue',
+//     'peach',
+//     'green'
+//   ]
+// },
+// {
+//   name: 'Girl with a Pearl Earring',
+//   artist: 'Johannes Vermeer',
+//   file: 'girlpearl.svg',
+//   colors: [
+//     'cream',
+//     'light blue',
+//     'dark blue',
+//     'yellow',
+//     'peach',
+//     'pink',
+//     'black',
+//     'light brown',
+//     'dark brown',
+//     'gray'
+//   ]
+// }

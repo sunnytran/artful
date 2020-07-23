@@ -12,8 +12,9 @@ export default class PortraitGenerator {
     static generatePortrait = (colors, portraits, currentPortrait) => {
         var portrait = portraits[Math.floor(Math.random() * portraits.length)]
         //console.log(portrait.name + "<--")
-        while (currentPortrait && currentPortrait.name === portrait.name)
-          portrait = portraits[Math.floor(Math.random() * portraits.length)]
+        if (portraits.length > 1)
+          while (currentPortrait && currentPortrait.name === portrait.name)
+            portrait = portraits[Math.floor(Math.random() * portraits.length)]
 
         var colorsMap = {}
         var shuffledColors = PortraitGenerator.shuffle(portrait.colors)

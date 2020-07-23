@@ -94,8 +94,8 @@ class App extends Component {
               <h1>artful</h1>
               <Portrait colors={this.state.colors} portrait={this.state.currentPortrait} />
               <button type="button" onClick={this.handleNewPortrait}>New portrait</button>
-              { this.renderPalette() }
               { this.renderKey() }
+              { this.renderPalette() }
             </div> :
             null
         }
