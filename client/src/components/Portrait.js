@@ -9,15 +9,16 @@ class Portrait extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick() {
-    alert("HELLO")
+  handleClick(e) {
+    console.log(e.target.attributes.getNamedItem('fill').value)
+    e.target.attributes.getNamedItem('fill').value = '#f00'
   }
 
   render() {
     return (
       <div>
         <h1>{this.props.portrait.name} by {this.props.portrait.artist}</h1>
-        <SvgCompa></SvgCompa>
+        <SvgCompa handleClick={this.handleClick}></SvgCompa>
       </div>
     );
   }
