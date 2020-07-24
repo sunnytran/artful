@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { SvgLoader, SvgProxy } from 'react-svgmt';
+import SvgCompa from './SvgCompa'
 
 class Portrait extends Component {
   constructor(props) {
@@ -17,11 +17,7 @@ class Portrait extends Component {
     return (
       <div>
         <h1>{this.props.portrait.name} by {this.props.portrait.artist}</h1>
-        
-        <SvgLoader svgXML={this.props.portrait.file}>
-          <SvgProxy selector="text" fill="red" onclick={this.handleClick} />
-        </SvgLoader>
-        {/* <div dangerouslySetInnerHTML={{ __html: this.props.portrait.file }}></div> */}
+        <SvgCompa></SvgCompa>
       </div>
     );
   }
