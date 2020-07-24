@@ -10,8 +10,15 @@ class Portrait extends Component {
   }
 
   handleClick(e) {
-    console.log(e.target.attributes.getNamedItem('fill').value)
-    e.target.attributes.getNamedItem('fill').value = '#f00'
+    // console.log(e.target.attributes.getNamedItem('fill').value)
+    var hexColor = this.props.colors[this.props.currentColor].hex
+
+    if (e.type == 'click')
+      e.target.attributes.getNamedItem('fill').value = hexColor;
+    if (e.nativeEvent.which === 3) {
+      console.log("HELLO")
+      e.target.attributes.getNamedItem('fill').value = '#fff'
+    }
   }
 
   render() {

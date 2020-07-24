@@ -11,10 +11,12 @@ class App extends Component {
     this.state = {
       colors: {},
       portraits: [],
-      currentPortrait: null
+      currentPortrait: null,
+      currentColor: null
     }
 
     this.handleNewPortrait = this.handleNewPortrait.bind(this)
+    this.handleNewColor = this.handleNewColor.bind(this)
     this.renderPalette = this.renderPalette.bind(this)
     this.renderKey = this.renderKey.bind(this)
   }
@@ -51,6 +53,12 @@ class App extends Component {
     this.getNewPortrait()
   }
 
+  handleNewColor(color) {
+    this.setState({
+      currentColor: color
+    })
+  }
+
   renderPalette() {
     return (
       <div>
@@ -58,7 +66,11 @@ class App extends Component {
         <ul>
           {
             this.state.currentPortrait.palette.map(i => {
-              return <li>{i}</li>
+              return <li>
+                <a onClick={() => {this.handleNewColor(i)}} href="#">
+                  {i}
+                </a>
+              </li>
             })
           }
         </ul>
@@ -92,7 +104,7 @@ class App extends Component {
           this.state.currentPortrait ?
             <div>
               <h1>artful</h1>
-              <Portrait colors={this.state.colors} portrait={this.state.currentPortrait} />
+              <Portrait currentColor={this.state.currentColor} colors={this.state.colors} portrait={this.state.currentPortrait} />
               <button type="button" onClick={this.handleNewPortrait}>New portrait</button>
               { this.renderKey() }
               { this.renderPalette() }
