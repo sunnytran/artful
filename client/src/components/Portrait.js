@@ -7,17 +7,37 @@ class Portrait extends Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this)
+
+    const colors = this.props.colors
+    var hexDict = {}
+    Object.keys(this.props.colors).forEach(function(key) {
+      hexDict[colors[key].hex] = key
+    })
+
+    this.state = {
+      hexDict: hexDict
+    }
+    console.log(hexDict)
   }
 
   handleClick(e) {
     // console.log(e.target.attributes.getNamedItem('fill').value)
-    var hexColor = this.props.colors[this.props.currentColor].hex
+    var hexColor = !this.props.currentColor ? this.props.colors["white"].hex :
+      this.props.colors[this.props.currentColor].hex
+
+    var currentPaletteColor = this.state.hexDict[hexColor]
+    var currentCellColor = this.state.hexDict[e.target.attributes.getNamedItem('fill').value]
+    var determinedColor = hexColor
+    
+    if (currentPaletteColor === 'white' && currentCellColor === 'black') {
+      determinedColor = this.props.colors["gray"].hex
+    }
 
     if (e.type == 'click')
-      e.target.attributes.getNamedItem('fill').value = hexColor;
+      e.target.attributes.getNamedItem('fill').value = determinedColor;
     if (e.nativeEvent.which === 3) {
-      console.log("HELLO")
-      e.target.attributes.getNamedItem('fill').value = '#fff'
+      // supposed to be erase
+      e.target.attributes.getNamedItem('fill').value = '#ffffff'
     }
   }
 

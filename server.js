@@ -96,6 +96,13 @@ app.get('/api/colors', (req, res) => {
         'yellow'
       ]
     },
+    'light green': {
+      'hex': '#adff2f',
+      'mixOf': [
+        'green',
+        'white'
+      ]
+    },
     'blue': {
       'hex': '#1a1aff',
       'mixOf': null
