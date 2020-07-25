@@ -31,6 +31,14 @@ class Portrait extends Component {
     
     if (currentPaletteColor === 'white' && currentCellColor === 'black') {
       determinedColor = this.props.colors["gray"].hex
+    } else if (currentPaletteColor === 'white' && this.props.colors["light " + currentCellColor]) {
+      determinedColor = this.props.colors["light " + currentCellColor].hex
+    } else if (currentPaletteColor === 'black' && this.props.colors["dark " + currentCellColor]) {
+      determinedColor = this.props.colors["dark " + currentCellColor].hex
+    } else if (currentPaletteColor === 'white' && currentCellColor.includes("dark")) {
+      determinedColor = this.props.colors[currentCellColor.substring(currentCellColor.indexOf("dark") + 5)].hex
+    } else if (currentPaletteColor === 'black' && currentCellColor.includes("light")) {
+      determinedColor = this.props.colors[currentCellColor.substring(currentCellColor.indexOf("light") + 6)].hex
     }
 
     if (e.type == 'click')
