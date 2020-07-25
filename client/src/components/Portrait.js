@@ -5,9 +5,7 @@ import SvgCompa from './SvgCompa'
 class Portrait extends Component {
   constructor(props) {
     super(props);
-
-    this.handleClick = this.handleClick.bind(this)
-
+    
     const colors = this.props.colors
     var hexDict = {}
     Object.keys(this.props.colors).forEach(function(key) {
@@ -17,7 +15,9 @@ class Portrait extends Component {
     this.state = {
       hexDict: hexDict
     }
-    console.log(hexDict)
+
+    this.handleClick = this.handleClick.bind(this)
+    this.handleErase = this.handleErase.bind(this)
   }
 
   handleClick(e) {
@@ -41,19 +41,18 @@ class Portrait extends Component {
       determinedColor = this.props.colors[currentCellColor.substring(currentCellColor.indexOf("light") + 6)].hex
     }
 
-    if (e.type == 'click')
-      e.target.attributes.getNamedItem('fill').value = determinedColor;
-    if (e.nativeEvent.which === 3) {
-      // supposed to be erase
-      e.target.attributes.getNamedItem('fill').value = '#ffffff'
-    }
+    e.target.attributes.getNamedItem('fill').value = determinedColor;
+  }
+
+  handleErase(e) {
+    e.target.attributes.getNamedItem('fill').value = this.props.colors["white"].hex;
   }
 
   render() {
     return (
       <div>
         <h1>{this.props.portrait.name} by {this.props.portrait.artist}</h1>
-        <SvgCompa handleClick={this.handleClick}></SvgCompa>
+        <SvgCompa handleClick={this.handleClick} handleErase={this.handleErase} onContextMenu={(e)=> e.preventDefault()}></SvgCompa>
       </div>
     );
   }
