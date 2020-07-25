@@ -107,6 +107,7 @@ class App extends Component {
               <Portrait currentColor={this.state.currentColor} colors={this.state.colors} portrait={this.state.currentPortrait} />
               <button type="button" onClick={this.handleNewPortrait}>New portrait</button>
               { this.renderKey() }
+              <h4>Click on a color to pick it. Left click a cell to paint and right click to erase.</h4>
               { this.renderPalette() }
             </div> :
             null
