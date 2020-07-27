@@ -51,12 +51,50 @@ class Portrait extends Component {
       determinedColor = this.props.colors[currentCellColor.substring(currentCellColor.indexOf("light") + 6)].hex
     } else if (currentCellColor !== 'white' && currentCellColor !== 'black' &&
         (this.state.mixDict[[currentCellColor, currentPaletteColor]] || this.state.mixDict[[currentPaletteColor, currentCellColor]])) {
-      var mixedColor = this.state.mixDict[[currentCellColor, currentPaletteColor]]
-      if (!mixedColor)
-        this.state.mixDict[[currentPaletteColor, currentCellColor]]
+          var mixedColor = this.state.mixDict[[currentCellColor, currentPaletteColor]]
+          if (!mixedColor)
+          this.state.mixDict[[currentPaletteColor, currentCellColor]]
+          
+          determinedColor = this.props.colors[mixedColor].hex
+    } else if (currentCellColor !== 'white') {
+      // any color with "light" in it will be broken down (this includes pink and cream, which is essentially light red and light yellow)
+      // at this point, you should have three colors. if more, then no.
+      // check if those three colors alone match an entry in the dictionary
+      // if not, mix the two colors that aren't white and see if the resulting color along with white match an entry (this accounts for light colors)
       
-      determinedColor = this.props.colors[mixedColor].hex
+      var mixOfCell = this.props.colors[currentCellColor].mixOf
+      var mixOfPalette = this.props.colors[currentPaletteColor].mixOf
+
+      if (!mixOfCell)
+        mixOfCell = [currentCellColor]
+      else if (!mixOfPalette)
+        mixOfPalette = [currentPaletteColor]
+
+      if (mixOfCell.length + mixOfPalette.length === 3) {
+        var threeColors = mixOfCell
+        threeColors.push.apply(threeColors, mixOfPalette)
+        threeColors.sort()
+
+        console.log(threeColors + "<--")
+        console.log(this.state.mixDict)
+        if (this.state.mixDict[threeColors]) {
+          determinedColor = this.props.colors[this.state.mixDict[threeColors]].hex
+        } else if (threeColors.includes("white")) {
+          threeColors.splice(threeColors.indexOf("white"), 1)
+          if (this.state.mixDict[threeColors]) {
+            var mixedColor = this.state.mixDict[threeColors]
+            var finalMixCheck = [mixedColor, 'white']
+            finalMixCheck.sort()
+
+            if (this.state.mixDict[finalMixCheck]) {
+              determinedColor = this.props.colors[this.state.mixDict[finalMixCheck]].hex
+              console.log(determinedColor)
+            }
+          }
+        }
+      }
     }
+
 
     e.target.attributes.getNamedItem('fill').value = determinedColor;
   }
