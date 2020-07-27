@@ -2,7 +2,6 @@ working on
 
 number the cells
 
-componentwillmount workaround
 
 get art facts!!! wikiart.org
 
@@ -16,3 +15,5 @@ fetch portrait no dupes
 global colors???
 color option generation
 generate color numbers schemes and stuff
+three color combinations
+componentwillmount workaround
