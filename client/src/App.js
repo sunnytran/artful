@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Portrait from './components/Portrait';
 import PortraitGenerator from './utils/PortraitGenerator';
+import Palette from './components/Palette';
 
 import './App.css'
 
@@ -104,7 +105,8 @@ class App extends Component {
         {
           this.state.currentPortrait ?
             <div class="container">
-              <h1 class="title">artful</h1>
+
+              <span class="title">artful</span>
 
               <div class="has-text-centered">
                 <div class="is-inline-block">
@@ -130,7 +132,8 @@ class App extends Component {
                   { this.renderKey() }
                 </div>
                 <div class="column is-half">
-                  { this.renderPalette() }
+                  <Palette portrait={this.state.currentPortrait} handleClick={this.handleNewColor} />
+                  {/* { this.renderPalette() } */}
                 </div>
               </div>     
             </div> :
