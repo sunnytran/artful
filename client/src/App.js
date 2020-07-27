@@ -64,7 +64,6 @@ class App extends Component {
   renderPalette() {
     return (
       <div>
-        <h2>Your palette</h2>
         <ul>
           {
             this.state.currentPortrait.palette.map(i => {
@@ -85,7 +84,7 @@ class App extends Component {
 
     return (
       <div>
-        <h2>Color key</h2>
+        <h2><u>Color key</u></h2>
         <ul>
         {
           Object
@@ -110,17 +109,30 @@ class App extends Component {
               <div class="has-text-centered">
                 <div class="is-inline-block">
                   <h2 class="subtitle has-text-left">
-                    {this.state.currentPortrait.name} by {this.state.currentPortrait.artist}
+                    <span class="is-italic">
+                      {this.state.currentPortrait.name}&nbsp;
+                    </span>
+                    by {this.state.currentPortrait.artist}
                   </h2>
                   
                   <Portrait currentColor={this.state.currentColor} colors={this.state.colors} portrait={this.state.currentPortrait} />
                 </div>
               </div>
 
-              <button type="button" onClick={this.handleNewPortrait}>New portrait</button>
-              { this.renderKey() }
-              <h4>Click on a color to pick it. Left click a cell to paint and right click to erase.</h4>
-              { this.renderPalette() }     
+              <div>
+                <a href="#" onClick={this.handleNewPortrait}>Get a new portrait</a>
+                &nbsp;|&nbsp;
+                <span>Click on a color to pick it. Left click a spot to paint it and right click to erase!</span>
+              </div>
+              
+              <div class="columns">
+                <div class="column is-half">
+                  { this.renderKey() }
+                </div>
+                <div class="column is-half">
+                  { this.renderPalette() }
+                </div>
+              </div>     
             </div> :
             null
         }
