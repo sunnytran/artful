@@ -62,16 +62,16 @@ class Portrait extends Component {
       // check if those three colors alone match an entry in the dictionary
       // if not, mix the two colors that aren't white and see if the resulting color along with white match an entry (this accounts for light colors)
       
-      var mixOfCell = this.props.colors[currentCellColor].mixOf
-      var mixOfPalette = this.props.colors[currentPaletteColor].mixOf
+      var mixOfCell = [currentCellColor] 
+      var mixOfPalette = [currentPaletteColor]
 
-      if (!mixOfCell)
-        mixOfCell = [currentCellColor]
-      else if (!mixOfPalette)
-        mixOfPalette = [currentPaletteColor]
+      if (this.props.colors[currentCellColor].mixOf)
+        mixOfCell = this.props.colors[currentCellColor].mixOf.slice()
+      else if (this.props.colors[currentPaletteColor].mixOf)
+        mixOfPalette = this.props.colors[currentPaletteColor].mixOf.slice()
 
       if (mixOfCell.length + mixOfPalette.length === 3) {
-        var threeColors = mixOfCell
+        var threeColors = mixOfCell.slice()
         threeColors.push.apply(threeColors, mixOfPalette)
         threeColors.sort()
 
