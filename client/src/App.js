@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Portrait from './components/Portrait';
 import PortraitGenerator from './utils/PortraitGenerator';
 
+import './App.css'
+
 class App extends Component {
 
   constructor(props) {
@@ -102,13 +104,23 @@ class App extends Component {
       <div>
         {
           this.state.currentPortrait ?
-            <div>
-              <h1>artful</h1>
-              <Portrait currentColor={this.state.currentColor} colors={this.state.colors} portrait={this.state.currentPortrait} />
+            <div class="container">
+              <h1 class="title">artful</h1>
+
+              <div class="has-text-centered">
+                <div class="is-inline-block">
+                  <h2 class="subtitle has-text-left">
+                    {this.state.currentPortrait.name} by {this.state.currentPortrait.artist}
+                  </h2>
+                  
+                  <Portrait currentColor={this.state.currentColor} colors={this.state.colors} portrait={this.state.currentPortrait} />
+                </div>
+              </div>
+
               <button type="button" onClick={this.handleNewPortrait}>New portrait</button>
               { this.renderKey() }
               <h4>Click on a color to pick it. Left click a cell to paint and right click to erase.</h4>
-              { this.renderPalette() }
+              { this.renderPalette() }     
             </div> :
             null
         }

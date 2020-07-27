@@ -106,7 +106,6 @@ class Portrait extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.portrait.name} by {this.props.portrait.artist}</h1>
         <SvgCompa handlePaint={this.handlePaint} handleErase={this.handleErase} onContextMenu={(e)=> e.preventDefault()}></SvgCompa>
       </div>
     );
