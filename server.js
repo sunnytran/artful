@@ -141,6 +141,11 @@ app.get('/api/portraits', (req, res) => {
         'red',
         'blue',
         'light blue'
+      ],
+      facts: [
+        "Piet Mondrian's name is an anagram for \"I paint modern\"",
+        "Mondrian liked to dance to jazz, but wasn't very good at it",
+        "Mondrian was a qualified art teacher"
       ]
     },
   ]

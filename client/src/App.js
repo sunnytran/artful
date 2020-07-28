@@ -90,6 +90,8 @@ class App extends Component {
               <h1 class="title">artful</h1>
 
               <div class="columns is-centered is-vcentered is-mobile">
+                
+
                 <div class="column is-narrow">
 
                   <span class="subtitle has-text-left">
