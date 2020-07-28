@@ -87,17 +87,17 @@ class App extends Component {
           this.state.currentPortrait ?
             <div class="container">
 
-              <span class="title">artful</span>
+              <h1 class="title">artful</h1>
 
               <div class="columns is-centered is-vcentered is-mobile">
                 <div class="column is-narrow">
 
-                  <h2 class="subtitle has-text-left">
+                  <span class="subtitle has-text-left">
                     <span class="is-italic">
                       {this.state.currentPortrait.name}&nbsp;
                     </span>
                     by {this.state.currentPortrait.artist}
-                  </h2>
+                  </span>
                   <Portrait currentColor={this.state.currentColor} colors={this.state.colors} portrait={this.state.currentPortrait} />
 
                   <div class="columns">
