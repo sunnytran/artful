@@ -20,7 +20,6 @@ class App extends Component {
 
     this.handleNewPortrait = this.handleNewPortrait.bind(this)
     this.handleNewColor = this.handleNewColor.bind(this)
-    this.renderPalette = this.renderPalette.bind(this)
     this.renderKey = this.renderKey.bind(this)
   }
 
@@ -62,24 +61,6 @@ class App extends Component {
     })
   }
 
-  renderPalette() {
-    return (
-      <div>
-        <ul>
-          {
-            this.state.currentPortrait.palette.map(i => {
-              return <li>
-                <a onClick={() => {this.handleNewColor(i)}} href="#">
-                  {i}
-                </a>
-              </li>
-            })
-          }
-        </ul>
-      </div>
-    )
-  }
-
   renderKey() {
     const keyData = this.state.currentPortrait.key
 
@@ -108,41 +89,42 @@ class App extends Component {
 
               <span class="title">artful</span>
 
-              <div class="has-text-centered">
-                <div class="is-inline-block">
+              <div class="columns is-centered is-vcentered is-mobile">
+                <div class="column is-narrow">
+
                   <h2 class="subtitle has-text-left">
                     <span class="is-italic">
                       {this.state.currentPortrait.name}&nbsp;
                     </span>
                     by {this.state.currentPortrait.artist}
                   </h2>
-                  
                   <Portrait currentColor={this.state.currentColor} colors={this.state.colors} portrait={this.state.currentPortrait} />
-                </div>
-              </div>
 
-              <div>
-                <a href="#" onClick={this.handleNewPortrait}>Get a new portrait</a>
-                &nbsp;|&nbsp;
-                <span>Choose a color and click on a spot to paint it. Right click to erase!</span>
+                  <div class="columns">
+                    <div class="column">
+                      <a href="#" onClick={this.handleNewPortrait}>Get a new portrait</a>
+                      &nbsp;|&nbsp;
+                      <span>Choose a color and click on a spot to paint it. Right click to erase!</span>
+                    </div>
+                  </div>
+
+                  <div class="columns">
+                    <div class="column is-half">
+                      { this.renderKey() }
+                    </div>
+                    <div class="column is-half">
+                      <Palette portrait={this.state.currentPortrait} handleClick={this.handleNewColor} />
+                    </div>
+                  </div>
+
+                </div>
               </div>
-              
-              <div class="columns">
-                <div class="column is-half">
-                  { this.renderKey() }
-                </div>
-                <div class="column is-half">
-                  <Palette portrait={this.state.currentPortrait} handleClick={this.handleNewColor} />
-                  {/* { this.renderPalette() } */}
-                </div>
-              </div>     
             </div> :
             null
         }
       </div>
     );
   }
-
 }
 
 export default App;
