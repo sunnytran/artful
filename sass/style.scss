@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 $my-black: #2d2d2d;
 $my-white: #fefefe;
@@ -13,7 +13,12 @@ $dark: $my-white;
 $grey-darker: $my-white;
 $grey-dark: $my-white;
 
-$family-sans-serif: 'Libre Baskerville', serif;
+$family-sans-serif: 'Roboto', sans-serif;
+$family-weight: 500;
+// $family-serif: 'Libre Baskerville', serif;
+
+$title-family: 'Libre Baskerville', serif;
+$subtitle-family: 'Libre Baskerville', serif;
 
 @import "../node_modules/bulma/bulma.sass";
 @import "../node_modules/bulma/sass/utilities/_all.sass";

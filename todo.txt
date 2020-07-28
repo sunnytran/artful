@@ -1,5 +1,7 @@
 working on
 
+different body font
+
 number the cells
 
 
@@ -7,6 +9,8 @@ get art facts!!! wikiart.org
 
 amgoth resize is eh
 scale the svg
+
+add another, less fancy font for text
 
 ==================================================
 

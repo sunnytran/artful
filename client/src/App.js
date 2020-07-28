@@ -124,7 +124,7 @@ class App extends Component {
               <div>
                 <a href="#" onClick={this.handleNewPortrait}>Get a new portrait</a>
                 &nbsp;|&nbsp;
-                <span>Click on a color to pick it. Left click a spot to paint it and right click to erase!</span>
+                <span>Choose a color and click on a spot to paint it. Right click to erase!</span>
               </div>
               
               <div class="columns">

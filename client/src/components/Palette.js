@@ -13,7 +13,7 @@ class Palette extends Component {
           {
             this.props.portrait.palette.map(i => {
               return <li>
-                <a onClick={() => {this.props.handleClick}} href="#">
+                <a onClick={() => {this.props.handleClick(i)}} href="#">
                   {i}
                 </a>
               </li>
