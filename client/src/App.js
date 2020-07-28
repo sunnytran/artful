@@ -113,7 +113,7 @@ class App extends Component {
                       { this.renderKey() }
                     </div>
                     <div class="column is-half">
-                      <Palette portrait={this.state.currentPortrait} handleClick={this.handleNewColor} />
+                      <Palette portrait={this.state.currentPortrait} colors={this.state.colors} handleClick={this.handleNewColor} />
                     </div>
                   </div>
 

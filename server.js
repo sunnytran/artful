@@ -140,8 +140,7 @@ app.get('/api/portraits', (req, res) => {
         'light gray',
         'red',
         'blue',
-        'light blue',
-        'orange'
+        'light blue'
       ]
     },
   ]

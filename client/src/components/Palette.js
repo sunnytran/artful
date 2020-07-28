@@ -12,11 +12,11 @@ class Palette extends Component {
         <ul>
           {
             this.props.portrait.palette.map(i => {
-              return <li>
-                <a onClick={() => {this.props.handleClick(i)}} href="#">
-                  {i}
-                </a>
-              </li>
+              return (
+                <svg width="50" height="50" onClick={() => {this.props.handleClick(i)}}>
+                  <rect width="50" height="50" fill={this.props.colors[i].hex}/>
+                </svg>
+              )
             })
           }
         </ul>
