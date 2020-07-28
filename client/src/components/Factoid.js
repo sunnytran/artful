@@ -35,6 +35,7 @@ class Factoid extends Component {
   render() {
     return (
       <div>
+        <b>FACT: </b>
         {this.props.facts[this.state.factIndex]}
       </div>
     )

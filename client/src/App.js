@@ -92,6 +92,7 @@ class App extends Component {
                 <h1 class="title">artful</h1>
 
                 <div class="columns is-centered is-vcentered is-mobile">
+
                   <div class="column is-narrow">
 
                     <span class="subtitle has-text-left">
@@ -100,6 +101,10 @@ class App extends Component {
                       </span>
                       by {this.state.currentPortrait.artist}
                     </span>
+                    <span class="is-pulled-right">
+                      <Factoid facts={this.state.currentPortrait.facts} />
+                    </span>
+                    
                     <Portrait currentColor={this.state.currentColor} colors={this.state.colors} portrait={this.state.currentPortrait} />
 
                     <div class="columns">
@@ -121,10 +126,6 @@ class App extends Component {
 
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <Factoid facts={this.state.currentPortrait.facts} />
               </div>
             </div> :
             null
