@@ -1,16 +1,12 @@
 working on
 
-different body font
+new portrait should clear the painting's cells
 
 number the cells
+    - using svgr
 
-
-get art facts!!! wikiart.org
-
-amgoth resize is eh
 scale the svg
-
-add another, less fancy font for text
+more svgs
 
 ==================================================
 
@@ -21,3 +17,8 @@ color option generation
 generate color numbers schemes and stuff
 three color combinations
 componentwillmount workaround
+different body font
+hardcoded facts
+no solect the numbers on the painting
+
+add another, less fancy font for text

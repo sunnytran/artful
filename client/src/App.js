@@ -5,7 +5,8 @@ import PortraitGenerator from './utils/PortraitGenerator';
 import Palette from './components/Palette';
 import Factoid from './components/Factoid';
 
-import './App.css'
+import './bulma.css'
+import './App.css';
 
 class App extends Component {
 
@@ -83,12 +84,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div class="noselect">
         {
           this.state.currentPortrait ?
             <div>
-              <div class="container">
-
+              <div class="container" style={{paddingTop: '10px', paddingLeft: '10px'}}>
                 <h1 class="title">artful</h1>
 
                 <div class="columns is-centered is-vcentered is-mobile">
