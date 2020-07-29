@@ -5,7 +5,12 @@ import SvgCompa from './SvgCompa'
 class Portrait extends Component {
   constructor(props) {
     super(props);
-    
+
+    this.handlePaint = this.handlePaint.bind(this)
+    this.handleErase = this.handleErase.bind(this)
+  }
+
+  componentDidMount() {
     const colors = this.props.colors
 
     var hexDict = {}
@@ -21,13 +26,10 @@ class Portrait extends Component {
         mixDict[key] = key
     })
 
-    this.state = {
+    this.setState({
       hexDict: hexDict,
       mixDict: mixDict
-    }
-
-    this.handlePaint = this.handlePaint.bind(this)
-    this.handleErase = this.handleErase.bind(this)
+    })
   }
 
   handlePaint(e) {
