@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "css-build": "node-sass --omit-source-map-url sass/style.scss css/style.css",
     "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
+    "css-start": "npm run css-watch"
   },
   "author": "sunnytran",
   "license": "MIT",
