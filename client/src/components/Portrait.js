@@ -7,9 +7,10 @@ class Portrait extends Component {
     super(props);
 
     this.handlePaint = this.handlePaint.bind(this)
-    this.toggleNumberVisibility = this.toggleNumberVisibility.bind(this)
     this.handleErase = this.handleErase.bind(this)
     this.isFilled = this.isFilled.bind(this)
+    this.showNumber = this.showNumber.bind(this)
+    this.hideNumber = this.hideNumber.bind(this)
 
     this.state = {
       paintedCells: []
@@ -38,14 +39,22 @@ class Portrait extends Component {
     })
   }
 
-  toggleNumberVisibility(e) {
-    var pathId = e.target.id.substr(e.target.id.indexOf("_") + 1)
+  hideNumber(e, id) {
     var arr = e.target.parentElement.children
     for (var i = 0; i < arr.length; i++) {
-      if (arr[i].id === "text_" + pathId) {
+      if (arr[i].id === "text_" + id) {
         if (!arr[i].getAttribute('display'))
           arr[i].setAttribute('display', 'none')
-        else
+        break
+      }
+    }
+  }
+
+  showNumber(e, id) {
+    var arr = e.target.parentElement.children
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].id === "text_" + id) {
+        if (arr[i].getAttribute('display'))
           arr[i].removeAttribute('display')
         break
       }
@@ -120,7 +129,7 @@ class Portrait extends Component {
     }
 
     e.target.attributes.getNamedItem('fill').value = determinedColor;
-    this.toggleNumberVisibility(e)
+    this.hideNumber(e, pathId)
 
     if (!this.state.paintedCells.includes(pathId))
       this.setState(prevState => ({
@@ -136,7 +145,7 @@ class Portrait extends Component {
     if (!this.isFilled(id))
       return
     e.target.attributes.getNamedItem('fill').value = this.props.colors["white"].hex;
-    this.toggleNumberVisibility(e)
+    this.showNumber(e, id)
 
     var tmp = this.state.paintedCells
     tmp.splice(tmp.indexOf(id), 1);
