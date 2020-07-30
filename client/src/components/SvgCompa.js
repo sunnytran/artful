@@ -1,3113 +1,4508 @@
-
-
-import React, { Component } from 'react';
+import React, { Component } from 'react';;
 
 var SvgCompa = function SvgCompa(props) {
-    return (
-    <svg width={1013.333} height={1125.333} viewBox="0 0 760 844" {...props}>
-    <path d="M0 422v422h760V0H0v422zM42 17v12H5V5h37v12zm46-1v11H46V5h42v11zm51 0v11H89V5h50v11zm72 0v11h-71V5h71v11zm75 0v11h-74V5h74v11zm61 1v12h-57V5h57v12zm67.8-.3l-.3 11.8h-66l-.3-11.8-.3-11.7h67.2l-.3 11.7zm66.2.3v12h-65V5h65v12zm45.8-.3l-.3 11.8-20.7.3-20.8.2V5h42.1l-.3 11.7zm72.2.3v12h-71V5h71v12zm66 0v12l-32.2-.2-32.3-.3-.3-11.8-.3-11.7H665v12zm56 0v12h-52V5h52v12zm34 0v12l-16.2-.2-16.3-.3-.3-8.5c-.2-4.7 0-10 .3-11.8l.6-3.2H755v12zM42 45v15H5V30h37v15zm305 0v15h-57V30h57v15zm68 0v15h-67V30h67v15zm66 0v15h-65V30h65v15zm46 0v15h-42V30h42v15zm72 0v15h-71V30h71v15zm66 0v15h-65V30h65v15zm56 0v15h-52V30h52v15zm34 0v15h-33V30h33v15zm-667 .5V60H46V31h42v14.5zm49 0V60H89V31h48v14.5zm73.8.2l.3 14.3H141V31l34.8.2 34.7.3.3 14.2zm75.2-.2V60h-74V31h74v14.5zM42 91v30H5V61h37v30zm46 0v30H46V61h42v30zm49 0v30H89V61h48v30zm73.8.2l.2 29.8h-70V61l34.8.2 34.7.3.3 29.7zM286 91v30h-74V61h74v30zm61-1v29h-57V61h57v29zm67.8.2l.2 28.8h-67V90.7c0-15.6.3-28.7.7-29 .4-.4 15.3-.6 33.2-.5l32.6.3.3 28.7zM481 90v29h-65V61h65v29zm45.8.2l.2 28.8h-42V61l20.8.2 20.7.3.3 28.7zM599 90v29h-71V61h71v29zm66 0v29h-65V90.7c0-15.6.3-28.7.7-29 .3-.4 15-.7 32.5-.7H665v29zm56 1v30h-52V61h52v30zm34 0v30h-33V91.7c0-16.2.3-29.7.7-30 .3-.4 7.8-.7 16.5-.7H755v30zM42 158v35H5v-70h37v35zm46 0v35H46v-70h42v35zm49 0v35H89v-70h48v35zm73.8-.3l-.3 34.8-34.7.3-34.8.2v-70h70l-.2 34.7zm75.2.3v35h-74v-70h74v35zm61 0v35h-57v-70h57v35zm67.5 0v34.5h-66l-.3-33.5c-.1-18.4 0-34.1.3-34.8.3-1 7.4-1.2 33.2-1l32.8.3V158zm66.5 0v35h-65v-70h65v35zm45.5 0v34.5l-20.7.3-20.8.2v-70l20.8.2 20.7.3V158zm72.5 0v35h-71v-70h71v35zm66 0v35l-32.2-.2-32.3-.3-.3-33.5c-.1-18.4 0-34.1.3-34.7.3-1 7.7-1.3 32.5-1.3h32v35zm56 0v35h-52v-70h52v35zm34 0v35l-16.2-.2-16.3-.3-.3-34.8-.2-34.7h33v35zM42 218.5V240H5v-43h37v21.5zm46 0V240H46v-43h42v21.5zm51 0V240H89v-43h50v21.5zm72 0V240h-71v-43h71v21.5zm75 0V240h-74v-43h74v21.5zm61 0V240h-57v-43h57v21.5zm68 0V240h-67v-43h67v21.5zm66 0V240h-65v-43h65v21.5zm46 0V240h-42v-43h42v21.5zm72 0V240h-71v-43h71v21.5zm66 0V240h-65v-43h65v21.5zm55 0V240h-51v-43h51v21.5zm35 0V240h-31v-43h31v21.5zM42 282v41H5v-82h37v41zm46 0v41H46v-82h42v41zm50.8.2l.2 40.8H89v-82l24.8.2 24.7.3.3 40.7zm72 0l.2 40.8h-71v-82l35.3.2 35.2.3.3 40.7zm75.2-.2v41h-74v-82h74v41zm61 0v41h-57v-82h57v41zm67.8.2l.2 40.8h-67v-40.3c0-22.2.3-40.7.7-41 .4-.4 15.3-.6 33.2-.5l32.6.3.3 40.7zm66.2-.2v41h-65v-82h65v41zm45.8.2l.2 40.8h-42v-82l20.8.2 20.7.3.3 40.7zm72.2-.2v41h-71v-82h71v41zm66 0v41h-65v-40.3c0-22.2.3-40.7.7-41 .3-.4 15-.7 32.5-.7H665v41zm55 0v41h-51v-82h51v41zm35 0v41h-31v-82h31v41zM42 353v28H5v-56h37v28zm46-1v27H46v-54h42v27zm51 0v27H89v-54h50v27zm72 0v27h-71v-54h71v27zm75 0v27h-74v-54h74v27zm61 0v27h-57v-54h57v27zm68 0v27h-67v-54h67v27zm66 0v27h-65v-54h65v27zm46 0v27h-42v-54h42v27zm72 0v27h-71v-54h71v27zm66 0v27h-65v-54h65v27zm55 1v28h-51v-56h51v28zm35 0v28h-31v-56h31v28zM42 403.5V425H5v-43h37v21.5zm677.8.2l.2 21.3h-51v-43l25.3.2 25.2.3.3 21.2zm35.2-.2V425h-31v-43h31v21.5zM88 404v21H46v-42h42v21zm50.8.2l.2 20.8H89v-42l24.8.2 24.7.3.3 20.7zm72 0l.2 20.8h-71v-42l35.3.2 35.2.3.3 20.7zm75.2-.2v21h-74v-42h74v21zm61 0v21h-57v-42h57v21zm67.8.2l.2 20.8h-67v-20.3c0-11.2.3-20.7.7-21 .4-.4 15.3-.6 33.2-.5l32.6.3.3 20.7zm66.2-.2v21h-65v-42h65v21zm45.8.2l.2 20.8h-42v-42l20.8.2 20.7.3.3 20.7zm72.2-.2v21h-71v-42h71v21zm66 0v21h-65v-20.3c0-11.2.3-20.7.7-21 .3-.4 15-.7 32.5-.7H665v21zM42 456v29H5v-58h37v29zm46 0v29H46v-58h42v29zm51 0v29H89v-58h50v29zm72 0v29h-71v-58h71v29zm75 0v29h-74v-58h74v29zm61 0v29h-57v-58h57v29zm68 0v29h-67v-58h67v29zm66 0v29h-65v-58h65v29zm46 0v29h-42v-58h42v29zm72 0v29h-71v-58h71v29zm66 0v29h-65v-58h65v29zm55 0v29h-51v-58h51v29zm35 0v29h-31v-58h31v29zM42 509v22H5v-44h37v22zm46 0v22H46v-44h42v22zm51 0v22H89v-44h50v22zm72 0v22h-71v-44h71v22zm75 0v22h-74v-44h74v22zm61 0v22h-57v-44h57v22zm68 0v22h-67v-44h67v22zm66 0v22h-65v-44h65v22zm45.8.7l-.3 22.8-20.7.3-20.8.2v-46h42l-.2 22.7zm72.2.3v23h-71v-46h71v23zm66 0v23l-32.2-.2-32.3-.3-.3-22.8-.2-22.7h65v23zm54.8-.3l-.3 22.8-25.2.3-25.3.2v-46h51l-.2 22.7zm35 0l-.3 22.8-15.2.3-15.3.3V487h31l-.2 22.7zM527 566.5V599h-42v-65h42v32.5zm72 0V599h-71v-65h71v32.5zm66 0V599h-65v-65h65v32.5zm55 0V599h-51v-65h51v32.5zm35 0V599h-31v-65h31v32.5zM43 567v32H5v-64h38v32zm45 0v32H45v-64h43v32zm49 0v32H89v-64h48v32zm73.8.2l.2 31.8h-70v-64l34.8.2 34.7.3.3 31.7zm75.2-.2v32h-74v-64h74v32zm61 0v32h-57v-64h57v32zm67.8.2l.2 31.8h-67v-31.3c0-17.3.3-31.7.7-32 .4-.4 15.3-.6 33.2-.5l32.6.3.3 31.7zm66.2-.2v32h-65v-64h65v32zM43 634v33H5v-66h38v33zm45 0v33H45v-66h43v33zm49 0v33H89v-66h48v33zm74 0v33h-70v-66h70v33zm75 0v33h-74v-66h74v33zm61-.5V666h-57v-65h57v32.5zm68 0V666h-67v-65h67v32.5zm66 0V666h-65v-65h65v32.5zm46 0V666h-42v-65h42v32.5zm72 0V666h-71v-65h71v32.5zm66 0V666h-65v-65h65v32.5zm55 0V666h-51v-65h51v32.5zm35 0V666h-31v-65h31v32.5zM43 698v29H5v-58h38v29zm45 0v29H45v-58h43v29zm49 0v29H89v-58h48v29zm73.8.7l-.3 29.8-34.7.3-34.8.2v-60h70l-.2 29.7zm75.2.3v30h-74v-60h74v30zm61 .5V729h-57v-59h57v29.5zm67.8-.3l-.3 29.3h-66l-.3-29.3-.2-29.2h67l-.2 29.2zm66.2.3V729h-65v-59h65v29.5zm45.8-.3l-.3 29.3-20.7.3-20.8.2v-59h42l-.2 29.2zm72.2.3V729h-71v-59h71v29.5zm66 0V729l-32.2-.2-32.3-.3-.3-29.3-.2-29.2h65v29.5zm56 0V729h-52v-59h52v29.5zm34 0V729l-16.2-.2-16.3-.3-.3-29.3-.2-29.2h33v29.5zm-544 61V791h-70v-61h70v30.5zm75 0V791h-74v-61h74v30.5zm61 0V791h-57v-61h57v30.5zm68 0V791h-67v-61h67v30.5zm66 0V791h-65v-61h65v30.5zm46 0V791h-42v-61h42v30.5zm72 0V791h-71v-61h71v30.5zm66 0V791h-65v-61h65v30.5zm56 1V793h-52v-63h52v31.5zm34 0V793l-16.2-.2-16.3-.3-.3-31.3-.2-31.2h33v31.5zM43 762v31H5v-62h38v31zm45 0v31H45v-62h43v31zm49 0v31H89v-62h48v31zm-94 54.5V839H5v-45h38v22.5zm45 0V839H45v-45h43v22.5zm49 0V839H89v-45h48v22.5zm584 0V839h-52v-45h52v22.5zm34 0V839h-33v-45h33v22.5zm-544.2.7l.2 21.8h-70v-44l34.8.2 34.7.3.3 21.7zm76.2-.2v22h-75v-44h75v22zm60 0v22h-59v-21.3c0-11.8.3-21.7.7-22 .3-.4 13.6-.7 29.5-.7H347v22zm67.8.2l.2 21.8h-67v-21.3c0-11.8.3-21.7.7-22 .4-.4 15.3-.6 33.2-.5l32.6.3.3 21.7zm66.2-.2v22h-65v-44h65v22zm45.8.2l.2 21.8h-42v-44l20.8.2 20.7.3.3 21.7zm72.2-.2v22h-71v-44h71v22zm66 0v22h-65v-21.3c0-11.8.3-21.7.7-22 .3-.4 15-.7 32.5-.7H665v22z" />
-    <path id="path_1" onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M5.063 17.005V5.013H41.93v23.984H5.063z" fill="#ffffff" />
-    <text
+  return (
+    <svg
+      width={1013.333}
+      height={1125.333}
+      viewBox="0 0 760 844"
+      preserveAspectRatio="xMidYMid meet"
+      id="svg8"
+      {...props}
+    >
+      <g transform="matrix(.1 0 0 -.1 0 844)" fill="#000000" stroke="none" id="g6">
+        <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+          d="M0 4220V0h7600v8440H0V4220zm420 4050v-120H50v240h370v-120zm460 10v-110H460v220h420v-110zm510 0v-110H890v220h500v-110zm720 0v-110h-710v220h710v-110zm750 0v-110h-740v220h740v-110zm610-10v-120h-570v240h570v-120zm678 3l-3-118h-660l-3 118-3 117h672l-3-117zm662-3v-120h-650v240h650v-120zm458 3l-3-118-207-3-208-2v240h421l-3-117zm722-3v-120h-710v240h710v-120zm660 0v-120l-322 2-323 3-3 118-3 117h651v-120zm560 0v-120h-520v240h520v-120zm340 0v-120l-162 2-163 3-3 85c-2 47 0 100 3 118l6 32h319v-120zM420 7990v-150H50v300h370v-150zm3050 0v-150h-570v300h570v-150zm680 0v-150h-670v300h670v-150zm660 0v-150h-650v300h650v-150zm460 0v-150h-420v300h420v-150zm720 0v-150h-710v300h710v-150zm660 0v-150h-650v300h650v-150zm560 0v-150h-520v300h520v-150zm340 0v-150h-330v300h330v-150zm-6670-5v-145H460v290h420v-145zm490 0v-145H890v290h480v-145zm738-2l3-143h-701v290l348-2 347-3 3-142zm752 2v-145h-740v290h740v-145zM420 7530v-300H50v600h370v-300zm460 0v-300H460v600h420v-300zm490 0v-300H890v600h480v-300zm738-2l2-298h-700v600l348-2 347-3 3-297zm752 2v-300h-740v600h740v-300zm610 10v-290h-570v580h570v-290zm678-2l2-288h-670v283c0 156 3 287 7 290 4 4 153 6 332 5l326-3 3-287zm662 2v-290h-650v580h650v-290zm458-2l2-288h-420v580l208-2 207-3 3-287zm722 2v-290h-710v580h710v-290zm660 0v-290h-650v283c0 156 3 287 7 290 3 4 150 7 325 7h318v-290zm560-10v-300h-520v600h520v-300zm340 0v-300h-330v293c0 162 3 297 7 300 3 4 78 7 165 7h158v-300zM420 6860v-350H50v700h370v-350zm460 0v-350H460v700h420v-350zm490 0v-350H890v700h480v-350zm738 3l-3-348-347-3-348-2v700h700l-2-347zm752-3v-350h-740v700h740v-350zm610 0v-350h-570v700h570v-350zm675 0v-345h-660l-3 335c-1 184 0 341 3 348 3 10 74 12 332 10l328-3v-345zm665 0v-350h-650v700h650v-350zm455 0v-345l-207-3-208-2v700l208-2 207-3v-345zm725 0v-350h-710v700h710v-350zm660 0v-350l-322 2-323 3-3 335c-1 184 0 341 3 347 3 10 77 13 325 13h320v-350zm560 0v-350h-520v700h520v-350zm340 0v-350l-162 2-163 3-3 348-2 347h330v-350zM420 6255v-215H50v430h370v-215zm460 0v-215H460v430h420v-215zm510 0v-215H890v430h500v-215zm720 0v-215h-710v430h710v-215zm750 0v-215h-740v430h740v-215zm610 0v-215h-570v430h570v-215zm680 0v-215h-670v430h670v-215zm660 0v-215h-650v430h650v-215zm460 0v-215h-420v430h420v-215zm720 0v-215h-710v430h710v-215zm660 0v-215h-650v430h650v-215zm550 0v-215h-510v430h510v-215zm350 0v-215h-310v430h310v-215zM420 5620v-410H50v820h370v-410zm460 0v-410H460v820h420v-410zm508-2l2-408H890v820l248-2 247-3 3-407zm720 0l2-408h-710v820l353-2 352-3 3-407zm752 2v-410h-740v820h740v-410zm610 0v-410h-570v820h570v-410zm678-2l2-408h-670v403c0 222 3 407 7 410 4 4 153 6 332 5l326-3 3-407zm662 2v-410h-650v820h650v-410zm458-2l2-408h-420v820l208-2 207-3 3-407zm722 2v-410h-710v820h710v-410zm660 0v-410h-650v403c0 222 3 407 7 410 3 4 150 7 325 7h318v-410zm550 0v-410h-510v820h510v-410zm350 0v-410h-310v820h310v-410zM420 4910v-280H50v560h370v-280zm460 10v-270H460v540h420v-270zm510 0v-270H890v540h500v-270zm720 0v-270h-710v540h710v-270zm750 0v-270h-740v540h740v-270zm610 0v-270h-570v540h570v-270zm680 0v-270h-670v540h670v-270zm660 0v-270h-650v540h650v-270zm460 0v-270h-420v540h420v-270zm720 0v-270h-710v540h710v-270zm660 0v-270h-650v540h650v-270zm550-10v-280h-510v560h510v-280zm350 0v-280h-310v560h310v-280zM420 4405v-215H50v430h370v-215zm6778-2l2-213h-510v430l253-2 252-3 3-212zm352 2v-215h-310v430h310v-215zm-6670-5v-210H460v420h420v-210zm508-2l2-208H890v420l248-2 247-3 3-207zm720 0l2-208h-710v420l353-2 352-3 3-207zm752 2v-210h-740v420h740v-210zm610 0v-210h-570v420h570v-210zm678-2l2-208h-670v203c0 112 3 207 7 210 4 4 153 6 332 5l326-3 3-207zm662 2v-210h-650v420h650v-210zm458-2l2-208h-420v420l208-2 207-3 3-207zm722 2v-210h-710v420h710v-210zm660 0v-210h-650v203c0 112 3 207 7 210 3 4 150 7 325 7h318v-210zM420 3880v-290H50v580h370v-290zm460 0v-290H460v580h420v-290zm510 0v-290H890v580h500v-290zm720 0v-290h-710v580h710v-290zm750 0v-290h-740v580h740v-290zm610 0v-290h-570v580h570v-290zm680 0v-290h-670v580h670v-290zm660 0v-290h-650v580h650v-290zm460 0v-290h-420v580h420v-290zm720 0v-290h-710v580h710v-290zm660 0v-290h-650v580h650v-290zm550 0v-290h-510v580h510v-290zm350 0v-290h-310v580h310v-290zM420 3350v-220H50v440h370v-220zm460 0v-220H460v440h420v-220zm510 0v-220H890v440h500v-220zm720 0v-220h-710v440h710v-220zm750 0v-220h-740v440h740v-220zm610 0v-220h-570v440h570v-220zm680 0v-220h-670v440h670v-220zm660 0v-220h-650v440h650v-220zm458-7l-3-228-207-3-208-2v460h420l-2-227zm722-3v-230h-710v460h710v-230zm660 0v-230l-322 2-323 3-3 228-2 227h650v-230zm548 3l-3-228-252-3-253-2v460h510l-2-227zm350 0l-3-228-152-3-153-3v461h310l-2-227zm-2278-568v-325h-420v650h420v-325zm720 0v-325h-710v650h710v-325zm660 0v-325h-650v650h650v-325zm550 0v-325h-510v650h510v-325zm350 0v-325h-310v650h310v-325zm-7120-5v-320H50v640h380v-320zm450 0v-320H450v640h430v-320zm490 0v-320H890v640h480v-320zm738-2l2-318h-700v640l348-2 347-3 3-317zm752 2v-320h-740v640h740v-320zm610 0v-320h-570v640h570v-320zm678-2l2-318h-670v313c0 173 3 317 7 320 4 4 153 6 332 5l326-3 3-317zm662 2v-320h-650v640h650v-320zM430 2100v-330H50v660h380v-330zm450 0v-330H450v660h430v-330zm490 0v-330H890v660h480v-330zm740 0v-330h-700v660h700v-330zm750 0v-330h-740v660h740v-330zm610 5v-325h-570v650h570v-325zm680 0v-325h-670v650h670v-325zm660 0v-325h-650v650h650v-325zm460 0v-325h-420v650h420v-325zm720 0v-325h-710v650h710v-325zm660 0v-325h-650v650h650v-325zm550 0v-325h-510v650h510v-325zm350 0v-325h-310v650h310v-325zM430 1460v-290H50v580h380v-290zm450 0v-290H450v580h430v-290zm490 0v-290H890v580h480v-290zm738-7l-3-298-347-3-348-2v600h700l-2-297zm752-3v-300h-740v600h740v-300zm610-5v-295h-570v590h570v-295zm678 3l-3-293h-660l-3 293-2 292h670l-2-292zm662-3v-295h-650v590h650v-295zm458 3l-3-293-207-3-208-2v590h420l-2-292zm722-3v-295h-710v590h710v-295zm660 0v-295l-322 2-323 3-3 293-2 292h650v-295zm560 0v-295h-520v590h520v-295zm340 0v-295l-162 2-163 3-3 293-2 292h330v-295zM2110 835V530h-700v610h700V835zm750 0V530h-740v610h740V835zm610 0V530h-570v610h570V835zm680 0V530h-670v610h670V835zm660 0V530h-650v610h650V835zm460 0V530h-420v610h420V835zm720 0V530h-710v610h710V835zm660 0V530h-650v610h650V835zm560-10V510h-520v630h520V825zm340 0V510l-162 2-163 3-3 313-2 312h330V825zm-7120-5V510H50v620h380V820zm450 0V510H450v620h430V820zm490 0V510H890v620h480V820zM430 275V50H50v450h380V275zm450 0V50H450v450h430V275zm490 0V50H890v450h480V275zm5840 0V50h-520v450h520V275zm340 0V50h-330v450h330V275zm-5442-7l2-218h-700v440l348-2 347-3 3-217zm762 2V50h-750v440h750V270zm600 0V50h-590v213c0 118 3 217 7 220 3 4 136 7 295 7h288V270zm678-2l2-218h-670v213c0 118 3 217 7 220 4 4 153 6 332 5l326-3 3-217zm662 2V50h-650v440h650V270zm458-2l2-218h-420v440l208-2 207-3 3-217zm722 2V50h-710v440h710V270zm660 0V50h-650v213c0 118 3 217 7 220 3 4 150 7 325 7h318V270z"
+          id="path4"
+        />
+      </g>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={1}
+        d="M6.75 22.673V6.685h49.157v31.978H6.75z"
+        fill="#ffffff"
+        strokeWidth={0.17}
+      />
+      <text
         id="text_1"
         y={20.666}
         x={20.156}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={20.666} x={20.156}>
-        {"0"}
+      >
+        <tspan y={20.666} x={20.156} id="tspan1035" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M46.012 15.984V5.014H87.983V26.954H46.012z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={2}
+        d="M61.35 21.313V6.685h55.96V35.94H61.35z"
+        fill="#ffffff"
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_2"
         y={16.967}
         x={64.295}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={16.967} x={64.295}>
-        {"0"}
+      >
+        <tspan y={16.967} x={64.295} id="tspan1041" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M89.003 15.984V5.014h50.008V26.954H89.003z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={3}
+        d="M118.671 21.313V6.685H185.348V35.94H118.67z"
+        fill="#ffffff"
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_3"
         y={18.498}
         x={111.113}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={18.498} x={111.113}>
-        {"0"}
+      >
+        <tspan y={18.498} x={111.113} id="tspan1047" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M139.989 15.984V5.014h71.056V26.954h-71.056z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={4}
+        d="M186.652 21.313V6.685h94.741V35.94h-94.741z"
+        fill="#ffffff"
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_4"
         y={19.263}
         x={171.071}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={19.263} x={171.071}>
-        {"0"}
+      >
+        <tspan y={19.263} x={171.071} id="tspan1053" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M211.98 15.984V5.014h73.991V26.954H211.98z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={5}
+        d="M282.64 21.313V6.685h98.654V35.94H282.641z"
+        fill="#ffffff"
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_5"
         y={19.135}
         x={242.51}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={19.135} x={242.51}>
-        {"0"}
+      >
+        <tspan y={19.135} x={242.51} id="tspan1059" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M290.053 17.005V5.013h56.896v23.984h-56.896z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={6}
+        d="M386.737 22.673V6.685H462.598v31.978h-75.86z"
+        fill="#ffffff"
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_6"
         y={20.921}
         x={315.224}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={20.921} x={315.224}>
-        {"0"}
+      >
+        <tspan y={20.921} x={315.224} id="tspan1065" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M348.47 26.222c-.044-1.245-.164-5.766-.265-10.046-.102-4.28-.217-8.543-.256-9.472l-.071-1.69h67.245l-.072 1.626c-.04.895-.155 5.186-.257 9.536-.101 4.35-.22 8.9-.265 10.11l-.08 2.2H348.551z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={7}
+        d="M464.627 34.963c-.06-1.661-.219-7.689-.354-13.395-.135-5.707-.289-11.39-.34-12.63l-.096-2.253h89.66l-.096 2.168c-.053 1.193-.207 6.915-.342 12.715-.135 5.8-.294 11.866-.354 13.48l-.107 2.934h-87.862z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_7"
         y={20.794}
         x={375.947}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={20.794} x={375.947}>
-        {"0"}
+      >
+        <tspan y={20.794} x={375.947} id="tspan1071" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.05 17.005V5.013h64.932v23.984H416.049z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={8}
+        d="M554.732 22.673V6.685h86.577v31.978h-86.577z"
+        fill="#ffffff"
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_8"
         y={19.646}
         x={445.345}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={19.646} x={445.345}>
-        {"0"}
+      >
+        <tspan y={19.646} x={445.345} id="tspan1077" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M484.98 17.012V5.013H527.114l-.08 2.201c-.044 1.21-.17 6.133-.279 10.94-.11 4.805-.229 9.089-.266 9.518l-.067.78-4.234.083c-3.862.076-13.235.198-30.672.4l-6.538.076z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={9}
+        d="M646.639 22.683V6.685h56.182l-.108 2.934c-.058 1.614-.226 8.177-.372 14.585-.145 6.408-.305 12.12-.354 12.692l-.09 1.04-5.645.11c-5.15.102-17.647.265-40.896.535l-8.717.101z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_9"
         y={19.391}
         x={502.369}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={19.391} x={502.369}>
-        {"0"}
+      >
+        <tspan y={19.391} x={502.369} id="tspan1083" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.055 17.005V5.013h70.929v23.984h-70.929z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={10}
+        d="M704.074 22.673V6.685h94.571v31.978h-94.571z"
+        fill="#ffffff"
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_10"
         y={19.646}
         x={559.903}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={19.646} x={559.903}>
-        {"0"}
+      >
+        <tspan y={19.646} x={559.903} id="tspan1089" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M650.756 28.906c-11.7-.054-50.122-.428-50.183-.489-.047-.047-.623-20.303-.648-22.798l-.006-.606h65.06v23.984l-3.986-.031c-2.192-.017-6.8-.044-10.237-.06z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={11}
+        d="M867.674 38.542c-15.598-.072-66.829-.571-66.91-.652-.063-.063-.83-27.071-.864-30.397l-.008-.808h86.748v31.978l-5.316-.042c-2.923-.022-9.066-.058-13.65-.08z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_11"
         y={19.773}
         x={628.152}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={19.773} x={628.152}>
-        {"0"}
+      >
+        <tspan y={19.773} x={628.152} id="tspan1095" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M668.977 17.005V5.013h52.048v23.984h-52.048z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={12}
+        d="M891.97 22.673V6.685h69.398v31.978h-69.399z"
+        fill="#ffffff"
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_12"
         y={19.773}
         x={690.789}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={19.773} x={690.789}>
-        {"0"}
+      >
+        <tspan y={19.773} x={690.789} id="tspan1101" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M747.815 28.907c-6.246-.061-25.183-.43-25.244-.49-.118-.119-.381-8.655-.386-12.496-.005-4.59.12-6.527.58-9.026l.346-1.882h31.848v23.984l-2.01-.03c-1.104-.016-3.415-.043-5.134-.06z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={13}
+        d="M997.087 38.542c-8.328-.081-33.577-.572-33.659-.654-.157-.157-.508-11.538-.514-16.66-.007-6.12.158-8.703.772-12.034l.462-2.51h42.464v31.978l-2.68-.04c-1.473-.02-4.553-.057-6.845-.08z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.17}
+      />
+      <text
+        id="text_13"
         y={19.135}
         x={734.29}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={19.135} x={734.29}>
-        {"0"}
+      >
+        <tspan y={19.135} x={734.29} id="tspan1107" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M4.976 45.005V30.031H41.96V59.98H4.976z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={14}
+        d="M6.635 60.007V40.042h49.312v39.931H6.635z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_14"
         y={47.989}
         x={20.206}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={47.989} x={20.206}>
-        {"0"}
+      >
+        <tspan y={47.989} x={20.206} id="tspan1113" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M46.05 45.501V31.024h41.945v28.955H46.05z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={15}
+        d="M61.4 60.669V41.365h55.927v38.608H61.4z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_15"
         y={47.899}
         x={63.685}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={47.899} x={63.685}>
-        {"0"}
+      >
+        <tspan y={47.899} x={63.685} id="tspan1119" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M89.018 45.501V31.024H137.007v28.955H89.018z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={16}
+        d="M118.69 60.669V41.365h63.986v38.608H118.69z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_16"
         y={48.44}
         x={109.87}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={48.44} x={109.87}>
-        {"0"}
+      >
+        <tspan y={48.44} x={109.87} id="tspan1125" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M141.006 45.501V31.024h2.638c7.65.003 66.744.45 66.81.506.025.021.57 24.13.638 28.246l.004.203h-70.09z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={17}
+        d="M188.008 60.669V41.365h3.518c10.199.004 88.992.6 89.08.675.032.028.758 32.173.85 37.662l.005.27h-93.453z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_17"
         y={48.801}
         x={171.3}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={48.801} x={171.3}>
-        {"0"}
+      >
+        <tspan y={48.801} x={171.3} id="tspan1131" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M211.997 45.501V31.024h73.969v28.955h-73.969z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={18}
+        d="M282.663 60.669V41.365h98.625v38.608h-98.625z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_18"
         y={47.628}
         x={244.907}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={47.628} x={244.907}>
-        {"0"}
+      >
+        <tspan y={47.628} x={244.907} id="tspan1137" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M289.995 45.005V30.031h57.01V59.98h-57.01z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={19}
+        d="M386.66 60.007V40.042h76.013v39.931H386.66z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_19"
         y={46.997}
         x={316.801}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={46.997} x={316.801}>
-        {"0"}
+      >
+        <tspan y={46.997} x={316.801} id="tspan1143" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M347.997 45.005V30.031h67.022V59.98H347.997z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={20}
+        d="M463.996 60.007V40.042h89.363v39.931h-89.363z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_20"
         y={47.177}
         x={378.05}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={47.177} x={378.05}>
-        {"0"}
+      >
+        <tspan y={47.177} x={378.05} id="tspan1149" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.012 45.005V30.031h64.947V59.98h-64.947z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={21}
+        d="M554.682 60.007V40.042H641.28v39.931H554.682z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_21"
         y={46.456}
         x={444.441}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={46.456} x={444.441}>
-        {"0"}
+      >
+        <tspan y={46.456} x={444.441} id="tspan1155" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M484.989 45.005V30.031h42.035V59.98H484.99z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={22}
+        d="M646.652 60.007V40.042h56.047v39.931h-56.047z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_22"
         y={46.185}
         x={503.436}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={46.185} x={503.436}>
-        {"0"}
+      >
+        <tspan y={46.185} x={503.436} id="tspan1163" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.017 45.005V30.031h70.991V59.98h-70.991z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={23}
+        d="M704.022 60.007V40.042h94.655v39.931h-94.655z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_23"
         y={47.989}
         x={562.069}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={47.989} x={562.069}>
-        {"0"}
+      >
+        <tspan y={47.989} x={562.069} id="tspan1169" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M599.97 45.005V30.031H665.008V59.98H599.97z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={24}
+        d="M799.96 60.007V40.042H886.678v39.931H799.96z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_24"
         y={48.801}
         x={629.813}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={48.801} x={629.813}>
-        {"0"}
+      >
+        <tspan y={48.801} x={629.813} id="tspan1175" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M668.977 45.005V30.031h52.049V59.98h-52.049z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={25}
+        d="M891.97 60.007V40.042h69.398v39.931H891.97z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_25"
         y={48.26}
         x={690.07}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={48.26} x={690.07}>
-        {"0"}
+      >
+        <tspan y={48.26} x={690.07} id="tspan1181" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M722.018 45.005V30.031h33.015V59.98h-33.015z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={26}
+        d="M962.69 60.007V40.042h44.02v39.931h-44.02z"
+        fill="#ffffff"
+        strokeWidth={0.12}
+      />
+      <text
+        id="text_26"
         y={48.711}
         x={736.255}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={48.711} x={736.255}>
-        {"0"}
+      >
+        <tspan y={48.711} x={736.255} id="tspan1187" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M5.057 120.89c-.066-.067-.12-13.543-.12-29.949V61.114H41.92v59.896H23.549c-10.105 0-18.426-.054-18.492-.12z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={27}
+        d="M6.743 161.186c-.089-.088-.16-18.057-.16-39.93V81.484h49.311V161.346H31.4c-13.473 0-24.568-.072-24.656-.16z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_27"
         y={95.257}
         x={20.567}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={95.257} x={20.567}>
-        {"0"}
+      >
+        <tspan y={95.257} x={20.567} id="tspan1193" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M46.07 91.062V61.114H87.925v59.896H46.07z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={28}
+        d="M61.427 121.416V81.485h55.807V161.346H61.427z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_28"
         y={95.618}
         x={63.865}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={95.618} x={63.865}>
-        {"0"}
+      >
+        <tspan y={95.618} x={63.865} id="tspan1199" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M88.948 91.062V61.114H136.937v59.896H88.948z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={29}
+        d="M118.597 121.416V81.485h63.986V161.346h-63.986z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_29"
         y={95.257}
         x={108.788}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={95.257} x={108.788}>
-        {"0"}
+      >
+        <tspan y={95.257} x={108.788} id="tspan1205" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M140.966 91.062V61.114l10.329-.003c11.395-.003 59 .372 59.105.466.075.067.298 20.307.482 43.602l.124 15.83h-70.04z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={30}
+        d="M187.955 121.416V81.485l13.771-.004c15.194-.004 78.668.497 78.807.622.1.09.398 27.075.642 58.135l.166 21.108h-93.386z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_30"
         y={93.272}
         x={171.21}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={93.272} x={171.21}>
-        {"0"}
+      >
+        <tspan y={93.272} x={171.21} id="tspan1211" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M212.048 91.062V61.114h73.968v59.896h-73.968z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={31}
+        d="M282.73 121.416V81.485h98.625V161.346h-98.624z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_31"
         y={93.994}
         x={244.998}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={93.994} x={244.998}>
-        {"0"}
+      >
+        <tspan y={93.994} x={244.998} id="tspan1217" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M290.106 90.07V61.113h56.829v57.911h-56.829z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={32}
+        d="M386.807 120.093V81.485h75.773V158.7h-75.773z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_32"
         y={93.272}
         x={313.734}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={93.272} x={313.734}>
-        {"0"}
+      >
+        <tspan y={93.272} x={313.734} id="tspan1223" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M348.078 97.331c.001-20.05.181-32.472.503-34.681.128-.874.152-.903.851-1.04 1.452-.282 20.42-.403 42.382-.27 12.396.076 22.561.162 22.59.19.053.053.309 23.091.513 45.994l.102 11.501h-66.941z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={33}
+        d="M464.104 129.775c.001-26.735.242-43.297.671-46.242.17-1.165.202-1.204 1.135-1.386 1.935-.376 27.225-.537 56.508-.36 16.528.101 30.083.215 30.122.254.069.07.41 30.788.682 61.325l.137 15.334h-89.256z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_33"
         y={92.19}
         x={375.254}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={92.19} x={375.254}>
-        {"0"}
+      >
+        <tspan y={92.19} x={375.254} id="tspan1229" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M415.972 90.07V61.113h64.948v57.911h-64.948z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={34}
+        d="M554.63 120.093V81.485h86.596V158.7H554.63z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_34"
         y={89.484}
         x={445.434}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={89.484} x={445.434}>
-        {"0"}
+      >
+        <tspan y={89.484} x={445.434} id="tspan1235" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M485.07 90.04V61.057l15.109.145c8.31.08 17.626.194 20.702.254l5.592.11.11 10.193c.06 5.606.174 18.535.252 28.73l.142 18.537h-41.908z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={35}
+        d="M646.759 120.054V81.408l20.146.193c11.08.106 23.501.259 27.603.339l7.457.146.146 13.591c.08 7.475.232 24.713.336 38.307l.19 24.716h-55.878z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_35"
         y={91.649}
         x={502.624}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={91.649} x={502.624}>
-        {"0"}
+      >
+        <tspan y={91.649} x={502.624} id="tspan1241" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.007 90.07V61.113H598.908v57.911H528.007z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={36}
+        d="M704.01 120.093V81.485h94.534V158.7H704.01z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_36"
         y={90.205}
         x={559.994}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={90.205} x={559.994}>
-        {"0"}
+      >
+        <tspan y={90.205} x={559.994} id="tspan1247" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M600.048 94.625c.094-21.61.273-31.66.582-32.633.065-.206.373-.341.946-.415 2.394-.31 14.554-.458 37.7-.46l25.663-.003v57.911h-64.996z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={37}
+        d="M800.064 126.166c.125-28.812.364-42.213.776-43.51.087-.275.498-.455 1.262-.554 3.191-.412 19.405-.61 50.265-.614l34.218-.003V158.7h-86.661z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_37"
         y={90.025}
         x={630.715}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={90.025} x={630.715}>
-        {"0"}
+      >
+        <tspan y={90.025} x={630.715} id="tspan1253" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M669.088 91.062V61.114h51.958v59.896h-51.958z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={38}
+        d="M892.117 121.416V81.485H961.395V161.346h-69.278z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_38"
         y={95.437}
         x={693.137}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={95.437} x={693.137}>
-        {"0"}
+      >
+        <tspan y={95.437} x={693.137} id="tspan1259" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M722.006 96.79c.105-21.89.286-32.583.585-34.447.086-.538.2-.685.589-.767 1.478-.31 7.672-.461 19.02-.462h12.763v59.896h-33.072z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={39}
+        d="M962.675 129.053c.14-29.186.381-43.443.78-45.93.115-.716.266-.913.785-1.022 1.97-.414 10.229-.615 25.36-.615l17.018-.001V161.346h-44.096z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_39"
         y={95.076}
         x={737.158}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={95.076} x={737.158}>
-        {"0"}
+      >
+        <tspan y={95.076} x={737.158} id="tspan1265" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M5.082 157.949v-34.954H42.077v69.908H5.082z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={40}
+        d="M6.776 210.598v-46.605h49.326v93.211H6.776z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_40"
         y={159.972}
         x={19.135}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={159.972} x={19.135}>
-        {"0"}
+      >
+        <tspan y={159.972} x={19.135} id="tspan1271" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M46.159 157.949v-34.954h41.843v69.908H46.159z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={41}
+        d="M61.545 210.598v-46.605h55.791v93.211H61.545z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_41"
         y={160.482}
         x={63.274}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={160.482} x={63.274}>
-        {"0"}
+      >
+        <tspan y={160.482} x={63.274} id="tspan1277" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M89.022 157.949v-34.954h47.967v69.908H89.022z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={42}
+        d="M118.697 210.598v-46.605h63.954v93.211h-63.954z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_42"
         y={159.972}
         x={110.73}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={159.972} x={110.73}>
-        {"0"}
+      >
+        <tspan y={159.972} x={110.73} id="tspan1283" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M141.156 157.987v-34.992h69.874l-.114 9.759c-.063 5.367-.184 20.966-.27 34.663l-.154 24.904-5.518.162c-3.036.088-18.636.237-34.669.329l-29.15.168z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={43}
+        d="M188.208 210.65v-46.657H281.373l-.152 13.012c-.084 7.157-.245 27.955-.358 46.218l-.207 33.205-7.358.215c-4.047.119-24.848.316-46.224.44l-38.866.224z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_43"
         y={161.248}
         x={168.392}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={161.248} x={168.392}>
-        {"0"}
+      >
+        <tspan y={161.248} x={168.392} id="tspan1289" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M211.914 157.949v-34.954h73.991v69.908h-73.991z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={44}
+        d="M282.553 210.598v-46.605H381.206v93.211H282.553z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_44"
         y={160.227}
         x={244.678}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={160.227} x={244.678}>
-        {"0"}
+      >
+        <tspan y={160.227} x={244.678} id="tspan1295" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M289.987 157.949v-34.954h56.896v69.908h-56.896z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={45}
+        d="M386.65 210.598v-46.605h75.86v93.211h-75.86z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_45"
         y={157.676}
         x={316.117}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={157.676} x={316.117}>
-        {"0"}
+      >
+        <tspan y={157.676} x={316.117} id="tspan1301" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M348.287 165.248c-.2-28.643-.052-40.767.506-41.23.175-.145 1.454-.375 2.84-.51 2.922-.284 31.386-.335 50.041-.089l12.82.17v68.804h-66.017z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={46}
+        d="M464.383 220.331c-.268-38.191-.07-54.356.674-54.973.234-.195 1.938-.5 3.787-.68 3.897-.38 41.848-.447 66.721-.119l17.095.225v91.74h-88.024z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_46"
         y={160.738}
         x={370.207}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={160.738} x={370.207}>
-        {"0"}
+      >
+        <tspan y={160.738} x={370.207} id="tspan1307" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.026 157.949v-34.954h65.06v69.908h-65.06z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={47}
+        d="M554.7 210.598v-46.605h86.748v93.211h-86.747z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_47"
         y={160.738}
         x={443.687}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={160.738} x={443.687}>
-        {"0"}
+      >
+        <tspan y={160.738} x={443.687} id="tspan1313" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M485.083 157.96v-35.018l9.76.154c5.367.085 14.667.225 20.666.312l10.907.157V192.323l-3.126.16c-1.719.088-11.018.235-20.666.328l-17.54.168z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={48}
+        d="M646.778 210.614v-46.69l13.012.204c7.156.113 19.556.3 27.555.416l14.543.21v91.678l-4.168.212c-2.292.117-14.691.313-27.555.437l-23.387.225z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_48"
         y={159.462}
         x={497.521}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={159.462} x={497.521}>
-        {"0"}
+      >
+        <tspan y={159.462} x={497.521} id="tspan1319" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.032 157.949v-34.954h70.928v69.908h-70.928z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={49}
+        d="M704.042 210.598v-46.605h94.572v93.211h-94.572z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_49"
         y={160.482}
         x={557.479}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={160.482} x={557.479}>
-        {"0"}
+      >
+        <tspan y={160.482} x={557.479} id="tspan1325" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M617.573 192.653c-9.292-.087-16.944-.21-17.005-.273-.21-.22-.421-58.577-.228-63.39l.194-4.847 1.275-.32c2.16-.54 15.68-.819 39.993-.824l23.154-.004v69.908l-15.244-.046c-8.385-.026-22.847-.118-32.14-.204z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={50}
+        d="M823.43 256.87c-12.389-.116-22.591-.28-22.672-.363-.281-.294-.562-78.103-.305-84.52l.259-6.463 1.7-.426c2.88-.721 20.908-1.093 53.325-1.099l30.871-.006v93.211l-20.326-.062c-11.179-.034-30.462-.156-42.852-.272z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_50"
         y={160.227}
         x={626.622}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={160.227} x={626.622}>
-        {"0"}
+      >
+        <tspan y={160.227} x={626.622} id="tspan1331" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M669.039 157.949v-34.954h52.048v69.908h-52.048z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={51}
+        d="M892.051 210.598v-46.605h69.398v93.211h-69.398z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_51"
         y={158.952}
         x={691.937}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={158.952} x={691.937}>
-        {"0"}
+      >
+        <tspan y={158.952} x={691.937} id="tspan1337" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M731.24 192.656c-4.59-.085-8.427-.238-8.527-.339-.209-.208-.561-33.123-.588-54.843l-.018-14.48h32.913V192.904l-7.718-.046c-4.244-.025-11.472-.115-16.062-.2z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={52}
+        d="M974.987 256.875c-6.12-.114-11.236-.318-11.37-.452-.278-.277-.748-44.165-.783-73.125l-.024-19.305h43.884v93.211l-10.29-.061c-5.66-.033-15.298-.154-21.417-.268z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_52"
         y={159.972}
         x={739.903}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={159.972} x={739.903}>
-        {"0"}
+      >
+        <tspan y={159.972} x={739.903} id="tspan1343" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M4.98 218.497V197.03H41.963v42.938H4.979z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={53}
+        d="M6.64 291.33v-28.625H55.95v57.25H6.64z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_53"
         y={224.07}
         x={19.304}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={224.07} x={19.304}>
-        {"0"}
+      >
+        <tspan y={224.07} x={19.304} id="tspan1349" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M46.113 218.497V197.03H87.968v42.938H46.113z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={54}
+        d="M61.484 291.33v-28.625h55.807v57.25H61.484z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_54"
         y={221.364}
         x={62.783}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={221.364} x={62.783}>
-        {"0"}
+      >
+        <tspan y={221.364} x={62.783} id="tspan1355" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M89.05 218.497V197.03H139.025v42.938H89.051z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={55}
+        d="M118.734 291.33v-28.625h66.632v57.25h-66.632z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_55"
         y={221.364}
         x={111.855}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={221.364} x={111.855}>
-        {"0"}
+      >
+        <tspan y={221.364} x={111.855} id="tspan1361" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M140.107 218.497V197.03H211.008v42.938H140.107z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={56}
+        d="M186.81 291.33v-28.625h94.534v57.25H186.81z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_56"
         y={222.807}
         x={170.488}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={222.807} x={170.488}>
-        {"0"}
+      >
+        <tspan y={222.807} x={170.488} id="tspan1367" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M211.97 218.497V197.03h73.969v42.938H211.97z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={57}
+        d="M282.627 291.33v-28.625h98.625v57.25h-98.625z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_57"
         y={221.725}
         x={245.539}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={221.725} x={245.539}>
-        {"0"}
+      >
+        <tspan y={221.725} x={245.539} id="tspan1373" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M289.968 218.497V197.03h57.01v42.938h-57.01z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={58}
+        d="M386.624 291.33v-28.625h76.013v57.25h-76.013z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_58"
         y={220.823}
         x={315.358}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={220.823} x={315.358}>
-        {"0"}
+      >
+        <tspan y={220.823} x={315.358} id="tspan1379" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M347.94 218.497V197.03h67.113v42.938H347.94z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={59}
+        d="M463.92 291.33v-28.625h89.483v57.25H463.92z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_59"
         y={221.003}
         x={377.96}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={221.003} x={377.96}>
-        {"0"}
+      >
+        <tspan y={221.003} x={377.96} id="tspan1385" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.015 218.497V197.03h64.948v42.938h-64.948z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={60}
+        d="M554.686 291.33v-28.625H641.283v57.25H554.686z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_60"
         y={220.823}
         x={443.99}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={220.823} x={443.99}>
-        {"0"}
+      >
+        <tspan y={220.823} x={443.99} id="tspan1391" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M485.112 218.497V197.03H526.967v42.938H485.112z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={61}
+        d="M646.816 291.33v-28.625h55.807v57.25h-55.807z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_61"
         y={221.725}
         x={501.361}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={221.725} x={501.361}>
-        {"0"}
+      >
+        <tspan y={221.725} x={501.361} id="tspan1397" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.11 218.497V197.03H599.01v42.938H528.11z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={62}
+        d="M704.146 291.33v-28.625h94.536v57.25h-94.536z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_62"
         y={221.725}
         x={557.469}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={221.725} x={557.469}>
-        {"0"}
+      >
+        <tspan y={221.725} x={557.469} id="tspan1403" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M599.973 218.497V197.03h64.948v42.938h-64.948z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={63}
+        d="M799.965 291.33v-28.625H886.562v57.25H799.965z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_63"
         y={219.56}
         x={628.19}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={219.56} x={628.19}>
-        {"0"}
+      >
+        <tspan y={219.56} x={628.19} id="tspan1409" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M669.07 218.497V197.03H719.947v42.938h-50.875z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={64}
+        d="M892.094 291.33v-28.625H959.93v57.25H892.094z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_64"
         y={220.101}
         x={691.514}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={220.101} x={691.514}>
-        {"0"}
+      >
+        <tspan y={220.101} x={691.514} id="tspan1415" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M724.096 218.497V197.03h30.85v42.938h-30.85z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={65}
+        d="M965.461 291.33v-28.625h41.134v57.25H965.46z"
+        fill="#ffffff"
+        strokeWidth={0.241}
+      />
+      <text
+        id="text_65"
         y={221.183}
         x={737.699}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={221.183} x={737.699}>
-        {"0"}
+      >
+        <tspan y={221.183} x={737.699} id="tspan1421" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M5.13 322.878c-.135-.135-.245-18.565-.245-40.957v-40.713h37.168l-.092 40.863-.092 40.863-18.248.094c-10.036.051-18.358-.016-18.492-.15z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={66}
+        d="M6.839 430.503c-.179-.178-.325-24.752-.325-54.608V321.61H56.07l-.123 54.484-.122 54.484-24.331.125c-13.382.068-24.477-.022-24.656-.2z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_66"
         y={289.073}
         x={18.88}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={289.073} x={18.88}>
-        {"0"}
+      >
+        <tspan y={289.073} x={18.88} id="tspan1427" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M46.136 281.922v-40.95h41.843v81.9H46.136z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={67}
+        d="M61.514 375.896v-54.6h55.791v109.2H61.514z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_67"
         y={287.797}
         x={61.744}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={287.797} x={61.744}>
-        {"0"}
+      >
+        <tspan y={287.797} x={61.744} id="tspan1433" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M89 281.904v-40.967l9.758.148c5.368.08 16.49.217 24.718.302l14.959.155.157 21.338c.086 11.736.227 30.035.312 40.665l.156 19.326H89z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={68}
+        d="M118.666 375.872V321.25l13.012.196c7.156.108 21.987.29 32.957.404l19.945.207.21 28.45c.115 15.648.302 40.046.416 54.22l.207 25.768h-66.747z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_68"
         y={285.501}
         x={110.475}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={285.501} x={110.475}>
-        {"0"}
+      >
+        <tspan y={285.501} x={110.475} id="tspan1439" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M140.027 281.906V240.94l14.096.147c7.753.08 23.583.216 35.176.301l21.08.155.16 13.556c.088 7.455.233 25.754.322 40.664l.163 27.108H140.026z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={69}
+        d="M186.703 375.875v-54.621l18.795.195c10.337.108 31.443.289 46.901.402l28.106.207.213 18.074c.118 9.94.311 34.339.43 54.219l.217 36.144h-94.662z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_69"
         y={283.459}
         x={172.219}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={283.459} x={172.219}>
-        {"0"}
+      >
+        <tspan y={283.459} x={172.219} id="tspan1445" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M211.976 281.922v-40.95h73.99v81.9h-73.99z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={70}
+        d="M282.635 375.896v-54.6h98.654v109.2h-98.654z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_70"
         y={281.674}
         x={245.444}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={281.674} x={245.444}>
-        {"0"}
+      >
+        <tspan y={281.674} x={245.444} id="tspan1451" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M290.049 281.922v-40.95h56.896v81.9h-56.896z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={71}
+        d="M386.732 375.896v-54.6H462.593v109.2H386.732z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_71"
         y={284.735}
         x={315.352}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={284.735} x={315.352}>
-        {"0"}
+      >
+        <tspan y={284.735} x={315.352} id="tspan1457" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M348.23 283.516c.077-21.645.213-39.89.302-40.543.125-.92.286-1.226.712-1.353 1.05-.313 26.17-.461 45.615-.27l19.55.193.159 17.766c.087 9.77.23 28.07.317 40.664l.16 22.898H348.09z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={72}
+        d="M464.306 378.022c.103-28.86.284-53.187.403-54.058.167-1.226.381-1.634.95-1.804 1.4-.417 34.893-.615 60.82-.36l26.067.258.21 23.687c.117 13.028.307 37.426.425 54.219l.213 30.531h-89.275z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_72"
         y={286.266}
         x={376.33}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={286.266} x={376.33}>
-        {"0"}
+      >
+        <tspan y={286.266} x={376.33} id="tspan1463" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.002 281.922v-40.95h65.06v81.9h-65.06z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={73}
+        d="M554.67 375.896v-54.6h86.747v109.2H554.67z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_73"
         y={283.715}
         x={445.473}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={283.715} x={445.473}>
-        {"0"}
+      >
+        <tspan y={283.715} x={445.473} id="tspan1469" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M484.975 281.903v-40.968l8.1.148c4.456.081 13.8.218 20.763.303l12.663.156.156 30.523c.087 16.788.2 35.087.25 40.665l.094 10.141h-42.026z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={74}
+        d="M646.633 375.871v-54.624l10.801.197c5.94.109 18.398.29 27.684.405l16.883.207.209 40.697c.115 22.384.265 46.783.333 54.22l.125 13.522h-56.035z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_74"
         y={283.204}
         x={502.369}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={283.204} x={502.369}>
-        {"0"}
+      >
+        <tspan y={283.204} x={502.369} id="tspan1475" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.093 281.922v-40.95h70.929v81.9h-70.929z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={75}
+        d="M704.125 375.896v-54.6h94.571v109.2h-94.571z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_75"
         y={283.97}
         x={560.285}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={283.97} x={560.285}>
-        {"0"}
+      >
+        <tspan y={283.97} x={560.285} id="tspan1481" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M600.139 288.874c.01-31.443.21-46.677.617-47.085.402-.402 7.753-.553 35.027-.717l29.15-.176v81.975h-64.805z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={76}
+        d="M800.185 385.166c.013-41.925.28-62.237.823-62.78.537-.537 10.337-.738 46.703-.957l38.866-.235v109.301H800.17z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_76"
         y={281.674}
         x={625.091}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={281.674} x={625.091}>
-        {"0"}
+      >
+        <tspan y={281.674} x={625.091} id="tspan1487" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M669.015 281.922v-40.95h51.028v81.9h-51.028z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={77}
+        d="M892.02 375.896v-54.6h68.037v109.2H892.02z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_77"
         y={281.674}
         x={688.875}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={281.674} x={688.875}>
-        {"0"}
+      >
+        <tspan y={281.674} x={688.875} id="tspan1493" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M724.125 281.922v-40.95h30.872v81.9h-30.872z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={78}
+        d="M965.5 375.896v-54.6h41.162v109.2H965.5z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_78"
         y={280.908}
         x={738.117}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={280.908} x={738.117}>
-        {"0"}
+      >
+        <tspan y={280.908} x={738.117} id="tspan1499" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M5.075 380.85c-.093-.094-.17-12.666-.17-27.938v-27.768H41.9v55.876H23.573c-10.08 0-18.404-.077-18.498-.17z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={79}
+        d="M6.767 507.8c-.125-.125-.227-16.888-.227-37.251v-37.023h49.327v74.5H31.431c-13.44 0-24.54-.102-24.664-.227z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_79"
         y={358.981}
         x={18.37}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={358.981} x={18.37}>
-        {"0"}
+      >
+        <tspan y={358.981} x={18.37} id="tspan1505" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M45.983 352.061v-26.917H88.08v53.834H45.983z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={80}
+        d="M61.31 469.415v-35.89h56.131v71.78H61.31z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_80"
         y={356.174}
         x={63.785}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={356.174} x={63.785}>
-        {"0"}
+      >
+        <tspan y={356.174} x={63.785} id="tspan1511" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M89.101 352.061v-26.917h49.752v53.834H89.101z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={81}
+        d="M118.802 469.415v-35.89h66.336v71.78h-66.336z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_81"
         y={354.643}
         x={108.944}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={354.643} x={108.944}>
-        {"0"}
+      >
+        <tspan y={354.643} x={108.944} id="tspan1517" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M140.044 352.061v-26.917h70.929v53.834h-70.929z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={82}
+        d="M186.725 469.415v-35.89h94.572v71.78h-94.572z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_82"
         y={354.643}
         x={169.667}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={354.643} x={169.667}>
-        {"0"}
+      >
+        <tspan y={354.643} x={169.667} id="tspan1523" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M211.908 352.061v-26.917h73.99v53.834h-73.99z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={83}
+        d="M282.544 469.415v-35.89h98.654v71.78h-98.654z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_83"
         y={355.409}
         x={246.464}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={355.409} x={246.464}>
-        {"0"}
+      >
+        <tspan y={355.409} x={246.464} id="tspan1529" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M290.066 352.061v-26.917h56.896v53.834h-56.896z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={84}
+        d="M386.754 469.415v-35.89H462.615v71.78h-75.86z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_84"
         y={354.133}
         x={310.759}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={354.133} x={310.759}>
-        {"0"}
+      >
+        <tspan y={354.133} x={310.759} id="tspan1535" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M347.982 352.061v-26.917h67.101v53.834h-67.1z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={85}
+        d="M463.976 469.415v-35.89h89.469v71.78h-89.469z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_85"
         y={354.643}
         x={377.606}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={354.643} x={377.606}>
-        {"0"}
+      >
+        <tspan y={354.643} x={377.606} id="tspan1541" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.104 352.061v-26.917h64.806v53.834h-64.806z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={86}
+        d="M554.806 469.415v-35.89H641.213v71.78H554.806z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_86"
         y={354.898}
         x={443.687}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={354.898} x={443.687}>
-        {"0"}
+      >
+        <tspan y={354.898} x={443.687} id="tspan1547" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M485.077 352.061v-26.917h41.843v53.834h-41.843z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={87}
+        d="M646.77 469.415v-35.89h55.79v71.78h-55.791z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_87"
         y={356.684}
         x={501.859}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={356.684} x={501.859}>
-        {"0"}
+      >
+        <tspan y={356.684} x={501.859} id="tspan1553" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M527.94 352.061v-26.917h70.929v53.834H527.94z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={88}
+        d="M703.92 469.415v-35.89h94.572v71.78h-94.571z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_88"
         y={356.174}
         x={558.755}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={356.174} x={558.755}>
-        {"0"}
+      >
+        <tspan y={356.174} x={558.755} id="tspan1559" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M600.06 352.061v-26.917h64.805v53.834H600.06z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={89}
+        d="M800.08 469.415v-35.89H886.487v71.78H800.08z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_89"
         y={355.919}
         x={626.366}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={355.919} x={626.366}>
-        {"0"}
+      >
+        <tspan y={355.919} x={626.366} id="tspan1565" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M668.947 353.082v-27.938h51.028v55.876h-51.028z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={90}
+        d="M891.93 470.776v-37.25h68.037v74.5H891.93z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_90"
         y={356.174}
         x={691.682}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={356.174} x={691.682}>
-        {"0"}
+      >
+        <tspan y={356.174} x={691.682} id="tspan1571" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M724.057 353.082v-27.938h30.872v55.876h-30.872z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={91}
+        d="M965.41 470.776v-37.25h41.162v74.5H965.41z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_91"
         y={357.45}
         x={737.097}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={357.45} x={737.097}>
-        {"0"}
+      >
+        <tspan y={357.45} x={737.097} id="tspan1577" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M4.957 403.434l.133-21.304h36.74l.133 21.304.133 21.304H4.824z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={92}
+        d="M6.61 537.912l.177-28.405h48.986l.178 28.405.178 28.406H6.432z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_92"
         y={411.336}
         x={19.484}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={411.336} x={19.484}>
-        {"0"}
+      >
+        <tspan y={411.336} x={19.484} id="tspan1583" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M46.128 403.89v-20.928h41.856V424.817H46.128z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={93}
+        d="M61.504 538.52v-27.904h55.807v55.807H61.504z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_93"
         y={409.532}
         x={63.144}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={409.532} x={63.144}>
-        {"0"}
+      >
+        <tspan y={409.532} x={63.144} id="tspan1589" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M89.066 403.913v-20.905l21.018.168c11.56.093 22.656.259 24.658.369l3.641.2.238 11.606c.13 6.383.237 15.624.238 20.536v8.93H89.066z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={94}
+        d="M118.755 538.55v-27.873l28.023.225c15.414.123 30.209.344 32.879.491l4.854.267.317 15.475c.174 8.51.317 20.832.317 27.381v11.907h-66.39z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_94"
         y={408.81}
         x={110.05}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={408.81} x={110.05}>
-        {"0"}
+      >
+        <tspan y={408.81} x={110.05} id="tspan1595" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M139.942 403.912v-20.906l30.038.168c16.521.093 32.343.262 35.159.376l5.12.207.187 1.857c.103 1.022.269 10.261.37 20.53l.182 18.673h-71.056z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={95}
+        d="M186.59 538.55v-27.875l40.05.224c22.028.123 43.124.348 46.878.5l6.827.276.25 2.478c.137 1.362.358 13.68.492 27.373l.244 24.897H186.59z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_95"
         y={409.171}
         x={169.586}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={409.171} x={169.586}>
-        {"0"}
+      >
+        <tspan y={409.171} x={169.586} id="tspan1601" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M212.106 403.89v-20.928h73.968V424.817h-73.968z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={96}
+        d="M282.808 538.52v-27.904h98.625v55.807h-98.625z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_96"
         y={410.614}
         x={243.915}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={410.614} x={243.915}>
-        {"0"}
+      >
+        <tspan y={410.614} x={243.915} id="tspan1607" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M290.164 403.89v-20.928h56.649V424.817h-56.649z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={97}
+        d="M386.885 538.52v-27.904h75.532v55.807h-75.532z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_97"
         y={408.089}
         x={314.275}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={408.089} x={314.275}>
-        {"0"}
+      >
+        <tspan y={408.089} x={314.275} id="tspan1613" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M348.02 406.145c.132-10.27.342-19.505.464-20.522l.223-1.85 1.849-.222c2.467-.296 55.728-.288 60.219.009 3.197.212 3.539.304 3.675.99.083.417.242 9.647.353 20.512l.201 19.755h-67.227z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={98}
+        d="M464.026 541.526c.177-13.693.456-26.006.62-27.362l.296-2.466 2.466-.296c3.29-.395 74.304-.385 80.292.011 4.263.283 4.719.405 4.9 1.32.111.556.322 12.863.47 27.35l.269 26.34h-89.636z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_98"
         y={408.089}
         x={377.419}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={408.089} x={377.419}>
-        {"0"}
+      >
+        <tspan y={408.089} x={377.419} id="tspan1619" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.09 403.89v-20.928h64.948V424.817H416.09z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={99}
+        d="M554.787 538.52v-27.904H641.384v55.807H554.787z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_99"
         y={408.45}
         x={443.088}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={408.45} x={443.088}>
-        {"0"}
+      >
+        <tspan y={408.45} x={443.088} id="tspan1625" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M485.007 403.91v-20.907l17.41.172c9.575.094 18.885.26 20.69.37l3.28.197.237 11.608c.13 6.383.237 15.625.238 20.537v8.93H485.007z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={100}
+        d="M646.676 538.547v-27.876l23.213.228c12.767.126 25.18.348 27.586.493l4.373.265.317 15.476c.174 8.512.317 20.834.317 27.383l.001 11.907h-55.807z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_100"
         y={408.45}
         x={501.181}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={408.45} x={501.181}>
-        {"0"}
+      >
+        <tspan y={408.45} x={501.181} id="tspan1631" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.185 403.89v-20.928h70.721V424.817h-70.72z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={101}
+        d="M704.247 538.52v-27.904h94.295v55.807h-94.295z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_101"
         y={406.285}
         x={555.665}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={406.285} x={555.665}>
-        {"0"}
+      >
+        <tspan y={406.285} x={555.665} id="tspan1637" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M600.095 405.062c.115-10.865.315-20.104.445-20.53.167-.55.622-.837 1.556-.983.726-.114 15.163-.317 32.08-.451l30.76-.245v41.964h-65.05z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={102}
+        d="M800.127 540.083c.153-14.487.42-26.805.593-27.375.223-.732.829-1.115 2.075-1.31.968-.151 20.216-.421 42.774-.6l41.013-.327v55.952h-86.734z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_102"
         y={409.171}
         x={629.272}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={409.171} x={629.272}>
-        {"0"}
+      >
+        <tspan y={409.171} x={629.272} id="tspan1643" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M668.906 403.55c0-11.697.121-21.322.27-21.39.46-.21 49.9.336 50.116.553.112.112.293 9.631.401 21.154l.198 20.95h-50.985z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={103}
+        d="M891.874 538.067c0-15.596.162-28.43.36-28.52.613-.28 66.533.448 66.822.737.15.15.39 12.842.535 28.205l.264 27.934h-67.98z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_103"
         y={408.81}
         x={691.694}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={408.81} x={691.694}>
-        {"0"}
+      >
+        <tspan y={408.81} x={691.694} id="tspan1649" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M724.111 403.348V381.88h30.67v42.938h-30.67z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={104}
+        d="M965.482 537.798v-28.625h40.893v57.25h-40.893z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_104"
         y={408.45}
         x={736.436}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={408.45} x={736.436}>
-        {"0"}
+      >
+        <tspan y={408.45} x={736.436} id="tspan1655" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M4.976 456v-29.046H41.78v58.092H4.976z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={105}
+        d="M6.634 608v-38.728h49.072v77.456H6.634z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_105"
         y={461.49}
         x={20.206}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={461.49} x={20.206}>
-        {"0"}
+      >
+        <tspan y={461.49} x={20.206} id="tspan1661" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M46.11 455.94v-28.866H87.964v57.732H46.109z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={106}
+        d="M61.48 607.92v-38.488h55.806v76.975H61.48z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_106"
         y={460.408}
         x={63.144}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={460.408} x={63.144}>
-        {"0"}
+      >
+        <tspan y={460.408} x={63.144} id="tspan1667" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M89.167 455.94v-28.866h49.794v57.732H89.167z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={107}
+        d="M118.89 607.92v-38.488H185.28v76.975H118.89z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_107"
         y={462.212}
         x={109.69}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={462.212} x={109.69}>
-        {"0"}
+      >
+        <tspan y={462.212} x={109.69} id="tspan1673" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M139.923 455.94v-28.866h71.082v57.732h-71.082z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={108}
+        d="M186.564 607.92v-38.488h94.776v76.975h-94.776z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_108"
         y={461.851}
         x={167.782}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={461.851} x={167.782}>
-        {"0"}
+      >
+        <tspan y={461.851} x={167.782} id="tspan1679" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M211.967 455.94v-28.866h73.968v57.732h-73.968z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={109}
+        d="M282.623 607.92v-38.488h98.624v76.975h-98.624z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_109"
         y={461.49}
         x={246.441}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={461.49} x={246.441}>
-        {"0"}
+      >
+        <tspan y={461.49} x={246.441} id="tspan1685" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M289.904 455.94v-28.866h57.01v57.732h-57.01z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={110}
+        d="M386.539 607.92v-38.488h76.013v76.975h-76.013z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_110"
         y={461.49}
         x={313.193}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={461.49} x={313.193}>
-        {"0"}
+      >
+        <tspan y={461.49} x={313.193} id="tspan1691" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M348.117 455.94v-28.866h66.752v57.732h-66.752z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={111}
+        d="M464.156 607.92v-38.488H553.158v76.975h-89.002z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_111"
         y={461.851}
         x={377.419}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={461.851} x={377.419}>
-        {"0"}
+      >
+        <tspan y={461.851} x={377.419} id="tspan1697" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M415.951 455.94v-28.866H480.9v57.732H415.95z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={112}
+        d="M554.601 607.92v-38.488H641.2v76.975H554.6z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_112"
         y={459.325}
         x={443.449}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={459.325} x={443.449}>
-        {"0"}
+      >
+        <tspan y={459.325} x={443.449} id="tspan1703" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M485.108 455.94v-28.866h41.856v57.732h-41.856z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={113}
+        d="M646.811 607.92v-38.488h55.807v76.975h-55.807z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_113"
         y={461.49}
         x={500.459}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={461.49} x={500.459}>
-        {"0"}
+      >
+        <tspan y={461.49} x={500.459} id="tspan1709" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.166 455.94v-28.866h70.721v57.732h-70.72z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={114}
+        d="M704.222 607.92v-38.488h94.295v76.975h-94.295z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_114"
         y={460.047}
         x={559.273}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={460.047} x={559.273}>
-        {"0"}
+      >
+        <tspan y={460.047} x={559.273} id="tspan1715" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M599.97 455.94v-28.866h64.948v57.732H599.97z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={115}
+        d="M799.96 607.92v-38.488H886.557v76.975H799.96z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_115"
         y={459.325}
         x={627.829}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={459.325} x={627.829}>
-        {"0"}
+      >
+        <tspan y={459.325} x={627.829} id="tspan1721" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M668.887 455.94v-28.866h51.236v57.732h-51.236z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={116}
+        d="M891.849 607.92v-38.488h68.315v76.975H891.85z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_116"
         y={456.8}
         x={688.808}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={456.8} x={688.808}>
-        {"0"}
+      >
+        <tspan y={456.8} x={688.808} id="tspan1727" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M724.092 455.94v-28.866h31.031v57.732h-31.031z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={117}
+        d="M965.456 607.92v-38.488h41.375v76.975h-41.375z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_117"
         y={457.16}
         x={737.158}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={457.16} x={737.158}>
-        {"0"}
+      >
+        <tspan y={457.16} x={737.158} id="tspan1733" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M4.977 509.004v-21.942H41.972v43.884H4.977z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={118}
+        d="M6.636 678.672v-29.256h49.327v58.512H6.636z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_118"
         y={510.788}
         x={20.411}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={510.788} x={20.411}>
-        {"0"}
+      >
+        <tspan y={510.788} x={20.411} id="tspan1739" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M46.14 509.004v-21.942h41.842v43.884H46.14z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={119}
+        d="M61.52 678.672v-29.256h55.79v58.512H61.519z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_119"
         y={510.788}
         x={61.489}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={510.788} x={61.489}>
-        {"0"}
+      >
+        <tspan y={510.788} x={61.489} id="tspan1745" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M89.003 509.004v-21.942H139.01v43.884H89.003z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={120}
+        d="M118.67 678.672v-29.256H185.348v58.512H118.67z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_120"
         y={511.554}
         x={111.496}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={511.554} x={111.496}>
-        {"0"}
+      >
+        <tspan y={511.554} x={111.496} id="tspan1751" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M140.116 509.004v-21.942h70.928v43.884h-70.928z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={121}
+        d="M186.821 678.672v-29.256h94.572v58.512H186.82z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_121"
         y={514.871}
         x={170.178}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={514.871} x={170.178}>
-        {"0"}
+      >
+        <tspan y={514.871} x={170.178} id="tspan1757" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M212.065 509.004v-21.942h73.99v43.884h-73.99z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={122}
+        d="M282.753 678.672v-29.256h98.654v58.512h-98.654z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_122"
         y={516.657}
         x={245.444}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={516.657} x={245.444}>
-        {"0"}
+      >
+        <tspan y={516.657} x={245.444} id="tspan1763" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M290.052 509.004v-21.942H346.95v43.884H290.052z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={123}
+        d="M386.737 678.672v-29.256H462.598v58.512H386.737z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_123"
         y={513.085}
         x={315.607}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={513.085} x={315.607}>
-        {"0"}
+      >
+        <tspan y={513.085} x={315.607} id="tspan1769" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M348.054 509.004v-21.942H414.901v43.884H348.054z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={124}
+        d="M464.072 678.672v-29.256H553.201v58.512H464.072z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_124"
         y={513.595}
         x={378.371}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={513.595} x={378.371}>
-        {"0"}
+      >
+        <tspan y={513.595} x={378.371} id="tspan1775" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M415.921 509.004v-21.942h65.06v43.884h-65.06z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={125}
+        d="M554.561 678.672v-29.256h86.748v58.512H554.56z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_125"
         y={512.319}
         x={444.197}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={512.319} x={444.197}>
-        {"0"}
+      >
+        <tspan y={512.319} x={444.197} id="tspan1781" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M484.979 510.056v-22.994h42.015l-.087 5.167c-.047 2.841-.157 13.046-.244 22.677l-.157 17.51-9.601.158c-5.281.086-14.625.228-20.764.316l-11.162.16z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={126}
+        d="M646.638 680.075v-30.659h56.02l-.115 6.89c-.063 3.788-.21 17.394-.325 30.236l-.21 23.347-12.802.21c-7.04.114-19.499.304-27.685.422l-14.883.213z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_126"
         y={515.126}
         x={501.348}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={515.126} x={501.348}>
-        {"0"}
+      >
+        <tspan y={515.126} x={501.348} id="tspan1787" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.097 510.025v-22.963h70.929v45.925h-70.929z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={127}
+        d="M704.13 680.033v-30.617H798.7v61.234H704.13z"
+        fill="#ffffff"
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_127"
         y={514.871}
         x={561.561}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={514.871} x={561.561}>
-        {"0"}
+      >
+        <tspan y={514.871} x={561.561} id="tspan1793" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M629.515 532.718c-10.103-.093-20.737-.185-23.63-.205l-5.262-.036-.158-7.208c-.088-3.964-.233-14.182-.323-22.707l-.163-15.5H664.852v45.925l-8.484-.05c-4.665-.027-16.75-.126-26.853-.219z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={128}
+        d="M839.353 710.29c-13.471-.123-27.65-.246-31.507-.272l-7.015-.049-.212-9.61c-.116-5.285-.31-18.91-.429-30.276l-.218-20.667h86.497v61.234l-11.311-.067c-6.221-.037-22.333-.168-35.805-.292z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_128"
         y={513.34}
         x={629.428}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={513.34} x={629.428}>
-        {"0"}
+      >
+        <tspan y={513.34} x={629.428} id="tspan1799" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M668.934 510.055v-22.993h51.094l-.162 14.607c-.09 8.034-.233 18.239-.32 22.678l-.158 8.07-11.513.157c-6.333.086-17.685.228-25.227.315l-13.714.16z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={129}
+        d="M891.912 680.074v-30.658h68.126l-.217 19.476c-.118 10.712-.31 24.318-.426 30.237l-.21 10.761-15.352.209c-8.443.114-23.58.303-33.636.42l-18.285.212z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_129"
         y={512.829}
         x={691.682}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={512.829} x={691.682}>
-        {"0"}
+      >
+        <tspan y={512.829} x={691.682} id="tspan1805" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M724.044 510.062v-23h30.945l-.168 18.434c-.092 10.139-.238 20.34-.325 22.671l-.158 4.238-5.898.161c-3.244.089-10.06.237-15.147.329l-9.249.167z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={130}
+        d="M965.392 680.083v-30.667h41.26l-.223 24.579c-.123 13.518-.319 27.12-.434 30.228l-.211 5.65-7.864.215c-4.326.118-13.414.316-20.196.439l-12.332.223z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.34}
+      />
+      <text
+        id="text_130"
         y={512.829}
         x={737.862}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={512.829} x={737.862}>
-        {"0"}
+      >
+        <tspan y={512.829} x={737.862} id="tspan1811" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M4.89 566.811v-31.898l19.008.134 19.007.133.132 31.765.131 31.765H4.89z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={131}
+        d="M6.52 755.749v-42.532l25.344.178 25.343.179.176 42.353.175 42.353H6.52z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_131"
         y={575.083}
         x={18.88}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={575.083} x={18.88}>
-        {"0"}
+      >
+        <tspan y={575.083} x={18.88} id="tspan1817" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M45.202 566.818v-31.893h42.863v63.785H45.202z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={132}
+        d="M60.269 755.757v-42.523H117.42v85.046H60.27z"
+        fill="#ffffff"
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_132"
         y={575.594}
         x={61.744}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={575.594} x={61.744}>
-        {"0"}
+      >
+        <tspan y={575.594} x={61.744} id="tspan1823" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M89.086 566.818v-31.893h47.966v63.785H89.086z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={133}
+        d="M118.78 755.757v-42.523h63.956v85.046H118.78z"
+        fill="#ffffff"
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_133"
         y={573.553}
         x={110.22}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={573.553} x={110.22}>
-        {"0"}
+      >
+        <tspan y={573.553} x={110.22} id="tspan1829" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M141.304 566.845v-31.864l34.316.297c18.874.163 34.431.4 34.572.525.14.125.317 14.33.394 31.567l.139 31.34h-69.42z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={134}
+        d="M188.405 755.794v-42.486l45.755.396c25.166.218 45.908.532 46.096.7.187.167.423 19.107.525 42.09l.185 41.786h-92.56z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_134"
         y={575.594}
         x={171.453}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={575.594} x={171.453}>
-        {"0"}
+      >
+        <tspan y={575.594} x={171.453} id="tspan1835" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M212.233 566.818v-31.893h73.48v63.785h-73.48z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={135}
+        d="M282.977 755.757v-42.523h97.973v85.046h-97.973z"
+        fill="#ffffff"
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_135"
         y={573.553}
         x={243.913}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={573.553} x={243.913}>
-        {"0"}
+      >
+        <tspan y={573.553} x={243.913} id="tspan1841" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M290.305 566.818v-31.893H346.946v63.785h-56.64z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={136}
+        d="M387.074 755.757v-42.523h75.52v85.046h-75.52z"
+        fill="#ffffff"
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_136"
         y={572.532}
         x={308.718}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={572.532} x={308.718}>
-        {"0"}
+      >
+        <tspan y={572.532} x={308.718} id="tspan1847" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M348.307 568.06c0-20.152.18-30.989.528-31.637.514-.96 1.42-.987 33.168-.987h32.64l.003 27.427c.002 15.085.15 29.322.33 31.637l.329 4.21H348.307z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={137}
+        d="M464.41 757.413c0-26.87.24-41.318.704-42.183.685-1.28 1.893-1.316 44.224-1.316h43.52l.003 36.57c.002 20.113.201 39.096.441 42.183l.437 5.613h-89.33z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_137"
         y={572.532}
         x={376.585}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={572.532} x={376.585}>
-        {"0"}
+      >
+        <tspan y={572.532} x={376.585} id="tspan1853" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.174 566.818v-31.893h64.805v63.785h-64.805z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={138}
+        d="M554.899 755.757v-42.523H641.306v85.046H554.899z"
+        fill="#ffffff"
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_138"
         y={580.186}
         x={441.901}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={580.186} x={441.901}>
-        {"0"}
+      >
+        <tspan y={580.186} x={441.901} id="tspan1861" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M485.232 566.307v-32.402h41.842v64.805h-41.842z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={139}
+        d="M646.975 755.076v-43.203h55.791V798.28h-55.791z"
+        fill="#ffffff"
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_139"
         y={574.063}
         x={499.562}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={574.063} x={499.562}>
-        {"0"}
+      >
+        <tspan y={574.063} x={499.562} id="tspan1867" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.095 566.307v-32.402h70.929v64.805h-70.929z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={140}
+        d="M704.127 755.076v-43.203h94.571V798.28h-94.571z"
+        fill="#ffffff"
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_140"
         y={574.573}
         x={557.734}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={574.573} x={557.734}>
-        {"0"}
+      >
+        <tspan y={574.573} x={557.734} id="tspan1873" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M599.998 566.435l.131-32.275h64.806l.13 32.275.132 32.275H599.866z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={141}
+        d="M799.997 755.247l.175-43.034H886.58l.176 43.034.175 43.033h-87.108z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_141"
         y={572.532}
         x={628.663}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={572.532} x={628.663}>
-        {"0"}
+      >
+        <tspan y={572.532} x={628.663} id="tspan1879" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M669.272 566.307v-32.402H719.789v64.805h-50.518z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={142}
+        d="M892.362 755.076v-43.203h67.357V798.28h-67.357z"
+        fill="#ffffff"
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_142"
         y={572.532}
         x={693.468}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={572.532} x={693.468}>
-        {"0"}
+      >
+        <tspan y={572.532} x={693.468} id="tspan1885" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M723.995 566.435l.132-32.275 15.436-.135 15.436-.135v64.82H723.864z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={143}
+        d="M965.327 755.247l.175-43.034 20.582-.18 20.58-.18V798.28h-41.512z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.68}
+      />
+      <text
+        id="text_143"
         y={571.001}
         x={735.821}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={571.001} x={735.821}>
-        {"0"}
+      >
+        <tspan y={571.001} x={735.821} id="tspan1891" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M5.222 633.97v-32.835h37.886V666.804H5.222z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={144}
+        d="M6.962 845.293v-43.78h50.515v87.56H6.962z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_144"
         y={640.818}
         x={20.928}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={640.818} x={20.928}>
-        {"0"}
+      >
+        <tspan y={640.818} x={20.928} id="tspan1897" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M44.912 633.97v-32.835H87.85V666.804H44.912z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={145}
+        d="M59.883 845.293v-43.78h57.25v87.56h-57.25z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_145"
         y={638.653}
         x={62.783}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={638.653} x={62.783}>
-        {"0"}
+      >
+        <tspan y={638.653} x={62.783} id="tspan1903" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M88.932 633.97v-32.835H136.921V666.804H88.932z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={146}
+        d="M118.576 845.293v-43.78h63.986v87.56h-63.986z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_146"
         y={637.21}
         x={107.164}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={637.21} x={107.164}>
-        {"0"}
+      >
+        <tspan y={637.21} x={107.164} id="tspan1909" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M140.89 633.97v-32.835h70V666.804h-70z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={147}
+        d="M187.854 845.293v-43.78h93.332v87.56h-93.332z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_147"
         y={640.097}
         x={168.143}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={640.097} x={168.143}>
-        {"0"}
+      >
+        <tspan y={640.097} x={168.143} id="tspan1915" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M211.972 633.97v-32.835h73.968V666.804h-73.968z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={148}
+        d="M282.63 845.293v-43.78h98.624v87.56h-98.625z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_148"
         y={640.457}
         x={241.389}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={640.457} x={241.389}>
-        {"0"}
+      >
+        <tspan y={640.457} x={241.389} id="tspan1921" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M290.03 633.609v-32.474h57.009v64.948H290.03z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={149}
+        d="M386.706 844.812v-43.299h76.013V888.11h-76.013z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_149"
         y={641.901}
         x={314.997}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={641.901} x={314.997}>
-        {"0"}
+      >
+        <tspan y={641.901} x={314.997} id="tspan1927" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M348.122 633.609v-32.474h66.752v64.948h-66.752z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={150}
+        d="M464.163 844.812v-43.299H553.165V888.11h-89.002z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_150"
         y={642.262}
         x={373.811}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={642.262} x={373.811}>
-        {"0"}
+      >
+        <tspan y={642.262} x={373.811} id="tspan1933" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.197 633.609v-32.474H480.784v64.948H416.197z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={151}
+        d="M554.93 844.812v-43.299H641.044V888.11H554.93z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_151"
         y={639.375}
         x={442.367}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={639.375} x={442.367}>
-        {"0"}
+      >
+        <tspan y={639.375} x={442.367} id="tspan1939" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M485.114 633.609v-32.474H526.969v64.948H485.114z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={152}
+        d="M646.818 844.812v-43.299h55.807V888.11h-55.807z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_152"
         y={642.262}
         x={499.376}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={642.262} x={499.376}>
-        {"0"}
+      >
+        <tspan y={642.262} x={499.376} id="tspan1945" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.172 633.609v-32.474h70.72v64.948h-70.72z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={153}
+        d="M704.229 844.812v-43.299h94.294V888.11H704.23z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_153"
         y={639.736}
         x={558.551}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={639.736} x={558.551}>
-        {"0"}
+      >
+        <tspan y={639.736} x={558.551} id="tspan1951" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M600.095 633.609v-32.474h64.948v64.948h-64.948z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={154}
+        d="M800.127 844.812v-43.299H886.724V888.11H800.127z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_154"
         y={642.262}
         x={627.468}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={642.262} x={627.468}>
-        {"0"}
+      >
+        <tspan y={642.262} x={627.468} id="tspan1957" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M669.012 633.609v-32.474h50.876v64.948h-50.876z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={155}
+        d="M892.016 844.812v-43.299H959.851V888.11H892.016z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_155"
         y={642.622}
         x={691.694}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={642.622} x={691.694}>
-        {"0"}
+      >
+        <tspan y={642.622} x={691.694} id="tspan1963" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M724.218 633.609v-32.474h30.67v64.948h-30.67z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={156}
+        d="M965.624 844.812v-43.299h40.893V888.11h-40.893z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_156"
         y={643.344}
         x={736.797}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={643.344} x={736.797}>
-        {"0"}
+      >
+        <tspan y={643.344} x={736.797} id="tspan1969" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M5.222 698.019v-29.05h37.89l-.092 28.956-.093 28.956-18.853.094-18.852.093z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={157}
+        d="M6.962 930.692v-38.733h50.52l-.122 38.608-.123 38.608-25.138.125-25.137.124z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_157"
         y={701.797}
         x={20.206}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={701.797} x={20.206}>
-        {"0"}
+      >
+        <tspan y={701.797} x={20.206} id="tspan1975" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M45.152 726.821c-.132-.132-.24-13.203-.24-29.046v-28.806H87.85v58.093H66.62c-11.675 0-21.336-.109-21.469-.24z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={158}
+        d="M60.203 969.095c-.176-.177-.32-17.604-.32-38.728v-38.408h57.25v77.457H88.828c-15.567 0-28.448-.145-28.625-.321z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_158"
         y={700.354}
         x={61.7}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={700.354} x={61.7}>
-        {"0"}
+      >
+        <tspan y={700.354} x={61.7} id="tspan1981" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M88.932 698.016v-29.047H136.921v58.093H88.932z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={159}
+        d="M118.576 930.687V891.96h63.986v77.457h-63.986z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_159"
         y={702.158}
         x={107.525}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={702.158} x={107.525}>
-        {"0"}
+      >
+        <tspan y={702.158} x={107.525} id="tspan1987" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M140.89 698.976v-30.007H211l-.263 29.675c-.145 16.322-.297 29.71-.339 29.75-.041.042-15.697.191-34.791.332l-34.717.256z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={160}
+        d="M187.854 931.967V891.96h93.48l-.351 39.567c-.193 21.761-.396 39.612-.452 39.667-.055.055-20.93.254-46.389.442l-46.288.34z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_160"
         y={705.405}
         x={169.586}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={705.405} x={169.586}>
-        {"0"}
+      >
+        <tspan y={705.405} x={169.586} id="tspan1993" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M211.972 698.918v-29.949h73.968V728.866h-73.968z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={161}
+        d="M282.63 931.89v-39.93h98.624V971.82h-98.625z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_161"
         y={706.488}
         x={239.224}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={706.488} x={239.224}>
-        {"0"}
+      >
+        <tspan y={706.488} x={239.224} id="tspan1999" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M289.91 699.459v-29.407h57.009v58.814h-57.01z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={162}
+        d="M386.546 932.612v-39.21h76.013V971.822h-76.013z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_162"
         y={704.684}
         x={313.914}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={704.684} x={313.914}>
-        {"0"}
+      >
+        <tspan y={704.684} x={313.914} id="tspan2005" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M348.562 728.054c-.077-.248-.236-13.4-.354-29.227l-.214-28.775h66.94l-.083 17.59c-.046 9.674-.186 22.826-.312 29.226l-.23 11.637h-32.804c-25.929 0-32.833-.095-32.943-.451z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={163}
+        d="M464.749 970.739c-.102-.331-.314-17.867-.471-38.97l-.286-38.366h89.253l-.11 23.453c-.061 12.9-.248 30.435-.417 38.969l-.305 15.515h-43.74c-34.572 0-43.778-.126-43.924-.601z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_163"
         y={702.88}
         x={375.254}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={702.88} x={375.254}>
-        {"0"}
+      >
+        <tspan y={702.88} x={375.254} id="tspan2011" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M416.197 699.459v-29.407H480.784v58.814H416.197z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={164}
+        d="M554.93 932.612v-39.21H641.044V971.822H554.93z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_164"
         y={704.323}
         x={442.728}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={704.323} x={442.728}>
-        {"0"}
+      >
+        <tspan y={704.323} x={442.728} id="tspan2017" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M484.873 699.459v-29.407h42.063l-.105 20.116c-.058 11.063-.204 24.19-.324 29.169l-.218 9.053-11.927.238c-6.56.13-15.878.238-20.708.238h-8.78z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={165}
+        d="M646.497 932.612v-39.21h56.085l-.141 26.822c-.078 14.751-.272 32.252-.431 38.891l-.29 12.071-15.903.318c-8.747.174-21.172.317-27.611.317h-11.709z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_165"
         y={705.766}
         x={502.985}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={705.766} x={502.985}>
-        {"0"}
+      >
+        <tspan y={705.766} x={502.985} id="tspan2023" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M528.172 699.459v-29.407h70.72v58.814h-70.72z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={166}
+        d="M704.229 932.612v-39.21h94.294V971.822H704.23z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_166"
         y={703.601}
         x={560.355}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={703.601} x={560.355}>
-        {"0"}
+      >
+        <tspan y={703.601} x={560.355} id="tspan2029" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M613.267 728.595l-12.506-.1-.2-2.972c-.11-1.634-.282-14.784-.381-29.221l-.182-26.25H664.923v58.814l-19.575-.086c-10.766-.047-25.202-.13-32.08-.185z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={167}
+        d="M817.69 971.46l-16.676-.132-.266-3.963c-.147-2.18-.376-19.713-.509-38.963l-.241-35h86.566V971.822l-26.1-.114c-14.354-.062-33.603-.173-42.774-.247z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_167"
         y={702.519}
         x={628.55}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={702.519} x={628.55}>
-        {"0"}
+      >
+        <tspan y={702.519} x={628.55} id="tspan2035" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M668.892 699.459v-29.407h51.959v58.814h-51.96z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={168}
+        d="M891.856 932.612v-39.21h69.277V971.822H891.855z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_168"
         y={706.488}
         x={691.694}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={706.488} x={691.694}>
-        {"0"}
+      >
+        <tspan y={706.488} x={691.694} id="tspan2041" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M729.098 728.596l-6.366-.107-.213-6.938c-.117-3.816-.275-16.964-.352-29.218l-.139-22.281h33.1v58.814l-9.832-.082c-5.408-.044-12.697-.13-16.198-.188z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={169}
+        d="M972.13 971.461l-8.487-.143-.284-9.25c-.156-5.088-.367-22.619-.47-38.958l-.185-29.707H1006.837v78.418l-13.11-.108c-7.21-.06-16.928-.173-21.596-.252z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_169"
         y={707.931}
         x={736.075}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={707.931} x={736.075}>
-        {"0"}
+      >
+        <tspan y={707.931} x={736.075} id="tspan2047" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M4.805 762.082v-30.67h38.247v61.34H4.805z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={170}
+        d="M6.407 1016.11v-40.893h50.996v81.786H6.407z"
+        fill="#ffffff"
+        strokeWidth={0.962}
+      />
+      <text
+        id="text_170"
         y={768.549}
         x={19.845}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={768.549} x={19.845}>
-        {"0"}
+      >
+        <tspan y={768.549} x={19.845} id="tspan2053" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M45.214 761.91v-31.03h42.577v62.06H45.214z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={171}
+        d="M60.285 1015.88v-41.374H117.054v82.748H60.285z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_171"
         y={770.353}
         x={63.865}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={770.353} x={63.865}>
-        {"0"}
+      >
+        <tspan y={770.353} x={63.865} id="tspan2059" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M88.962 762l.092-30.94 23.904-.093 23.905-.093v62.066H88.869z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={172}
+        d="M118.615 1016l.123-41.254 31.873-.124 31.872-.123v82.755h-63.991z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_172"
         y={768.549}
         x={107.886}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={768.549} x={107.886}>
-        {"0"}
+      >
+        <tspan y={768.549} x={107.886} id="tspan2065" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M141.192 760.467v-30.31H210.831V790.776H141.192z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={173}
+        d="M188.257 1013.955v-40.412h92.851v80.824h-92.851z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_173"
         y={767.106}
         x={168.864}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={767.106} x={168.864}>
-        {"0"}
+      >
+        <tspan y={767.106} x={168.864} id="tspan2071" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M212.034 760.467v-30.31h73.968V790.776h-73.968z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={174}
+        d="M282.711 1013.955v-40.412h98.625v80.824H282.71z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_174"
         y={763.137}
         x={242.472}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={763.137} x={242.472}>
-        {"0"}
+      >
+        <tspan y={763.137} x={242.472} id="tspan2077" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M290.211 760.467v-30.31h56.649V790.776h-56.649z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={175}
+        d="M386.949 1013.955v-40.412h75.532v80.824h-75.532z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_175"
         y={762.415}
         x={311.028}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={762.415} x={311.028}>
-        {"0"}
+      >
+        <tspan y={762.415} x={311.028} id="tspan2083" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M348.063 760.467v-30.31h66.752V790.776h-66.752z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={176}
+        d="M464.084 1013.955v-40.412h89.003v80.824H464.085z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_176"
         y={763.137}
         x={373.45}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={763.137} x={373.45}>
-        {"0"}
+      >
+        <tspan y={763.137} x={373.45} id="tspan2089" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M415.898 760.467v-30.31h64.947V790.776h-64.947z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={177}
+        d="M554.53 1013.955v-40.412H641.127v80.824H554.53z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_177"
         y={762.415}
         x={443.088}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={762.415} x={443.088}>
-        {"0"}
+      >
+        <tspan y={762.415} x={443.088} id="tspan2095" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M484.935 760.467v-30.31H526.79V790.776H484.935z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={178}
+        d="M646.58 1013.955v-40.412h55.807v80.824H646.58z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_178"
         y={762.054}
         x={503.345}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={762.054} x={503.345}>
-        {"0"}
+      >
+        <tspan y={762.054} x={503.345} id="tspan2101" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M527.872 760.467v-30.31h71.082V790.776h-71.082z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={179}
+        d="M703.83 1013.955v-40.412h94.775v80.824H703.83z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_179"
         y={764.58}
         x={560.355}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={764.58} x={560.355}>
-        {"0"}
+      >
+        <tspan y={764.58} x={560.355} id="tspan2107" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M600.157 760.467v-30.31h64.948V790.776h-64.948z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={180}
+        d="M800.21 1013.955v-40.412h86.596v80.824H800.21z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_180"
         y={763.497}
         x={630.354}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={763.497} x={630.354}>
-        {"0"}
+      >
+        <tspan y={763.497} x={630.354} id="tspan2113" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M669.074 761.549v-31.391h51.958v62.782h-51.958z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={181}
+        d="M892.098 1015.399v-41.856h69.278v83.711h-69.278z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_181"
         y={764.58}
         x={691.694}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={764.58} x={691.694}>
-        {"0"}
+      >
+        <tspan y={764.58} x={691.694} id="tspan2119" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M731.104 792.67l-8.51-.103-.24-19.749c-.131-10.862-.24-24.904-.24-31.204v-11.456h32.835v62.782l-7.667-.083c-4.217-.046-11.498-.13-16.178-.187z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={182}
+        d="M974.805 1056.894l-11.347-.138-.32-26.332c-.174-14.482-.318-33.205-.318-41.606v-15.275H1006.598v83.711l-10.223-.111c-5.623-.061-15.33-.173-21.571-.25z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_182"
         y={764.941}
         x={736.797}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={764.941} x={736.797}>
-        {"0"}
+      >
+        <tspan y={764.941} x={736.797} id="tspan2125" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M5.163 816.577v-22.554H43.054l-.092 22.461-.093 22.461-18.853.093-18.853.094z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={183}
+        d="M6.884 1088.77v-30.073H57.406l-.124 29.948-.124 29.949-25.137.124-25.137.125z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_183"
         y={822.311}
         x={23.453}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={822.311} x={23.453}>
-        {"0"}
+      >
+        <tspan y={822.311} x={23.453} id="tspan2131" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M45.214 816.574v-22.551h42.577v45.102H45.214z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={184}
+        d="M60.285 1088.766v-30.069H117.054v60.137H60.285z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_184"
         y={820.868}
         x={64.226}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={820.868} x={64.226}>
-        {"0"}
+      >
+        <tspan y={820.868} x={64.226} id="tspan2137" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M89.114 816.577v-22.554H137.109l-.093 22.461-.093 22.461-23.905.093-23.904.093z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={185}
+        d="M118.818 1088.769v-30.072H182.811l-.124 29.948-.123 29.949-31.873.123-31.873.124z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_185"
         y={818.342}
         x={109.69}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={818.342} x={109.69}>
-        {"0"}
+      >
+        <tspan y={818.342} x={109.69} id="tspan2143" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M141.072 817.062v-22.064l34.549.265c19.001.145 34.616.332 34.699.414.205.205.705 42.838.506 43.178-.087.149-15.817.27-34.956.27h-34.798z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={186}
+        d="M188.096 1089.415v-29.418l46.065.353c25.336.194 46.155.443 46.265.553.274.272.94 57.117.676 57.57-.116.199-21.09.361-46.609.361h-46.397z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_186"
         y={820.868}
         x={170.668}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={820.868} x={170.668}>
-        {"0"}
+      >
+        <tspan y={820.868} x={170.668} id="tspan2149" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M212.154 817.115v-22.01h74.69v44.02h-74.69z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={187}
+        d="M282.872 1089.487v-29.347h99.586v58.694h-99.586z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_187"
         y={822.311}
         x={245.358}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={822.311} x={245.358}>
-        {"0"}
+      >
+        <tspan y={822.311} x={245.358} id="tspan2155" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M288.227 817.674c.095-16.992.218-21.548.59-21.92.374-.374 6.268-.494 29.316-.595l28.848-.128v44.094H288.108z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={188}
+        d="M384.303 1090.233c.127-22.657.29-28.732.785-29.227.5-.5 8.358-.66 39.09-.795l38.463-.17v58.793h-78.498z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_188"
         y={820.868}
         x={313.914}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={820.868} x={313.914}>
-        {"0"}
+      >
+        <tspan y={820.868} x={313.914} id="tspan2161" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M348.057 838.541c-.334-.87.17-40.546.53-41.812l.308-1.082 7.733-.254c4.253-.139 18.958-.156 32.68-.037l24.946.216.209 4.006c.115 2.204.255 11.963.31 21.687l.102 17.68-33.296.092c-30.498.085-33.315.043-33.522-.496z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={189}
+        d="M464.076 1118.055c-.445-1.16.226-54.061.707-55.75l.41-1.443 10.31-.338c5.671-.185 25.279-.208 43.573-.05l33.263.288.278 5.342c.154 2.938.34 15.95.414 28.916l.136 23.574-44.395.122c-40.664.113-44.42.057-44.696-.661z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_189"
         y={820.507}
         x={379.945}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={820.507} x={379.945}>
-        {"0"}
+      >
+        <tspan y={820.507} x={379.945} id="tspan2167" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M416.138 817.117v-22.012h64.953l-.093 21.92-.093 21.92-32.383.092-32.384.092z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={190}
+        d="M554.85 1089.49v-29.35H641.456l-.124 29.227-.124 29.227-43.178.122-43.178.123z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_190"
         y={822.672}
         x={448.14}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={822.672} x={448.14}>
-        {"0"}
+      >
+        <tspan y={822.672} x={448.14} id="tspan2173" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M485.055 817.062v-22.064l20.657.264c11.36.145 20.682.291 20.714.324.031.033.176 9.843.322 21.8l.265 21.74h-41.959z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={191}
+        d="M646.74 1089.415v-29.418l27.542.352c15.149.194 27.577.388 27.619.433.042.044.235 13.124.43 29.066l.354 28.986H646.74z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_191"
         y={823.394}
         x={500.82}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={823.394} x={500.82}>
-        {"0"}
+      >
+        <tspan y={823.394} x={500.82} id="tspan2179" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M527.993 817.117v-22.012H599.08l-.093 21.92-.093 21.92-35.45.092-35.451.092z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={192}
+        d="M703.99 1089.49v-29.35h94.783l-.124 29.227-.124 29.227-47.267.122-47.268.123z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_192"
         y={820.868}
         x={559.273}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={820.868} x={559.273}>
-        {"0"}
+      >
+        <tspan y={820.868} x={559.273} id="tspan2185" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M600.215 817.645c.098-17.21.216-21.542.594-21.775.87-.538 12.26-.765 38.377-.765h25.924l-.093 21.92-.093 21.92-32.415.092-32.415.092z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={193}
+        d="M800.287 1090.194c.13-22.946.288-28.723.792-29.035 1.16-.716 16.345-1.019 51.169-1.019h34.566l-.124 29.227-.124 29.227-43.22.122-43.221.123z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_193"
         y={821.95}
         x={628.55}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={821.95} x={628.55}>
-        {"0"}
+      >
+        <tspan y={821.95} x={628.55} id="tspan2191" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
-        d="M669.074 816.577v-22.554h51.963l-.093 22.461-.093 22.461-25.888.093-25.89.092z"
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={194}
+        d="M892.098 1088.769v-30.072h69.285l-.124 29.948-.124 29.949-34.518.123-34.519.123z"
         fill="#ffffff"
-    />
-    <text
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_194"
         y={820.868}
         x={694.581}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={820.868} x={694.581}>
-        {"0"}
+      >
+        <tspan y={820.868} x={694.581} id="tspan2197" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
-    <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))} d="M722.114 816.574v-22.551h32.835v45.102h-32.835z" fill="#ffffff" />
-    <text
+      </text>
+      <path onClick={((e) => props.handlePaint(e))} onContextMenu={((e) => props.handleErase(e))}
+        transform="scale(.75)"
+        id={195}
+        d="M962.82 1088.766v-30.069H1006.598v60.137h-43.78z"
+        fill="#ffffff"
+        strokeWidth={0.481}
+      />
+      <text
+        id="text_195"
         y={819.786}
         x={736.075}
         style={{
-        lineHeight: 1.25,
+          lineHeight: 1.25,
         }}
+        xmlSpace="preserve"
         fontSize={10}
         fontFamily="sans-serif"
         strokeWidth={0.75}
-    >
-        <tspan y={819.786} x={736.075}>
-        {"0"}
+      >
+        <tspan y={819.786} x={736.075} id="tspan2203" strokeWidth={0.75}>
+          {"0"}
         </tspan>
-    </text>
+      </text>
     </svg>
-    )
+  );
 }
 
 export default SvgCompa;

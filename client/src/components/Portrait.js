@@ -30,6 +30,8 @@ class Portrait extends Component {
       hexDict: hexDict,
       mixDict: mixDict
     })
+
+    this.toggleNumberVisibility = this.toggleNumberVisibility.bind(this)
   }
 
   handlePaint(e) {
@@ -77,8 +79,6 @@ class Portrait extends Component {
         threeColors.push.apply(threeColors, mixOfPalette)
         threeColors.sort()
 
-        console.log(threeColors + "<--")
-        console.log(this.state.mixDict)
         if (this.state.mixDict[threeColors]) {
           determinedColor = this.props.colors[this.state.mixDict[threeColors]].hex
         } else if (threeColors.includes("white")) {
@@ -98,17 +98,26 @@ class Portrait extends Component {
     }
 
     e.target.attributes.getNamedItem('fill').value = determinedColor;
-    var pathId = e.target.id.substr(e.target.id.indexOf("_") + 1)
-    var arr = e.target.parentElement.children
-    for (var i = 0; i < arr.length; i++) {
-      if (arr[i].id === "text_" + pathId) {
-        arr[i].setAttribute('display', 'none')
-      }
-    }
+    this.toggleNumberVisibility(e)
   }
 
   handleErase(e) {
     e.target.attributes.getNamedItem('fill').value = this.props.colors["white"].hex;
+    this.toggleNumberVisibility(e)
+  }
+
+  toggleNumberVisibility(e) {
+    var pathId = e.target.id.substr(e.target.id.indexOf("_") + 1)
+    var arr = e.target.parentElement.children
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].id === "text_" + pathId) {
+        if (!arr[i].getAttribute('display'))
+          arr[i].setAttribute('display', 'none')
+        else
+          arr[i].setAttribute('display', null)
+        break
+      }
+    }
   }
 
   render() {
