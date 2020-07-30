@@ -46,7 +46,7 @@ class Portrait extends Component {
         if (!arr[i].getAttribute('display'))
           arr[i].setAttribute('display', 'none')
         else
-          arr[i].setAttribute('display', null)
+          arr[i].removeAttribute('display')
         break
       }
     }
@@ -125,7 +125,7 @@ class Portrait extends Component {
     if (!this.state.paintedCells.includes(pathId))
       this.setState(prevState => ({
         paintedCells: [...prevState.paintedCells, pathId]
-      }), () => { console.log(this.state.paintedCells) })
+      }))
   }
 
   handleErase(e) {
@@ -141,7 +141,6 @@ class Portrait extends Component {
     var tmp = this.state.paintedCells
     tmp.splice(tmp.indexOf(id), 1);
     this.setState({ paintedCells: tmp })
-    console.log(this.state.paintedCells)
   }
 
   isFilled(id) {
