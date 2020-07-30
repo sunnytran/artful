@@ -97,8 +97,14 @@ class Portrait extends Component {
       }
     }
 
-
     e.target.attributes.getNamedItem('fill').value = determinedColor;
+    var pathId = e.target.id.substr(e.target.id.indexOf("_") + 1)
+    var arr = e.target.parentElement.children
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].id === "text_" + pathId) {
+        arr[i].setAttribute('display', 'none')
+      }
+    }
   }
 
   handleErase(e) {

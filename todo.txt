@@ -1,5 +1,7 @@
 working on
 
+move title to left of the container
+
 new portrait should clear the painting's cells
 
 number the cells
@@ -7,6 +9,8 @@ number the cells
 
 scale the svg
 more svgs
+
+scramble up facts every time
 
 ==================================================
 
