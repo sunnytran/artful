@@ -10,6 +10,10 @@ class Portrait extends Component {
     this.toggleNumberVisibility = this.toggleNumberVisibility.bind(this)
     this.handleErase = this.handleErase.bind(this)
     this.isFilled = this.isFilled.bind(this)
+
+    this.state = {
+      paintedCells: []
+    }
   }
 
   componentDidMount() {
@@ -49,7 +53,7 @@ class Portrait extends Component {
   }
 
   handlePaint(e) {
-    if(!this.props.currentColor)
+    if(!this.props.currentColor || !e.target.attributes.getNamedItem('fill'))
       return
 
     var hexColor = this.props.colors[this.props.currentColor].hex
@@ -58,6 +62,10 @@ class Portrait extends Component {
     var currentCellColor = this.state.hexDict[e.target.attributes.getNamedItem('fill').value]
     var determinedColor = hexColor
     
+    var pathId = e.target.id.substr(e.target.id.indexOf("_") + 1)
+    if (currentPaletteColor === currentCellColor && this.state.paintedCells.includes(pathId))
+      return
+
     if (currentPaletteColor === 'white' && currentCellColor === 'black') {
       determinedColor = this.props.colors["gray"].hex
     } else if (currentPaletteColor === 'white' && this.props.colors["light " + currentCellColor]) {
@@ -72,7 +80,7 @@ class Portrait extends Component {
         (this.state.mixDict[[currentCellColor, currentPaletteColor]] || this.state.mixDict[[currentPaletteColor, currentCellColor]])) {
           var mixedColor = this.state.mixDict[[currentCellColor, currentPaletteColor]]
           if (!mixedColor)
-          this.state.mixDict[[currentPaletteColor, currentCellColor]]
+            mixedColor = this.state.mixDict[[currentPaletteColor, currentCellColor]]
           
           determinedColor = this.props.colors[mixedColor].hex
     } else if (currentCellColor !== 'white') {
@@ -105,7 +113,6 @@ class Portrait extends Component {
 
             if (this.state.mixDict[finalMixCheck]) {
               determinedColor = this.props.colors[this.state.mixDict[finalMixCheck]].hex
-              console.log(determinedColor)
             }
           }
         }
@@ -114,18 +121,31 @@ class Portrait extends Component {
 
     e.target.attributes.getNamedItem('fill').value = determinedColor;
     this.toggleNumberVisibility(e)
+
+    if (!this.state.paintedCells.includes(pathId))
+      this.setState(prevState => ({
+        paintedCells: [...prevState.paintedCells, pathId]
+      }), () => { console.log(this.state.paintedCells) })
   }
 
   handleErase(e) {
-    if (!this.isFilled(e))
+    var id = e.target.id.substr(e.target.id.indexOf("_") + 1)
+
+    if (!e.target.attributes.getNamedItem('fill'))
+      return
+    if (!this.isFilled(id))
       return
     e.target.attributes.getNamedItem('fill').value = this.props.colors["white"].hex;
     this.toggleNumberVisibility(e)
+
+    var tmp = this.state.paintedCells
+    tmp.splice(tmp.indexOf(id), 1);
+    this.setState({ paintedCells: tmp })
+    console.log(this.state.paintedCells)
   }
 
-  isFilled(e) {
-    if (e.target.attributes.getNamedItem('fill').value != this.props.colors["white"].hex)
-      return true
+  isFilled(id) {
+    return this.state.paintedCells.includes(id)
   }
 
   render() {
