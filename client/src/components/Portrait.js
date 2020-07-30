@@ -7,7 +7,9 @@ class Portrait extends Component {
     super(props);
 
     this.handlePaint = this.handlePaint.bind(this)
+    this.toggleNumberVisibility = this.toggleNumberVisibility.bind(this)
     this.handleErase = this.handleErase.bind(this)
+    this.isFilled = this.isFilled.bind(this)
   }
 
   componentDidMount() {
@@ -30,14 +32,27 @@ class Portrait extends Component {
       hexDict: hexDict,
       mixDict: mixDict
     })
+  }
 
-    this.toggleNumberVisibility = this.toggleNumberVisibility.bind(this)
+  toggleNumberVisibility(e) {
+    var pathId = e.target.id.substr(e.target.id.indexOf("_") + 1)
+    var arr = e.target.parentElement.children
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].id === "text_" + pathId) {
+        if (!arr[i].getAttribute('display'))
+          arr[i].setAttribute('display', 'none')
+        else
+          arr[i].setAttribute('display', null)
+        break
+      }
+    }
   }
 
   handlePaint(e) {
-    // console.log(e.target.attributes.getNamedItem('fill').value)
-    var hexColor = !this.props.currentColor ? this.props.colors["white"].hex :
-      this.props.colors[this.props.currentColor].hex
+    if(!this.props.currentColor)
+      return
+
+    var hexColor = this.props.colors[this.props.currentColor].hex
 
     var currentPaletteColor = this.state.hexDict[hexColor]
     var currentCellColor = this.state.hexDict[e.target.attributes.getNamedItem('fill').value]
@@ -102,22 +117,15 @@ class Portrait extends Component {
   }
 
   handleErase(e) {
+    if (!this.isFilled(e))
+      return
     e.target.attributes.getNamedItem('fill').value = this.props.colors["white"].hex;
     this.toggleNumberVisibility(e)
   }
 
-  toggleNumberVisibility(e) {
-    var pathId = e.target.id.substr(e.target.id.indexOf("_") + 1)
-    var arr = e.target.parentElement.children
-    for (var i = 0; i < arr.length; i++) {
-      if (arr[i].id === "text_" + pathId) {
-        if (!arr[i].getAttribute('display'))
-          arr[i].setAttribute('display', 'none')
-        else
-          arr[i].setAttribute('display', null)
-        break
-      }
-    }
+  isFilled(e) {
+    if (e.target.attributes.getNamedItem('fill').value != this.props.colors["white"].hex)
+      return true
   }
 
   render() {

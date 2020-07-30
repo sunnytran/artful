@@ -1,5 +1,7 @@
 working on
 
+bug: when painting, click on the number makes it appear again
+
 move title to left of the container
 
 new portrait should clear the painting's cells
