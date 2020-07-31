@@ -3,6 +3,7 @@ import React, { Component } from 'react';;
 var SvgCompa = function SvgCompa(props) {
   return (
     <svg
+      onload={(e) => {props.preparePortrait(e)}}
       width={1013.333}
       height={1125.333}
       viewBox="0 0 760 844"
@@ -20,10 +21,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={1}
         d="M6.75 22.673V6.685h49.157v31.978H6.75z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_1"
         y={20.666}
         x={20.156}
@@ -43,10 +44,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={2}
         d="M61.35 21.313V6.685h55.96V35.94H61.35z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_2"
         y={16.967}
         x={64.295}
@@ -66,10 +67,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={3}
         d="M118.671 21.313V6.685H185.348V35.94H118.67z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_3"
         y={18.498}
         x={111.113}
@@ -89,10 +90,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={4}
         d="M186.652 21.313V6.685h94.741V35.94h-94.741z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_4"
         y={19.263}
         x={171.071}
@@ -112,10 +113,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={5}
         d="M282.64 21.313V6.685h98.654V35.94H282.641z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_5"
         y={19.135}
         x={242.51}
@@ -135,10 +136,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={6}
         d="M386.737 22.673V6.685H462.598v31.978h-75.86z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_6"
         y={20.921}
         x={315.224}
@@ -158,10 +159,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={7}
         d="M464.627 34.963c-.06-1.661-.219-7.689-.354-13.395-.135-5.707-.289-11.39-.34-12.63l-.096-2.253h89.66l-.096 2.168c-.053 1.193-.207 6.915-.342 12.715-.135 5.8-.294 11.866-.354 13.48l-.107 2.934h-87.862z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_7"
         y={20.794}
         x={375.947}
@@ -181,10 +182,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={8}
         d="M554.732 22.673V6.685h86.577v31.978h-86.577z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_8"
         y={19.646}
         x={445.345}
@@ -204,10 +205,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={9}
         d="M646.639 22.683V6.685h56.182l-.108 2.934c-.058 1.614-.226 8.177-.372 14.585-.145 6.408-.305 12.12-.354 12.692l-.09 1.04-5.645.11c-5.15.102-17.647.265-40.896.535l-8.717.101z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_9"
         y={19.391}
         x={502.369}
@@ -227,10 +228,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={10}
         d="M704.074 22.673V6.685h94.571v31.978h-94.571z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_10"
         y={19.646}
         x={559.903}
@@ -250,10 +251,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={11}
         d="M867.674 38.542c-15.598-.072-66.829-.571-66.91-.652-.063-.063-.83-27.071-.864-30.397l-.008-.808h86.748v31.978l-5.316-.042c-2.923-.022-9.066-.058-13.65-.08z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_11"
         y={19.773}
         x={628.152}
@@ -273,10 +274,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={12}
         d="M891.97 22.673V6.685h69.398v31.978h-69.399z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_12"
         y={19.773}
         x={690.789}
@@ -296,10 +297,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={13}
         d="M997.087 38.542c-8.328-.081-33.577-.572-33.659-.654-.157-.157-.508-11.538-.514-16.66-.007-6.12.158-8.703.772-12.034l.462-2.51h42.464v31.978l-2.68-.04c-1.473-.02-4.553-.057-6.845-.08z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.17}
       />
-      <text
+      <text display="none"
         id="text_13"
         y={19.135}
         x={734.29}
@@ -319,10 +320,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={14}
         d="M6.635 60.007V40.042h49.312v39.931H6.635z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_14"
         y={47.989}
         x={20.206}
@@ -342,10 +343,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={15}
         d="M61.4 60.669V41.365h55.927v38.608H61.4z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_15"
         y={47.899}
         x={63.685}
@@ -365,10 +366,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={16}
         d="M118.69 60.669V41.365h63.986v38.608H118.69z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_16"
         y={48.44}
         x={109.87}
@@ -388,10 +389,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={17}
         d="M188.008 60.669V41.365h3.518c10.199.004 88.992.6 89.08.675.032.028.758 32.173.85 37.662l.005.27h-93.453z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_17"
         y={48.801}
         x={171.3}
@@ -411,10 +412,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={18}
         d="M282.663 60.669V41.365h98.625v38.608h-98.625z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_18"
         y={47.628}
         x={244.907}
@@ -434,10 +435,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={19}
         d="M386.66 60.007V40.042h76.013v39.931H386.66z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_19"
         y={46.997}
         x={316.801}
@@ -457,10 +458,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={20}
         d="M463.996 60.007V40.042h89.363v39.931h-89.363z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_20"
         y={47.177}
         x={378.05}
@@ -480,10 +481,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={21}
         d="M554.682 60.007V40.042H641.28v39.931H554.682z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_21"
         y={46.456}
         x={444.441}
@@ -503,10 +504,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={22}
         d="M646.652 60.007V40.042h56.047v39.931h-56.047z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_22"
         y={46.185}
         x={503.436}
@@ -526,10 +527,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={23}
         d="M704.022 60.007V40.042h94.655v39.931h-94.655z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_23"
         y={47.989}
         x={562.069}
@@ -549,10 +550,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={24}
         d="M799.96 60.007V40.042H886.678v39.931H799.96z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_24"
         y={48.801}
         x={629.813}
@@ -572,10 +573,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={25}
         d="M891.97 60.007V40.042h69.398v39.931H891.97z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_25"
         y={48.26}
         x={690.07}
@@ -595,10 +596,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={26}
         d="M962.69 60.007V40.042h44.02v39.931h-44.02z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.12}
       />
-      <text
+      <text display="none"
         id="text_26"
         y={48.711}
         x={736.255}
@@ -618,10 +619,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={27}
         d="M6.743 161.186c-.089-.088-.16-18.057-.16-39.93V81.484h49.311V161.346H31.4c-13.473 0-24.568-.072-24.656-.16z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_27"
         y={95.257}
         x={20.567}
@@ -641,10 +642,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={28}
         d="M61.427 121.416V81.485h55.807V161.346H61.427z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_28"
         y={95.618}
         x={63.865}
@@ -664,10 +665,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={29}
         d="M118.597 121.416V81.485h63.986V161.346h-63.986z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_29"
         y={95.257}
         x={108.788}
@@ -687,10 +688,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={30}
         d="M187.955 121.416V81.485l13.771-.004c15.194-.004 78.668.497 78.807.622.1.09.398 27.075.642 58.135l.166 21.108h-93.386z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_30"
         y={93.272}
         x={171.21}
@@ -710,10 +711,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={31}
         d="M282.73 121.416V81.485h98.625V161.346h-98.624z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_31"
         y={93.994}
         x={244.998}
@@ -733,10 +734,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={32}
         d="M386.807 120.093V81.485h75.773V158.7h-75.773z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_32"
         y={93.272}
         x={313.734}
@@ -756,10 +757,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={33}
         d="M464.104 129.775c.001-26.735.242-43.297.671-46.242.17-1.165.202-1.204 1.135-1.386 1.935-.376 27.225-.537 56.508-.36 16.528.101 30.083.215 30.122.254.069.07.41 30.788.682 61.325l.137 15.334h-89.256z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_33"
         y={92.19}
         x={375.254}
@@ -779,10 +780,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={34}
         d="M554.63 120.093V81.485h86.596V158.7H554.63z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_34"
         y={89.484}
         x={445.434}
@@ -802,10 +803,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={35}
         d="M646.759 120.054V81.408l20.146.193c11.08.106 23.501.259 27.603.339l7.457.146.146 13.591c.08 7.475.232 24.713.336 38.307l.19 24.716h-55.878z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_35"
         y={91.649}
         x={502.624}
@@ -825,10 +826,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={36}
         d="M704.01 120.093V81.485h94.534V158.7H704.01z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_36"
         y={90.205}
         x={559.994}
@@ -848,10 +849,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={37}
         d="M800.064 126.166c.125-28.812.364-42.213.776-43.51.087-.275.498-.455 1.262-.554 3.191-.412 19.405-.61 50.265-.614l34.218-.003V158.7h-86.661z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_37"
         y={90.025}
         x={630.715}
@@ -871,10 +872,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={38}
         d="M892.117 121.416V81.485H961.395V161.346h-69.278z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_38"
         y={95.437}
         x={693.137}
@@ -894,10 +895,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={39}
         d="M962.675 129.053c.14-29.186.381-43.443.78-45.93.115-.716.266-.913.785-1.022 1.97-.414 10.229-.615 25.36-.615l17.018-.001V161.346h-44.096z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_39"
         y={95.076}
         x={737.158}
@@ -917,10 +918,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={40}
         d="M6.776 210.598v-46.605h49.326v93.211H6.776z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_40"
         y={159.972}
         x={19.135}
@@ -940,10 +941,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={41}
         d="M61.545 210.598v-46.605h55.791v93.211H61.545z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_41"
         y={160.482}
         x={63.274}
@@ -963,10 +964,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={42}
         d="M118.697 210.598v-46.605h63.954v93.211h-63.954z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_42"
         y={159.972}
         x={110.73}
@@ -986,10 +987,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={43}
         d="M188.208 210.65v-46.657H281.373l-.152 13.012c-.084 7.157-.245 27.955-.358 46.218l-.207 33.205-7.358.215c-4.047.119-24.848.316-46.224.44l-38.866.224z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_43"
         y={161.248}
         x={168.392}
@@ -1009,10 +1010,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={44}
         d="M282.553 210.598v-46.605H381.206v93.211H282.553z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_44"
         y={160.227}
         x={244.678}
@@ -1032,10 +1033,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={45}
         d="M386.65 210.598v-46.605h75.86v93.211h-75.86z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_45"
         y={157.676}
         x={316.117}
@@ -1055,10 +1056,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={46}
         d="M464.383 220.331c-.268-38.191-.07-54.356.674-54.973.234-.195 1.938-.5 3.787-.68 3.897-.38 41.848-.447 66.721-.119l17.095.225v91.74h-88.024z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_46"
         y={160.738}
         x={370.207}
@@ -1078,10 +1079,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={47}
         d="M554.7 210.598v-46.605h86.748v93.211h-86.747z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_47"
         y={160.738}
         x={443.687}
@@ -1101,10 +1102,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={48}
         d="M646.778 210.614v-46.69l13.012.204c7.156.113 19.556.3 27.555.416l14.543.21v91.678l-4.168.212c-2.292.117-14.691.313-27.555.437l-23.387.225z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_48"
         y={159.462}
         x={497.521}
@@ -1124,10 +1125,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={49}
         d="M704.042 210.598v-46.605h94.572v93.211h-94.572z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_49"
         y={160.482}
         x={557.479}
@@ -1147,10 +1148,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={50}
         d="M823.43 256.87c-12.389-.116-22.591-.28-22.672-.363-.281-.294-.562-78.103-.305-84.52l.259-6.463 1.7-.426c2.88-.721 20.908-1.093 53.325-1.099l30.871-.006v93.211l-20.326-.062c-11.179-.034-30.462-.156-42.852-.272z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_50"
         y={160.227}
         x={626.622}
@@ -1170,10 +1171,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={51}
         d="M892.051 210.598v-46.605h69.398v93.211h-69.398z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_51"
         y={158.952}
         x={691.937}
@@ -1193,10 +1194,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={52}
         d="M974.987 256.875c-6.12-.114-11.236-.318-11.37-.452-.278-.277-.748-44.165-.783-73.125l-.024-19.305h43.884v93.211l-10.29-.061c-5.66-.033-15.298-.154-21.417-.268z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_52"
         y={159.972}
         x={739.903}
@@ -1216,10 +1217,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={53}
         d="M6.64 291.33v-28.625H55.95v57.25H6.64z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_53"
         y={224.07}
         x={19.304}
@@ -1239,10 +1240,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={54}
         d="M61.484 291.33v-28.625h55.807v57.25H61.484z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_54"
         y={221.364}
         x={62.783}
@@ -1262,10 +1263,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={55}
         d="M118.734 291.33v-28.625h66.632v57.25h-66.632z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_55"
         y={221.364}
         x={111.855}
@@ -1285,10 +1286,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={56}
         d="M186.81 291.33v-28.625h94.534v57.25H186.81z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_56"
         y={222.807}
         x={170.488}
@@ -1308,10 +1309,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={57}
         d="M282.627 291.33v-28.625h98.625v57.25h-98.625z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_57"
         y={221.725}
         x={245.539}
@@ -1331,10 +1332,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={58}
         d="M386.624 291.33v-28.625h76.013v57.25h-76.013z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_58"
         y={220.823}
         x={315.358}
@@ -1354,10 +1355,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={59}
         d="M463.92 291.33v-28.625h89.483v57.25H463.92z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_59"
         y={221.003}
         x={377.96}
@@ -1377,10 +1378,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={60}
         d="M554.686 291.33v-28.625H641.283v57.25H554.686z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_60"
         y={220.823}
         x={443.99}
@@ -1400,10 +1401,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={61}
         d="M646.816 291.33v-28.625h55.807v57.25h-55.807z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_61"
         y={221.725}
         x={501.361}
@@ -1423,10 +1424,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={62}
         d="M704.146 291.33v-28.625h94.536v57.25h-94.536z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_62"
         y={221.725}
         x={557.469}
@@ -1446,10 +1447,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={63}
         d="M799.965 291.33v-28.625H886.562v57.25H799.965z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_63"
         y={219.56}
         x={628.19}
@@ -1469,10 +1470,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={64}
         d="M892.094 291.33v-28.625H959.93v57.25H892.094z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_64"
         y={220.101}
         x={691.514}
@@ -1492,10 +1493,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={65}
         d="M965.461 291.33v-28.625h41.134v57.25H965.46z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.241}
       />
-      <text
+      <text display="none"
         id="text_65"
         y={221.183}
         x={737.699}
@@ -1515,10 +1516,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={66}
         d="M6.839 430.503c-.179-.178-.325-24.752-.325-54.608V321.61H56.07l-.123 54.484-.122 54.484-24.331.125c-13.382.068-24.477-.022-24.656-.2z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_66"
         y={289.073}
         x={18.88}
@@ -1538,10 +1539,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={67}
         d="M61.514 375.896v-54.6h55.791v109.2H61.514z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_67"
         y={287.797}
         x={61.744}
@@ -1561,10 +1562,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={68}
         d="M118.666 375.872V321.25l13.012.196c7.156.108 21.987.29 32.957.404l19.945.207.21 28.45c.115 15.648.302 40.046.416 54.22l.207 25.768h-66.747z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_68"
         y={285.501}
         x={110.475}
@@ -1584,10 +1585,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={69}
         d="M186.703 375.875v-54.621l18.795.195c10.337.108 31.443.289 46.901.402l28.106.207.213 18.074c.118 9.94.311 34.339.43 54.219l.217 36.144h-94.662z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_69"
         y={283.459}
         x={172.219}
@@ -1607,10 +1608,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={70}
         d="M282.635 375.896v-54.6h98.654v109.2h-98.654z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_70"
         y={281.674}
         x={245.444}
@@ -1630,10 +1631,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={71}
         d="M386.732 375.896v-54.6H462.593v109.2H386.732z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_71"
         y={284.735}
         x={315.352}
@@ -1653,10 +1654,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={72}
         d="M464.306 378.022c.103-28.86.284-53.187.403-54.058.167-1.226.381-1.634.95-1.804 1.4-.417 34.893-.615 60.82-.36l26.067.258.21 23.687c.117 13.028.307 37.426.425 54.219l.213 30.531h-89.275z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_72"
         y={286.266}
         x={376.33}
@@ -1676,10 +1677,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={73}
         d="M554.67 375.896v-54.6h86.747v109.2H554.67z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_73"
         y={283.715}
         x={445.473}
@@ -1699,10 +1700,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={74}
         d="M646.633 375.871v-54.624l10.801.197c5.94.109 18.398.29 27.684.405l16.883.207.209 40.697c.115 22.384.265 46.783.333 54.22l.125 13.522h-56.035z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_74"
         y={283.204}
         x={502.369}
@@ -1722,10 +1723,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={75}
         d="M704.125 375.896v-54.6h94.571v109.2h-94.571z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_75"
         y={283.97}
         x={560.285}
@@ -1745,10 +1746,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={76}
         d="M800.185 385.166c.013-41.925.28-62.237.823-62.78.537-.537 10.337-.738 46.703-.957l38.866-.235v109.301H800.17z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_76"
         y={281.674}
         x={625.091}
@@ -1768,10 +1769,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={77}
         d="M892.02 375.896v-54.6h68.037v109.2H892.02z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_77"
         y={281.674}
         x={688.875}
@@ -1791,10 +1792,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={78}
         d="M965.5 375.896v-54.6h41.162v109.2H965.5z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_78"
         y={280.908}
         x={738.117}
@@ -1814,10 +1815,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={79}
         d="M6.767 507.8c-.125-.125-.227-16.888-.227-37.251v-37.023h49.327v74.5H31.431c-13.44 0-24.54-.102-24.664-.227z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_79"
         y={358.981}
         x={18.37}
@@ -1837,10 +1838,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={80}
         d="M61.31 469.415v-35.89h56.131v71.78H61.31z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_80"
         y={356.174}
         x={63.785}
@@ -1860,10 +1861,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={81}
         d="M118.802 469.415v-35.89h66.336v71.78h-66.336z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_81"
         y={354.643}
         x={108.944}
@@ -1883,10 +1884,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={82}
         d="M186.725 469.415v-35.89h94.572v71.78h-94.572z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_82"
         y={354.643}
         x={169.667}
@@ -1906,10 +1907,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={83}
         d="M282.544 469.415v-35.89h98.654v71.78h-98.654z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_83"
         y={355.409}
         x={246.464}
@@ -1929,10 +1930,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={84}
         d="M386.754 469.415v-35.89H462.615v71.78h-75.86z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_84"
         y={354.133}
         x={310.759}
@@ -1952,10 +1953,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={85}
         d="M463.976 469.415v-35.89h89.469v71.78h-89.469z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_85"
         y={354.643}
         x={377.606}
@@ -1975,10 +1976,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={86}
         d="M554.806 469.415v-35.89H641.213v71.78H554.806z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_86"
         y={354.898}
         x={443.687}
@@ -1998,10 +1999,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={87}
         d="M646.77 469.415v-35.89h55.79v71.78h-55.791z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_87"
         y={356.684}
         x={501.859}
@@ -2021,10 +2022,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={88}
         d="M703.92 469.415v-35.89h94.572v71.78h-94.571z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_88"
         y={356.174}
         x={558.755}
@@ -2044,10 +2045,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={89}
         d="M800.08 469.415v-35.89H886.487v71.78H800.08z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_89"
         y={355.919}
         x={626.366}
@@ -2067,10 +2068,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={90}
         d="M891.93 470.776v-37.25h68.037v74.5H891.93z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_90"
         y={356.174}
         x={691.682}
@@ -2090,10 +2091,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={91}
         d="M965.41 470.776v-37.25h41.162v74.5H965.41z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_91"
         y={357.45}
         x={737.097}
@@ -2113,10 +2114,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={92}
         d="M6.61 537.912l.177-28.405h48.986l.178 28.405.178 28.406H6.432z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_92"
         y={411.336}
         x={19.484}
@@ -2136,10 +2137,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={93}
         d="M61.504 538.52v-27.904h55.807v55.807H61.504z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_93"
         y={409.532}
         x={63.144}
@@ -2159,10 +2160,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={94}
         d="M118.755 538.55v-27.873l28.023.225c15.414.123 30.209.344 32.879.491l4.854.267.317 15.475c.174 8.51.317 20.832.317 27.381v11.907h-66.39z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_94"
         y={408.81}
         x={110.05}
@@ -2182,10 +2183,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={95}
         d="M186.59 538.55v-27.875l40.05.224c22.028.123 43.124.348 46.878.5l6.827.276.25 2.478c.137 1.362.358 13.68.492 27.373l.244 24.897H186.59z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_95"
         y={409.171}
         x={169.586}
@@ -2205,10 +2206,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={96}
         d="M282.808 538.52v-27.904h98.625v55.807h-98.625z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_96"
         y={410.614}
         x={243.915}
@@ -2228,10 +2229,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={97}
         d="M386.885 538.52v-27.904h75.532v55.807h-75.532z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_97"
         y={408.089}
         x={314.275}
@@ -2251,10 +2252,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={98}
         d="M464.026 541.526c.177-13.693.456-26.006.62-27.362l.296-2.466 2.466-.296c3.29-.395 74.304-.385 80.292.011 4.263.283 4.719.405 4.9 1.32.111.556.322 12.863.47 27.35l.269 26.34h-89.636z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_98"
         y={408.089}
         x={377.419}
@@ -2274,10 +2275,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={99}
         d="M554.787 538.52v-27.904H641.384v55.807H554.787z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_99"
         y={408.45}
         x={443.088}
@@ -2297,10 +2298,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={100}
         d="M646.676 538.547v-27.876l23.213.228c12.767.126 25.18.348 27.586.493l4.373.265.317 15.476c.174 8.512.317 20.834.317 27.383l.001 11.907h-55.807z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_100"
         y={408.45}
         x={501.181}
@@ -2320,10 +2321,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={101}
         d="M704.247 538.52v-27.904h94.295v55.807h-94.295z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_101"
         y={406.285}
         x={555.665}
@@ -2343,10 +2344,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={102}
         d="M800.127 540.083c.153-14.487.42-26.805.593-27.375.223-.732.829-1.115 2.075-1.31.968-.151 20.216-.421 42.774-.6l41.013-.327v55.952h-86.734z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_102"
         y={409.171}
         x={629.272}
@@ -2366,10 +2367,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={103}
         d="M891.874 538.067c0-15.596.162-28.43.36-28.52.613-.28 66.533.448 66.822.737.15.15.39 12.842.535 28.205l.264 27.934h-67.98z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_103"
         y={408.81}
         x={691.694}
@@ -2389,10 +2390,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={104}
         d="M965.482 537.798v-28.625h40.893v57.25h-40.893z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_104"
         y={408.45}
         x={736.436}
@@ -2412,10 +2413,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={105}
         d="M6.634 608v-38.728h49.072v77.456H6.634z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_105"
         y={461.49}
         x={20.206}
@@ -2435,10 +2436,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={106}
         d="M61.48 607.92v-38.488h55.806v76.975H61.48z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_106"
         y={460.408}
         x={63.144}
@@ -2458,10 +2459,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={107}
         d="M118.89 607.92v-38.488H185.28v76.975H118.89z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_107"
         y={462.212}
         x={109.69}
@@ -2481,10 +2482,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={108}
         d="M186.564 607.92v-38.488h94.776v76.975h-94.776z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_108"
         y={461.851}
         x={167.782}
@@ -2504,10 +2505,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={109}
         d="M282.623 607.92v-38.488h98.624v76.975h-98.624z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_109"
         y={461.49}
         x={246.441}
@@ -2527,10 +2528,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={110}
         d="M386.539 607.92v-38.488h76.013v76.975h-76.013z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_110"
         y={461.49}
         x={313.193}
@@ -2550,10 +2551,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={111}
         d="M464.156 607.92v-38.488H553.158v76.975h-89.002z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_111"
         y={461.851}
         x={377.419}
@@ -2573,10 +2574,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={112}
         d="M554.601 607.92v-38.488H641.2v76.975H554.6z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_112"
         y={459.325}
         x={443.449}
@@ -2596,10 +2597,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={113}
         d="M646.811 607.92v-38.488h55.807v76.975h-55.807z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_113"
         y={461.49}
         x={500.459}
@@ -2619,10 +2620,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={114}
         d="M704.222 607.92v-38.488h94.295v76.975h-94.295z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_114"
         y={460.047}
         x={559.273}
@@ -2642,10 +2643,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={115}
         d="M799.96 607.92v-38.488H886.557v76.975H799.96z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_115"
         y={459.325}
         x={627.829}
@@ -2665,10 +2666,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={116}
         d="M891.849 607.92v-38.488h68.315v76.975H891.85z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_116"
         y={456.8}
         x={688.808}
@@ -2688,10 +2689,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={117}
         d="M965.456 607.92v-38.488h41.375v76.975h-41.375z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_117"
         y={457.16}
         x={737.158}
@@ -2711,10 +2712,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={118}
         d="M6.636 678.672v-29.256h49.327v58.512H6.636z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_118"
         y={510.788}
         x={20.411}
@@ -2734,10 +2735,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={119}
         d="M61.52 678.672v-29.256h55.79v58.512H61.519z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_119"
         y={510.788}
         x={61.489}
@@ -2757,10 +2758,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={120}
         d="M118.67 678.672v-29.256H185.348v58.512H118.67z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_120"
         y={511.554}
         x={111.496}
@@ -2780,10 +2781,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={121}
         d="M186.821 678.672v-29.256h94.572v58.512H186.82z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_121"
         y={514.871}
         x={170.178}
@@ -2803,10 +2804,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={122}
         d="M282.753 678.672v-29.256h98.654v58.512h-98.654z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_122"
         y={516.657}
         x={245.444}
@@ -2826,10 +2827,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={123}
         d="M386.737 678.672v-29.256H462.598v58.512H386.737z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_123"
         y={513.085}
         x={315.607}
@@ -2849,10 +2850,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={124}
         d="M464.072 678.672v-29.256H553.201v58.512H464.072z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_124"
         y={513.595}
         x={378.371}
@@ -2872,10 +2873,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={125}
         d="M554.561 678.672v-29.256h86.748v58.512H554.56z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_125"
         y={512.319}
         x={444.197}
@@ -2895,10 +2896,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={126}
         d="M646.638 680.075v-30.659h56.02l-.115 6.89c-.063 3.788-.21 17.394-.325 30.236l-.21 23.347-12.802.21c-7.04.114-19.499.304-27.685.422l-14.883.213z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_126"
         y={515.126}
         x={501.348}
@@ -2918,10 +2919,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={127}
         d="M704.13 680.033v-30.617H798.7v61.234H704.13z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_127"
         y={514.871}
         x={561.561}
@@ -2941,10 +2942,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={128}
         d="M839.353 710.29c-13.471-.123-27.65-.246-31.507-.272l-7.015-.049-.212-9.61c-.116-5.285-.31-18.91-.429-30.276l-.218-20.667h86.497v61.234l-11.311-.067c-6.221-.037-22.333-.168-35.805-.292z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_128"
         y={513.34}
         x={629.428}
@@ -2964,10 +2965,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={129}
         d="M891.912 680.074v-30.658h68.126l-.217 19.476c-.118 10.712-.31 24.318-.426 30.237l-.21 10.761-15.352.209c-8.443.114-23.58.303-33.636.42l-18.285.212z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_129"
         y={512.829}
         x={691.682}
@@ -2987,10 +2988,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={130}
         d="M965.392 680.083v-30.667h41.26l-.223 24.579c-.123 13.518-.319 27.12-.434 30.228l-.211 5.65-7.864.215c-4.326.118-13.414.316-20.196.439l-12.332.223z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.34}
       />
-      <text
+      <text display="none"
         id="text_130"
         y={512.829}
         x={737.862}
@@ -3010,10 +3011,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={131}
         d="M6.52 755.749v-42.532l25.344.178 25.343.179.176 42.353.175 42.353H6.52z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_131"
         y={575.083}
         x={18.88}
@@ -3033,10 +3034,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={132}
         d="M60.269 755.757v-42.523H117.42v85.046H60.27z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_132"
         y={575.594}
         x={61.744}
@@ -3056,10 +3057,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={133}
         d="M118.78 755.757v-42.523h63.956v85.046H118.78z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_133"
         y={573.553}
         x={110.22}
@@ -3079,10 +3080,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={134}
         d="M188.405 755.794v-42.486l45.755.396c25.166.218 45.908.532 46.096.7.187.167.423 19.107.525 42.09l.185 41.786h-92.56z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_134"
         y={575.594}
         x={171.453}
@@ -3102,10 +3103,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={135}
         d="M282.977 755.757v-42.523h97.973v85.046h-97.973z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_135"
         y={573.553}
         x={243.913}
@@ -3125,10 +3126,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={136}
         d="M387.074 755.757v-42.523h75.52v85.046h-75.52z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_136"
         y={572.532}
         x={308.718}
@@ -3148,10 +3149,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={137}
         d="M464.41 757.413c0-26.87.24-41.318.704-42.183.685-1.28 1.893-1.316 44.224-1.316h43.52l.003 36.57c.002 20.113.201 39.096.441 42.183l.437 5.613h-89.33z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_137"
         y={572.532}
         x={376.585}
@@ -3171,10 +3172,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={138}
         d="M554.899 755.757v-42.523H641.306v85.046H554.899z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_138"
         y={580.186}
         x={441.901}
@@ -3194,10 +3195,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={139}
         d="M646.975 755.076v-43.203h55.791V798.28h-55.791z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_139"
         y={574.063}
         x={499.562}
@@ -3217,10 +3218,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={140}
         d="M704.127 755.076v-43.203h94.571V798.28h-94.571z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_140"
         y={574.573}
         x={557.734}
@@ -3240,10 +3241,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={141}
         d="M799.997 755.247l.175-43.034H886.58l.176 43.034.175 43.033h-87.108z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_141"
         y={572.532}
         x={628.663}
@@ -3263,10 +3264,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={142}
         d="M892.362 755.076v-43.203h67.357V798.28h-67.357z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_142"
         y={572.532}
         x={693.468}
@@ -3286,10 +3287,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={143}
         d="M965.327 755.247l.175-43.034 20.582-.18 20.58-.18V798.28h-41.512z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.68}
       />
-      <text
+      <text display="none"
         id="text_143"
         y={571.001}
         x={735.821}
@@ -3309,10 +3310,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={144}
         d="M6.962 845.293v-43.78h50.515v87.56H6.962z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_144"
         y={640.818}
         x={20.928}
@@ -3332,10 +3333,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={145}
         d="M59.883 845.293v-43.78h57.25v87.56h-57.25z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_145"
         y={638.653}
         x={62.783}
@@ -3355,10 +3356,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={146}
         d="M118.576 845.293v-43.78h63.986v87.56h-63.986z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_146"
         y={637.21}
         x={107.164}
@@ -3378,10 +3379,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={147}
         d="M187.854 845.293v-43.78h93.332v87.56h-93.332z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_147"
         y={640.097}
         x={168.143}
@@ -3401,10 +3402,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={148}
         d="M282.63 845.293v-43.78h98.624v87.56h-98.625z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_148"
         y={640.457}
         x={241.389}
@@ -3424,10 +3425,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={149}
         d="M386.706 844.812v-43.299h76.013V888.11h-76.013z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_149"
         y={641.901}
         x={314.997}
@@ -3447,10 +3448,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={150}
         d="M464.163 844.812v-43.299H553.165V888.11h-89.002z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_150"
         y={642.262}
         x={373.811}
@@ -3470,10 +3471,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={151}
         d="M554.93 844.812v-43.299H641.044V888.11H554.93z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_151"
         y={639.375}
         x={442.367}
@@ -3493,10 +3494,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={152}
         d="M646.818 844.812v-43.299h55.807V888.11h-55.807z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_152"
         y={642.262}
         x={499.376}
@@ -3516,10 +3517,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={153}
         d="M704.229 844.812v-43.299h94.294V888.11H704.23z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_153"
         y={639.736}
         x={558.551}
@@ -3539,10 +3540,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={154}
         d="M800.127 844.812v-43.299H886.724V888.11H800.127z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_154"
         y={642.262}
         x={627.468}
@@ -3562,10 +3563,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={155}
         d="M892.016 844.812v-43.299H959.851V888.11H892.016z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_155"
         y={642.622}
         x={691.694}
@@ -3585,10 +3586,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={156}
         d="M965.624 844.812v-43.299h40.893V888.11h-40.893z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_156"
         y={643.344}
         x={736.797}
@@ -3608,10 +3609,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={157}
         d="M6.962 930.692v-38.733h50.52l-.122 38.608-.123 38.608-25.138.125-25.137.124z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_157"
         y={701.797}
         x={20.206}
@@ -3631,10 +3632,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={158}
         d="M60.203 969.095c-.176-.177-.32-17.604-.32-38.728v-38.408h57.25v77.457H88.828c-15.567 0-28.448-.145-28.625-.321z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_158"
         y={700.354}
         x={61.7}
@@ -3654,10 +3655,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={159}
         d="M118.576 930.687V891.96h63.986v77.457h-63.986z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_159"
         y={702.158}
         x={107.525}
@@ -3677,10 +3678,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={160}
         d="M187.854 931.967V891.96h93.48l-.351 39.567c-.193 21.761-.396 39.612-.452 39.667-.055.055-20.93.254-46.389.442l-46.288.34z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_160"
         y={705.405}
         x={169.586}
@@ -3700,10 +3701,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={161}
         d="M282.63 931.89v-39.93h98.624V971.82h-98.625z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_161"
         y={706.488}
         x={239.224}
@@ -3723,10 +3724,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={162}
         d="M386.546 932.612v-39.21h76.013V971.822h-76.013z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_162"
         y={704.684}
         x={313.914}
@@ -3746,10 +3747,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={163}
         d="M464.749 970.739c-.102-.331-.314-17.867-.471-38.97l-.286-38.366h89.253l-.11 23.453c-.061 12.9-.248 30.435-.417 38.969l-.305 15.515h-43.74c-34.572 0-43.778-.126-43.924-.601z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_163"
         y={702.88}
         x={375.254}
@@ -3769,10 +3770,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={164}
         d="M554.93 932.612v-39.21H641.044V971.822H554.93z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_164"
         y={704.323}
         x={442.728}
@@ -3792,10 +3793,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={165}
         d="M646.497 932.612v-39.21h56.085l-.141 26.822c-.078 14.751-.272 32.252-.431 38.891l-.29 12.071-15.903.318c-8.747.174-21.172.317-27.611.317h-11.709z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_165"
         y={705.766}
         x={502.985}
@@ -3815,10 +3816,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={166}
         d="M704.229 932.612v-39.21h94.294V971.822H704.23z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_166"
         y={703.601}
         x={560.355}
@@ -3838,10 +3839,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={167}
         d="M817.69 971.46l-16.676-.132-.266-3.963c-.147-2.18-.376-19.713-.509-38.963l-.241-35h86.566V971.822l-26.1-.114c-14.354-.062-33.603-.173-42.774-.247z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_167"
         y={702.519}
         x={628.55}
@@ -3861,10 +3862,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={168}
         d="M891.856 932.612v-39.21h69.277V971.822H891.855z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_168"
         y={706.488}
         x={691.694}
@@ -3884,10 +3885,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={169}
         d="M972.13 971.461l-8.487-.143-.284-9.25c-.156-5.088-.367-22.619-.47-38.958l-.185-29.707H1006.837v78.418l-13.11-.108c-7.21-.06-16.928-.173-21.596-.252z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_169"
         y={707.931}
         x={736.075}
@@ -3907,10 +3908,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={170}
         d="M6.407 1016.11v-40.893h50.996v81.786H6.407z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.962}
       />
-      <text
+      <text display="none"
         id="text_170"
         y={768.549}
         x={19.845}
@@ -3930,10 +3931,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={171}
         d="M60.285 1015.88v-41.374H117.054v82.748H60.285z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_171"
         y={770.353}
         x={63.865}
@@ -3953,10 +3954,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={172}
         d="M118.615 1016l.123-41.254 31.873-.124 31.872-.123v82.755h-63.991z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_172"
         y={768.549}
         x={107.886}
@@ -3976,10 +3977,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={173}
         d="M188.257 1013.955v-40.412h92.851v80.824h-92.851z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_173"
         y={767.106}
         x={168.864}
@@ -3999,10 +4000,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={174}
         d="M282.711 1013.955v-40.412h98.625v80.824H282.71z"
-        fill="#ffffff"
+        fill="#ff3333"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_174"
         y={763.137}
         x={242.472}
@@ -4022,10 +4023,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={175}
         d="M386.949 1013.955v-40.412h75.532v80.824h-75.532z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_175"
         y={762.415}
         x={311.028}
@@ -4045,10 +4046,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={176}
         d="M464.084 1013.955v-40.412h89.003v80.824H464.085z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_176"
         y={763.137}
         x={373.45}
@@ -4068,10 +4069,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={177}
         d="M554.53 1013.955v-40.412H641.127v80.824H554.53z"
-        fill="#ffffff"
+        fill="#1a1aff"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_177"
         y={762.415}
         x={443.088}
@@ -4091,10 +4092,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={178}
         d="M646.58 1013.955v-40.412h55.807v80.824H646.58z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_178"
         y={762.054}
         x={503.345}
@@ -4114,10 +4115,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={179}
         d="M703.83 1013.955v-40.412h94.775v80.824H703.83z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_179"
         y={764.58}
         x={560.355}
@@ -4137,10 +4138,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={180}
         d="M800.21 1013.955v-40.412h86.596v80.824H800.21z"
-        fill="#ffffff"
+        fill="#ffea00"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_180"
         y={763.497}
         x={630.354}
@@ -4160,10 +4161,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={181}
         d="M892.098 1015.399v-41.856h69.278v83.711h-69.278z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_181"
         y={764.58}
         x={691.694}
@@ -4183,10 +4184,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={182}
         d="M974.805 1056.894l-11.347-.138-.32-26.332c-.174-14.482-.318-33.205-.318-41.606v-15.275H1006.598v83.711l-10.223-.111c-5.623-.061-15.33-.173-21.571-.25z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_182"
         y={764.941}
         x={736.797}
@@ -4206,10 +4207,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={183}
         d="M6.884 1088.77v-30.073H57.406l-.124 29.948-.124 29.949-25.137.124-25.137.125z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_183"
         y={822.311}
         x={23.453}
@@ -4229,10 +4230,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={184}
         d="M60.285 1088.766v-30.069H117.054v60.137H60.285z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_184"
         y={820.868}
         x={64.226}
@@ -4252,10 +4253,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={185}
         d="M118.818 1088.769v-30.072H182.811l-.124 29.948-.123 29.949-31.873.123-31.873.124z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_185"
         y={818.342}
         x={109.69}
@@ -4275,10 +4276,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={186}
         d="M188.096 1089.415v-29.418l46.065.353c25.336.194 46.155.443 46.265.553.274.272.94 57.117.676 57.57-.116.199-21.09.361-46.609.361h-46.397z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_186"
         y={820.868}
         x={170.668}
@@ -4298,10 +4299,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={187}
         d="M282.872 1089.487v-29.347h99.586v58.694h-99.586z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_187"
         y={822.311}
         x={245.358}
@@ -4321,10 +4322,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={188}
         d="M384.303 1090.233c.127-22.657.29-28.732.785-29.227.5-.5 8.358-.66 39.09-.795l38.463-.17v58.793h-78.498z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_188"
         y={820.868}
         x={313.914}
@@ -4344,10 +4345,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={189}
         d="M464.076 1118.055c-.445-1.16.226-54.061.707-55.75l.41-1.443 10.31-.338c5.671-.185 25.279-.208 43.573-.05l33.263.288.278 5.342c.154 2.938.34 15.95.414 28.916l.136 23.574-44.395.122c-40.664.113-44.42.057-44.696-.661z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_189"
         y={820.507}
         x={379.945}
@@ -4367,10 +4368,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={190}
         d="M554.85 1089.49v-29.35H641.456l-.124 29.227-.124 29.227-43.178.122-43.178.123z"
-        fill="#ffffff"
+        fill="#000000"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_190"
         y={822.672}
         x={448.14}
@@ -4390,10 +4391,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={191}
         d="M646.74 1089.415v-29.418l27.542.352c15.149.194 27.577.388 27.619.433.042.044.235 13.124.43 29.066l.354 28.986H646.74z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_191"
         y={823.394}
         x={500.82}
@@ -4413,10 +4414,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={192}
         d="M703.99 1089.49v-29.35h94.783l-.124 29.227-.124 29.227-47.267.122-47.268.123z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_192"
         y={820.868}
         x={559.273}
@@ -4436,10 +4437,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={193}
         d="M800.287 1090.194c.13-22.946.288-28.723.792-29.035 1.16-.716 16.345-1.019 51.169-1.019h34.566l-.124 29.227-.124 29.227-43.22.122-43.221.123z"
-        fill="#ffffff"
+        fill="#c1e1ec"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_193"
         y={821.95}
         x={628.55}
@@ -4459,10 +4460,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={194}
         d="M892.098 1088.769v-30.072h69.285l-.124 29.948-.124 29.949-34.518.123-34.519.123z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_194"
         y={820.868}
         x={694.581}
@@ -4482,10 +4483,10 @@ var SvgCompa = function SvgCompa(props) {
         transform="scale(.75)"
         id={195}
         d="M962.82 1088.766v-30.069H1006.598v60.137h-43.78z"
-        fill="#ffffff"
+        fill="#bababa"
         strokeWidth={0.481}
       />
-      <text
+      <text display="none"
         id="text_195"
         y={819.786}
         x={736.075}
@@ -4506,3 +4507,10 @@ var SvgCompa = function SvgCompa(props) {
 }
 
 export default SvgCompa;
+
+// pre fill it up AND THEN add 0
+
+// add onload to prepare the portrait
+
+// adding onclicks and oncontextmenus
+// adding display=none

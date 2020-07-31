@@ -6,6 +6,7 @@ class Portrait extends Component {
   constructor(props) {
     super(props);
 
+    this.preparePortrait = this.preparePortrait.bind(this)
     this.handlePaint = this.handlePaint.bind(this)
     this.handleErase = this.handleErase.bind(this)
     this.isFilled = this.isFilled.bind(this)
@@ -37,6 +38,10 @@ class Portrait extends Component {
       hexDict: hexDict,
       mixDict: mixDict
     })
+  }
+
+  preparePortrait() {
+    alert("HELLO")
   }
 
   hideNumber(e, id) {
@@ -159,7 +164,12 @@ class Portrait extends Component {
   render() {
     return (
       <div>
-        <SvgCompa handlePaint={this.handlePaint} handleErase={this.handleErase} onContextMenu={(e)=> e.preventDefault()}></SvgCompa>
+        <SvgCompa
+          preparePortrait={this.preparePortrait}
+          handlePaint={this.handlePaint}
+          handleErase={this.handleErase}
+          onContextMenu={(e)=> e.preventDefault()}>
+        </SvgCompa>
       </div>
     );
   }

@@ -111,6 +111,8 @@ class App extends Component {
                       <div class="column">
                         <a href="#" onClick={this.handleNewPortrait}>Get a new portrait</a>
                         &nbsp;|&nbsp;
+                        <a href="#" onClick={this.handleNewPortrait}>Download your masterpiece</a>
+                        &nbsp;|&nbsp;
                         <span>Choose a color and click on a spot to paint it. Right click to erase!</span>
                       </div>
                     </div>
