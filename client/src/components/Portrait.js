@@ -43,11 +43,9 @@ class Portrait extends Component {
   preparePortrait(ref) {
     if (!ref.current)
       return
-
       
-      // start at 1 because first element is the entire outline of the portrait
+    // start at 1 because first element is the entire outline of the portrait
     var children = ref.current.children
-    console.log(children)
     for (var i = 1; i < children.length; i += 2) {
       var pathEle = children[i]
       if (!pathEle.attributes.trueColor)
@@ -60,7 +58,6 @@ class Portrait extends Component {
       textEle.attributes.display.value = 'block'
       textEle.children[0].innerHTML = this.props.portrait.key[fillColor]
     }
-    // console.log(ref.current.children.length)
   }
 
   hideNumber(e, id) {
