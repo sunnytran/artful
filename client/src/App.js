@@ -88,8 +88,8 @@ class App extends Component {
         {
           this.state.currentPortrait ?
             <div>
-              <div class="container" style={{paddingTop: '10px', paddingLeft: '10px'}}>
-                <h1 class="title">artful</h1>
+              <div class="container">
+                <h1 class="title" style={{paddingTop: '10px', paddingLeft: '10px'}}>artful</h1>
 
                 <div class="columns is-centered is-vcentered is-mobile">
 

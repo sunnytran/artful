@@ -4,16 +4,14 @@ class SvgCompa extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.svgRef = React.createRef();
   }
 
   render() {
-    var handleLoad = (e) => {
-      alert("HELLO")
-    }
-
-    return (
-      <svg
-        onLoad={handleLoad}
+    var x = <svg
+        ref={this.svgRef}
+        onLoad={this.props.preparePortrait(this.svgRef)}
         width={1013.333}
         height={1125.333}
         viewBox="0 0 760 844"
@@ -4513,7 +4511,8 @@ class SvgCompa extends React.Component {
           </tspan>
         </text>
       </svg>
-    );
+
+    return x
   }
 }
 

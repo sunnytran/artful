@@ -40,8 +40,8 @@ class Portrait extends Component {
     })
   }
 
-  preparePortrait() {
-    alert("HELLO")
+  preparePortrait(ref) {
+    console.log(ref)
   }
 
   hideNumber(e, id) {
