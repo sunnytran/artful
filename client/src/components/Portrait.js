@@ -53,6 +53,7 @@ class Portrait extends Component {
       var pathEle = children[i]
       var hexFillColor = pathEle.attributes.fill.value
       var fillColor = this.state.hexDict[hexFillColor]
+      pathEle.attributes.fill.value = '#ffffff'
 
       var textEle = children[i].nextSibling
       textEle.attributes.display.value = 'block'
