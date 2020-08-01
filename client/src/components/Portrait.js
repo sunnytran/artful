@@ -41,14 +41,31 @@ class Portrait extends Component {
   }
 
   preparePortrait(ref) {
-    console.log(ref)
+    if (!ref.current)
+      return
+    
+    // start at 1 because first element is the entire outline of the portrait
+    var children = ref.current.children
+    console.log(this.props.portrait.key)
+    console.log(this.state.hexDict)
+    console.log(children)
+    for (var i = 1; i < children.length; i += 2) {
+      var pathEle = children[i]
+      var hexFillColor = pathEle.attributes.fill.value
+      var fillColor = this.state.hexDict[hexFillColor]
+
+      var textEle = children[i].nextSibling
+      textEle.attributes.display.value = 'block'
+      textEle.children[0].innerHTML = this.props.portrait.key[fillColor]
+    }
+    // console.log(ref.current.children.length)
   }
 
   hideNumber(e, id) {
     var arr = e.target.parentElement.children
     for (var i = 0; i < arr.length; i++) {
       if (arr[i].id === "text_" + id) {
-        if (!arr[i].getAttribute('display'))
+        if (arr[i].getAttribute('display') === 'block')
           arr[i].setAttribute('display', 'none')
         break
       }
@@ -59,8 +76,8 @@ class Portrait extends Component {
     var arr = e.target.parentElement.children
     for (var i = 0; i < arr.length; i++) {
       if (arr[i].id === "text_" + id) {
-        if (arr[i].getAttribute('display'))
-          arr[i].removeAttribute('display')
+        if (arr[i].getAttribute('display') === 'none')
+          arr[i].setAttribute('display', 'block')
         break
       }
     }

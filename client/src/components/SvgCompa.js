@@ -11,7 +11,6 @@ class SvgCompa extends React.Component {
   render() {
     var x = <svg
         ref={this.svgRef}
-        onLoad={this.props.preparePortrait(this.svgRef)}
         width={1013.333}
         height={1125.333}
         viewBox="0 0 760 844"
@@ -4511,6 +4510,8 @@ class SvgCompa extends React.Component {
           </tspan>
         </text>
       </svg>
+
+    this.props.preparePortrait(this.svgRef)
 
     return x
   }
