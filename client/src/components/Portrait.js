@@ -43,15 +43,16 @@ class Portrait extends Component {
   preparePortrait(ref) {
     if (!ref.current)
       return
-    
-    // start at 1 because first element is the entire outline of the portrait
+
+      
+      // start at 1 because first element is the entire outline of the portrait
     var children = ref.current.children
-    console.log(this.props.portrait.key)
-    console.log(this.state.hexDict)
     console.log(children)
     for (var i = 1; i < children.length; i += 2) {
       var pathEle = children[i]
-      var hexFillColor = pathEle.attributes.fill.value
+      if (!pathEle.attributes.trueColor)
+        pathEle.attributes.trueColor = pathEle.attributes.fill.value      
+      var hexFillColor = pathEle.attributes.trueColor
       var fillColor = this.state.hexDict[hexFillColor]
       pathEle.attributes.fill.value = '#ffffff'
 
