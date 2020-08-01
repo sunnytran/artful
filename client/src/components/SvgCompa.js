@@ -1,16 +1,15 @@
-import React, { Component } from 'react';;
+
+import React, { Component } from 'react';
 
 class SvgCompa extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.svgRef = React.createRef();
   }
 
   render() {
     var x = <svg
-        ref={this.svgRef}
+        ref={this.props.svgRef}
         width={1013.333}
         height={1125.333}
         viewBox="0 0 760 844"
@@ -4511,8 +4510,6 @@ class SvgCompa extends React.Component {
         </text>
       </svg>
 
-    this.props.preparePortrait(this.svgRef)
-
     return x
   }
 }
@@ -4522,6 +4519,9 @@ export default SvgCompa;
 // change props to this.props
 // turn to component with constructor
 // pre fill it up AND THEN add 0
+
+// use effect
+// make the svg a var and retrurn it
 
 // add onload to prepare the portrait
 

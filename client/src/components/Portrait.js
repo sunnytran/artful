@@ -13,12 +13,6 @@ class Portrait extends Component {
     this.showNumber = this.showNumber.bind(this)
     this.hideNumber = this.hideNumber.bind(this)
 
-    this.state = {
-      paintedCells: []
-    }
-  }
-
-  componentDidMount() {
     const colors = this.props.colors
 
     var hexDict = {}
@@ -34,13 +28,22 @@ class Portrait extends Component {
         mixDict[key] = key
     })
 
-    this.setState({
+    this.state = {
       hexDict: hexDict,
-      mixDict: mixDict
-    })
+      mixDict: mixDict,
+      paintedCells: []
+    }
+
+    this.svgRef = React.createRef();
   }
 
-  preparePortrait(ref) {
+  componentDidMount() {
+    this.preparePortrait()
+  }
+
+  preparePortrait() {
+    var ref = this.svgRef
+
     if (!ref.current)
       return
       
@@ -181,6 +184,7 @@ class Portrait extends Component {
     return (
       <div>
         <SvgCompa
+          svgRef={this.svgRef}
           preparePortrait={this.preparePortrait}
           handlePaint={this.handlePaint}
           handleErase={this.handleErase}

@@ -4,9 +4,6 @@ move title to left of the container
 
 new portrait should clear the painting's cells
 
-number the cells
-    - using svgr
-
 scale the svg
 more svgs
 
@@ -30,3 +27,7 @@ no solect the numbers on the painting
 add another, less fancy font for text
 
 bug: when painting, click on the number makes it appear again
+
+number the cells
+    - using svgr
+
