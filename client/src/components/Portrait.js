@@ -27,7 +27,7 @@ class Portrait extends Component {
       else
         mixDict[key] = key
     })
-
+    
     this.state = {
       hexDict: hexDict,
       mixDict: mixDict,
