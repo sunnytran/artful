@@ -31,7 +31,7 @@ class Portrait extends Component {
     this.state = {
       hexDict: hexDict,
       mixDict: mixDict,
-      paintedCells: [],
+      paintedCells: {},
     }
 
     this.svgRef = React.createRef();
@@ -52,11 +52,11 @@ class Portrait extends Component {
 
     for (var i = 1; i < children.length; i += 2) {
       var pathEle = children[i]
-      if (!pathEle.attributes.trueColor)
-        pathEle.attributes.trueColor = pathEle.attributes.fill.value      
-      var hexFillColor = pathEle.attributes.trueColor
+      if (!pathEle.attributes.truecolor)
+        pathEle.setAttribute('truecolor', pathEle.attributes.fill.value)
+      var hexFillColor = pathEle.attributes.truecolor.value
       var fillColor = this.state.hexDict[hexFillColor]
-      pathEle.attributes.fill.value = '#ffffff'
+      pathEle.attributes.fill.value = this.props.colors["white"].hex
 
       var textEle = children[i].nextSibling
       textEle.attributes.display.value = 'block'
@@ -97,7 +97,7 @@ class Portrait extends Component {
     var determinedColor = hexColor
     
     var pathId = e.target.id.substr(e.target.id.indexOf("_") + 1)
-    if (currentPaletteColor === currentCellColor && this.state.paintedCells.includes(pathId))
+    if (currentPaletteColor === currentCellColor && this.state.paintedCells.hasOwnProperty(pathId))
       return
 
     if (currentPaletteColor === 'white' && currentCellColor === 'black') {
@@ -153,13 +153,16 @@ class Portrait extends Component {
       }
     }
 
-    e.target.attributes.getNamedItem('fill').value = determinedColor;
-    this.hideNumber(e, pathId)
+  e.target.attributes.getNamedItem('fill').value = determinedColor;
+  this.hideNumber(e, pathId)
 
-    if (!this.state.paintedCells.includes(pathId))
-      this.setState(prevState => ({
-        paintedCells: [...prevState.paintedCells, pathId]
-      }))
+    var tmp = this.state.paintedCells
+    tmp[pathId] = hexColor == e.target.attributes.getNamedItem('truecolor').value
+    console.log(pathId + " " + tmp[pathId])
+
+    this.setState(prevState => ({
+      paintedCells: [...prevState.paintedCells, pathId]
+    }))
   }
 
   handleErase(e) {
@@ -173,7 +176,7 @@ class Portrait extends Component {
     this.showNumber(e, id)
 
     var tmp = this.state.paintedCells
-    tmp.splice(tmp.indexOf(id), 1);
+    delete this.state.paintedCells[id]
     this.setState({ paintedCells: tmp })
   }
 
