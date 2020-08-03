@@ -12,6 +12,7 @@ class Portrait extends Component {
     this.isFilled = this.isFilled.bind(this)
     this.showNumber = this.showNumber.bind(this)
     this.hideNumber = this.hideNumber.bind(this)
+    this.verifyPainting = this.verifyPainting.bind(this)
 
     const colors = this.props.colors
 
@@ -32,6 +33,7 @@ class Portrait extends Component {
       hexDict: hexDict,
       mixDict: mixDict,
       paintedCells: {},
+      totalCells: -1
     }
 
     this.svgRef = React.createRef();
@@ -49,6 +51,7 @@ class Portrait extends Component {
       
     // start at 1 because first element is the entire outline of the portrait
     var children = ref.current.children
+    this.setState({ totalCells: (children.length - 1) / 2 })
 
     for (var i = 1; i < children.length; i += 2) {
       var pathEle = children[i]
@@ -84,6 +87,14 @@ class Portrait extends Component {
         break
       }
     }
+  }
+
+  verifyPainting() {
+    for (var i = 1; i <= Object.keys(this.state.totalCells).length; i++)
+      if (!this.state.paintedCells[i])
+        return false
+    
+    return true
   }
 
   handlePaint(e) {
@@ -153,16 +164,20 @@ class Portrait extends Component {
       }
     }
 
-  e.target.attributes.getNamedItem('fill').value = determinedColor;
-  this.hideNumber(e, pathId)
+    e.target.attributes.getNamedItem('fill').value = determinedColor;
+    this.hideNumber(e, pathId)
 
     var tmp = this.state.paintedCells
     tmp[pathId] = hexColor == e.target.attributes.getNamedItem('truecolor').value
-    console.log(pathId + " " + tmp[pathId])
 
     this.setState(prevState => ({
-      paintedCells: [...prevState.paintedCells, pathId]
-    }))
+      paintedCells: tmp
+    }), () => {
+      console.log(Object.keys(this.state.paintedCells).length + " " + this.state.totalCells)
+      if (Object.keys(this.state.paintedCells).length === this.state.totalCells && this.verifyPainting) {
+        alert("YOU DID IT!")
+      }
+    })
   }
 
   handleErase(e) {
@@ -181,7 +196,7 @@ class Portrait extends Component {
   }
 
   isFilled(id) {
-    return this.state.paintedCells.includes(id)
+    return this.state.paintedCells.hasOwnProperty(id)
   }
 
   render() {
