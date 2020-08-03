@@ -89,12 +89,14 @@ class App extends Component {
           this.state.currentPortrait ?
             <div>
               <div class="container">
-                <div style={{paddingTop: '2.5%', marginLeft: '-10%'}}>
-                  <h1 class="title" style={{marginBottom: '2px'}}>artful</h1>
-                  by <a href="https://github.com/sunnytran" target="_blank">sunnytran</a>
+                <div style={{paddingTop: '2.5%', marginLeft: '-12.5%', display: 'inline-block'}}>
+                  <h1 class="title is-1" style={{marginBottom: '2px'}}>artful</h1>
+                  <p class="is-pulled-right">color by numbers</p><br />
+                  <p class="is-pulled-right">for masterpieces</p><br />
+                  <span class="is-pulled-right"><a href="https://github.com/sunnytran" target="_blank">my github</a></span>
                 </div>
 
-                <div class="columns is-centered is-vcentered is-mobile" style={{marginTop: '-5%'}}>
+                <div class="columns is-centered is-vcentered is-mobile" style={{marginTop: '-10%'}}>
 
                   <div class="column is-narrow">
 
@@ -113,8 +115,6 @@ class App extends Component {
                     <div class="columns">
                       <div class="column">
                         <a href="#" onClick={this.handleNewPortrait}>Get a new portrait</a>
-                        &nbsp;|&nbsp;
-                        <a href="#" onClick={this.handleNewPortrait}>Download your masterpiece</a>
                         &nbsp;|&nbsp;
                         <span>Choose a color and click on a spot to paint it. Right click to erase!</span>
                       </div>

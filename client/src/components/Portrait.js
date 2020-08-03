@@ -27,11 +27,11 @@ class Portrait extends Component {
       else
         mixDict[key] = key
     })
-    
+
     this.state = {
       hexDict: hexDict,
       mixDict: mixDict,
-      paintedCells: []
+      paintedCells: [],
     }
 
     this.svgRef = React.createRef();
@@ -49,6 +49,7 @@ class Portrait extends Component {
       
     // start at 1 because first element is the entire outline of the portrait
     var children = ref.current.children
+
     for (var i = 1; i < children.length; i += 2) {
       var pathEle = children[i]
       if (!pathEle.attributes.trueColor)

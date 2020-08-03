@@ -1,13 +1,13 @@
 working on
 
-move title to left of the container
-
 new portrait should clear the painting's cells
 
 scale the svg
 more svgs
 
 scramble up facts every time
+
+fade into the real painting when finished
 
 DOWNLOAD FEATURE!
 
@@ -27,6 +27,8 @@ no solect the numbers on the painting
 add another, less fancy font for text
 
 bug: when painting, click on the number makes it appear again
+
+move title to left of the container
 
 number the cells
     - using svgr
