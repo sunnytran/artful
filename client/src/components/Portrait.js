@@ -41,14 +41,14 @@ class Portrait extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/portraits/compa')
+    // fetch('/api/portraits/compa')
 
     this.preparePortrait()
   }
 
   preparePortrait() {
     var ref = this.svgRef
-
+    
     if (!ref.current)
       return
       
@@ -56,6 +56,7 @@ class Portrait extends Component {
     var children = ref.current.children
     this.setState({ totalCells: (children.length - 1) / 2 })
 
+    
     for (var i = 1; i < children.length; i += 2) {
       var pathEle = children[i]
       if (!pathEle.attributes.truecolor)
@@ -63,10 +64,11 @@ class Portrait extends Component {
       var hexFillColor = pathEle.attributes.truecolor.value
       var fillColor = this.state.hexDict[hexFillColor]
       pathEle.attributes.fill.value = this.props.colors["white"].hex
-
+      
       var textEle = children[i].nextSibling
       textEle.attributes.display.value = 'block'
-      textEle.children[0].innerHTML = this.props.portrait.key[fillColor]
+      if (textEle.children[0])
+        textEle.children[0].innerHTML = this.props.portrait.key[fillColor]
     }
   }
 

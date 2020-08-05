@@ -4521,4 +4521,8 @@ export default SvgCompa;
 
 // make the svg a var and retrurn it
 
+// add ref={this.props.svgRef}
+
 // adding onclicks and oncontextmenus
+
+// add  display="none"
