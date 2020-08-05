@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
-import SvgCompa from './SvgCompa'
+// import SvgCompa from './SvgCompa'
+import Adam from './SvgAdam'
 
 class Portrait extends Component {
   constructor(props) {
@@ -40,6 +41,8 @@ class Portrait extends Component {
   }
 
   componentDidMount() {
+    fetch('/api/portraits/compa')
+
     this.preparePortrait()
   }
 
@@ -202,13 +205,13 @@ class Portrait extends Component {
   render() {
     return (
       <div>
-        <SvgCompa
+        <Adam
           svgRef={this.svgRef}
           preparePortrait={this.preparePortrait}
           handlePaint={this.handlePaint}
           handleErase={this.handleErase}
           onContextMenu={(e)=> e.preventDefault()}>
-        </SvgCompa>
+        </Adam>
       </div>
     );
   }

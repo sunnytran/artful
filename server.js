@@ -1,5 +1,6 @@
 const express = require('express');
-const fs = require("fs");
+const fs = require('fs');
+const path = require('path')
 
 const app = express();
 
@@ -126,7 +127,7 @@ app.get('/api/colors', (req, res) => {
   res.json(colors)
 })
 
-app.get('/api/portraits', (req, res) => {
+app.get('/api/portraits-data', (req, res) => {
   filePrefix = __dirname + '/data/'
 
   portraits = [
@@ -154,6 +155,12 @@ app.get('/api/portraits', (req, res) => {
     portraits[i].file = fs.readFileSync(filePrefix + portraits[i].file, "utf8")
 
   res.json(portraits)
+});
+
+app.get('/api/portraits/:name', (req, res) => {
+  console.log(req.params.name)
+
+  fs.readFile(path.resolve)
 });
 
 const port = 5000;

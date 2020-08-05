@@ -4518,12 +4518,7 @@ export default SvgCompa;
 
 // change props to this.props
 // turn to component with constructor
-// pre fill it up AND THEN add 0
 
-// use effect
 // make the svg a var and retrurn it
 
-// add onload to prepare the portrait
-
 // adding onclicks and oncontextmenus
-// adding display=none

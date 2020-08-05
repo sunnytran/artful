@@ -34,7 +34,7 @@ class App extends Component {
       })
     })
 
-    fetch('/api/portraits')
+    fetch('/api/portraits-data')
     .then(res => res.json())
     .then(res => {
       this.setState({
@@ -89,7 +89,7 @@ class App extends Component {
           this.state.currentPortrait ?
             <div>
               <div class="container">
-                <div style={{paddingTop: '1.75%', marginLeft: '-8%', display: 'inline-block', position: 'fixed', top: 0}}>
+                <div style={{paddingTop: '1.75%', marginLeft: '-8%', display: 'inline-block', position: 'fixed', top: 0, overflow: 'break-word'}}>
                   <h1 class="title is-1" style={{marginBottom: '2px'}}>artful</h1>
                   <p class="is-pulled-right">color by numbers</p><br />
                   <p class="is-pulled-right">for masterpieces</p><br />
