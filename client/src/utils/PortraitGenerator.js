@@ -1,13 +1,7 @@
 
+import ArrayShuffler from '../utils/ArrayShuffler';
+
 export default class PortraitGenerator {
-    static shuffle(array) {
-        let i = array.length;
-        while (i--) {
-          const ri = Math.floor(Math.random() * (i + 1));
-          [array[i], array[ri]] = [array[ri], array[i]];
-        }
-        return array;
-    }
 
     static generatePortrait = (colors, portraits, currentPortrait) => {
       var portrait = portraits[Math.floor(Math.random() * portraits.length)]
@@ -19,7 +13,7 @@ export default class PortraitGenerator {
       portrait = JSON.parse(JSON.stringify(portrait))
 
       var colorsMap = {}
-      var shuffledColors = PortraitGenerator.shuffle(portrait.colors)
+      var shuffledColors = ArrayShuffler.shuffle(portrait.colors)
       for (var i = 0; i < shuffledColors.length; i++)
         colorsMap[shuffledColors[i]] = (i+1)
   
@@ -36,13 +30,13 @@ export default class PortraitGenerator {
         const itsComponentColors = colors[currentColor].mixOf
         if (itsComponentColors && Math.floor(Math.random() * 5 + 1) === 5) {
           for (var j = 0; j < itsComponentColors.length; j++) {
-            if (!portrait.colors.includes(itsComponentColors[j]))
+            if (!portrait.colors.includes(itsComponentColors[j]) && !newColors.includes(itsComponentColors[j]))
               newColors.push(itsComponentColors[j])
           }
         } else
           newColors.push(currentColor)
       }
-      newColors = PortraitGenerator.shuffle(newColors)
+      newColors = ArrayShuffler.shuffle(newColors)
       portrait.palette = newColors
   
       portrait.key = colorsMap

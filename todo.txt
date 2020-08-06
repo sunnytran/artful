@@ -1,21 +1,19 @@
 working on
 
+header overflow
+
 lazy loading
 
-new portrait should clear the painting's cells
-
-scale the svg
 amgoth
-
-scramble up facts every time
-
+scale the svg
 fade into the real painting when finished
-
-DOWNLOAD FEATURE!
 
 ==================================================
 
 done
+
+bug with double brown for adam?
+
 fetch portrait no dupes
 global colors???
 color option generation
@@ -36,3 +34,8 @@ number the cells
     - using svgr
 
 persistent header
+
+new portrait should clear the painting's cells
+
+
+scramble up facts every time
