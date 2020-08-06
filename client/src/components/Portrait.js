@@ -32,6 +32,7 @@ class Portrait extends Component {
     })
 
     this.state = {
+      portrait: React.lazy(() => import('./' + this.props.portrait.file)),
       hexDict: hexDict,
       mixDict: mixDict,
       paintedCells: {},
@@ -44,17 +45,17 @@ class Portrait extends Component {
   componentDidMount() {
     this.preparePortrait()
   }
-
+  
   preparePortrait() {
     var ref = this.svgRef
     
+    console.log(ref)
     if (!ref.current)
       return
-      
+
     // start at 1 because first element is the entire outline of the portrait
     var children = ref.current.children
     this.setState({ totalCells: (children.length - 1) / 2 })
-
     
     for (var i = 1; i < children.length; i += 2) {
       var pathEle = children[i]
@@ -204,33 +205,25 @@ class Portrait extends Component {
   }
 
   render() {
-    const Portrait = React.lazy(() => import('./' + this.props.portrait.file))
-
-    // if (this.props.portrait.file === 'SvgAdam.js')
-    //   portrait = <Adam
-    //     svgRef={this.svgRef}
-    //     preparePortrait={this.preparePortrait}
-    //     handlePaint={this.handlePaint}
-    //     handleErase={this.handleErase}
-    //     onContextMenu={(e)=> e.preventDefault()} />
-    // else if (this.props.portrait.file === 'SvgCompa.js')
-    //   portrait = <Compa
-    //     svgRef={this.svgRef}
-    //     preparePortrait={this.preparePortrait}
-    //     handlePaint={this.handlePaint}
-    //     handleErase={this.handleErase}
-    //     onContextMenu={(e)=> e.preventDefault()} />
+    const Portrait = this.state.portrait
     
+    const Test = React.forwardRef((props, ref) => {
+      return <Portrait 
+        ref={ref} {...props}
+        handlePaint={this.handlePaint}
+        handleErase={this.handleErase}
+        onContextMenu={(e)=> e.preventDefault()} />
+    })
 
     return (
       <div>
         <Suspense fallback={<div>Loading...</div>}>
-          <Portrait
+          {/* <Portrait
             svgRef={this.svgRef}
-            preparePortrait={this.preparePortrait}
             handlePaint={this.handlePaint}
             handleErase={this.handleErase}
-            onContextMenu={(e)=> e.preventDefault()} />
+            onContextMenu={(e)=> e.preventDefault()} /> */}
+          <Test ref={this.svgRef} />
         </Suspense>
       </div>
     );
@@ -238,3 +231,19 @@ class Portrait extends Component {
 }
 
 export default Portrait;
+
+// const Test = React.forwardRef((props, ref) => (
+//   <Portrait
+//     svgRef={ref} {...props}
+//     handlePaint={this.handlePaint}
+//     handleErase={this.handleErase}
+//     onContextMenu={(e)=> e.preventDefault()} />
+// ))
+
+// return (
+//   <div>
+//     <Suspense fallback={<div>Loading...</div>}>
+//       <Test ref={this.svgRef} />
+//     </Suspense>
+//   </div>
+// );

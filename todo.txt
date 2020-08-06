@@ -1,5 +1,8 @@
 working on
 
+for the suspense render the blank svg
+cdn for the js files
+
 header overflow
 
 amgoth
