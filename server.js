@@ -127,14 +127,14 @@ app.get('/api/colors', (req, res) => {
   res.json(colors)
 })
 
-app.get('/api/portraits-data', (req, res) => {
+app.get('/api/portraits', (req, res) => {
   filePrefix = __dirname + '/data/'
 
   portraits = [
     {
       name: 'Composition A',
       artist: 'Piet Mondrian',
-      file: 'compa.svg',
+      file: 'SvgCompa.js',
       colors: [
         'black',
         'yellow',
@@ -149,18 +149,28 @@ app.get('/api/portraits-data', (req, res) => {
         "Mondrian was a qualified art teacher"
       ]
     },
+    {
+      name: 'Creation of Adam',
+      artist: 'Michelangelo',
+      file: 'SvgAdam.js',
+      colors: [
+        'light blue',
+        'light brown',
+        'cream',
+        'dark brown',
+        'peach',
+        'pink',
+        'yellow'
+      ],
+      facts: [
+        "Michelangelo painted God last because he wanted to make him look perfect",
+        "Michelangelo didn't see the entire painting for four years until he was done",
+        "Michaelangelo dissected a lot of bodies so he could know how to paint bodies perfectly"
+      ]
+    }
   ]
 
-  for (var i = 0; i < portraits.length; i++)
-    portraits[i].file = fs.readFileSync(filePrefix + portraits[i].file, "utf8")
-
   res.json(portraits)
-});
-
-app.get('/api/portraits/:name', (req, res) => {
-  console.log(req.params.name)
-
-  fs.readFile(path.resolve)
 });
 
 const port = 5000;

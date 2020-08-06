@@ -34,7 +34,7 @@ class App extends Component {
       })
     })
 
-    fetch('/api/portraits-data')
+    fetch('/api/portraits')
     .then(res => res.json())
     .then(res => {
       this.setState({

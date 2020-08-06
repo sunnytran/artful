@@ -1,7 +1,9 @@
 
 import React, { Component } from 'react';
-// import SvgCompa from './SvgCompa'
+
+import Compa from './SvgCompa'
 import Adam from './SvgAdam'
+import SvgCompa from './SvgCompa';
 
 class Portrait extends Component {
   constructor(props) {
@@ -205,15 +207,26 @@ class Portrait extends Component {
   }
 
   render() {
+    var portrait = null
+    if (this.props.portrait.file === 'SvgAdam.js')
+      portrait = <Adam
+        svgRef={this.svgRef}
+        preparePortrait={this.preparePortrait}
+        handlePaint={this.handlePaint}
+        handleErase={this.handleErase}
+        onContextMenu={(e)=> e.preventDefault()} />
+    else if (this.props.portrailt.file === 'SvgCompa.js')
+      portrait = <SvgCompa
+        svgRef={this.svgRef}
+        preparePortrait={this.preparePortrait}
+        handlePaint={this.handlePaint}
+        handleErase={this.handleErase}
+        onContextMenu={(e)=> e.preventDefault()} />
+    
+
     return (
       <div>
-        <Adam
-          svgRef={this.svgRef}
-          preparePortrait={this.preparePortrait}
-          handlePaint={this.handlePaint}
-          handleErase={this.handleErase}
-          onContextMenu={(e)=> e.preventDefault()}>
-        </Adam>
+        {portrait}
       </div>
     );
   }

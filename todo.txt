@@ -1,9 +1,11 @@
 working on
 
+lazy loading
+
 new portrait should clear the painting's cells
 
 scale the svg
-more svgs
+amgoth
 
 scramble up facts every time
 
