@@ -193,21 +193,4 @@ app.listen(port, () => `Server running on port ${port}`);
 //     'peach',
 //     'green'
 //   ]
-// },
-// {
-//   name: 'Girl with a Pearl Earring',
-//   artist: 'Johannes Vermeer',
-//   file: 'girlpearl.svg',
-//   colors: [
-//     'cream',
-//     'light blue',
-//     'dark blue',
-//     'yellow',
-//     'peach',
-//     'pink',
-//     'black',
-//     'light brown',
-//     'dark brown',
-//     'gray'
-//   ]
 // }

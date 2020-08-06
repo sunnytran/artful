@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-class SvgCompa extends React.Component {
+class Compa extends React.Component {
 
   constructor(props) {
     super(props);
@@ -4514,7 +4514,7 @@ class SvgCompa extends React.Component {
   }
 }
 
-export default SvgCompa;
+export default Compa;
 
 // change props to this.props
 // turn to component with constructor

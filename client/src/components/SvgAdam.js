@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-class SvgAdam extends React.Component {
+class Adam extends React.Component {
 
   constructor(props) {
     super(props);
@@ -18275,5 +18275,6 @@ class SvgAdam extends React.Component {
 
 
 }
-export default SvgAdam;
+
+export default Adam;
 

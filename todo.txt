@@ -2,8 +2,6 @@ working on
 
 header overflow
 
-lazy loading
-
 amgoth
 scale the svg
 fade into the real painting when finished

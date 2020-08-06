@@ -1,8 +1,8 @@
 
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 
-import Adam from './SvgAdam'
-import SvgCompa from './SvgCompa';
+// import Adam from './SvgAdam'
+// import Compa from './SvgCompa';
 
 class Portrait extends Component {
   constructor(props) {
@@ -204,26 +204,34 @@ class Portrait extends Component {
   }
 
   render() {
-    var portrait = null
-    if (this.props.portrait.file === 'SvgAdam.js')
-      portrait = <Adam
-        svgRef={this.svgRef}
-        preparePortrait={this.preparePortrait}
-        handlePaint={this.handlePaint}
-        handleErase={this.handleErase}
-        onContextMenu={(e)=> e.preventDefault()} />
-    else if (this.props.portrait.file === 'SvgCompa.js')
-      portrait = <SvgCompa
-        svgRef={this.svgRef}
-        preparePortrait={this.preparePortrait}
-        handlePaint={this.handlePaint}
-        handleErase={this.handleErase}
-        onContextMenu={(e)=> e.preventDefault()} />
+    const Portrait = React.lazy(() => import('./' + this.props.portrait.file))
+
+    // if (this.props.portrait.file === 'SvgAdam.js')
+    //   portrait = <Adam
+    //     svgRef={this.svgRef}
+    //     preparePortrait={this.preparePortrait}
+    //     handlePaint={this.handlePaint}
+    //     handleErase={this.handleErase}
+    //     onContextMenu={(e)=> e.preventDefault()} />
+    // else if (this.props.portrait.file === 'SvgCompa.js')
+    //   portrait = <Compa
+    //     svgRef={this.svgRef}
+    //     preparePortrait={this.preparePortrait}
+    //     handlePaint={this.handlePaint}
+    //     handleErase={this.handleErase}
+    //     onContextMenu={(e)=> e.preventDefault()} />
     
 
     return (
       <div>
-        {portrait}
+        <Suspense fallback={<div>Loading...</div>}>
+          <Portrait
+            svgRef={this.svgRef}
+            preparePortrait={this.preparePortrait}
+            handlePaint={this.handlePaint}
+            handleErase={this.handleErase}
+            onContextMenu={(e)=> e.preventDefault()} />
+        </Suspense>
       </div>
     );
   }
