@@ -33,7 +33,7 @@ export default class PortraitGenerator {
             if (!portrait.colors.includes(itsComponentColors[j]) && !newColors.includes(itsComponentColors[j]))
               newColors.push(itsComponentColors[j])
           }
-        } else
+        } else if (!newColors.includes(currentColor))
           newColors.push(currentColor)
       }
       newColors = ArrayShuffler.shuffle(newColors)
