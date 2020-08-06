@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 
-import Compa from './SvgCompa'
 import Adam from './SvgAdam'
 import SvgCompa from './SvgCompa';
 
@@ -43,8 +42,6 @@ class Portrait extends Component {
   }
 
   componentDidMount() {
-    // fetch('/api/portraits/compa')
-
     this.preparePortrait()
   }
 
@@ -215,7 +212,7 @@ class Portrait extends Component {
         handlePaint={this.handlePaint}
         handleErase={this.handleErase}
         onContextMenu={(e)=> e.preventDefault()} />
-    else if (this.props.portrailt.file === 'SvgCompa.js')
+    else if (this.props.portrait.file === 'SvgCompa.js')
       portrait = <SvgCompa
         svgRef={this.svgRef}
         preparePortrait={this.preparePortrait}

@@ -110,7 +110,11 @@ class App extends Component {
                       <Factoid facts={this.state.currentPortrait.facts} />
                     </span>
                     
-                    <Portrait currentColor={this.state.currentColor} colors={this.state.colors} portrait={this.state.currentPortrait} />
+                    <Portrait
+                      key = {this.state.currentPortrait.name}
+                      currentColor={this.state.currentColor}
+                      colors={this.state.colors}
+                      portrait={this.state.currentPortrait} />
 
                     <div class="columns">
                       <div class="column">
