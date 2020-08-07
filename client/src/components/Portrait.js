@@ -5,6 +5,10 @@ import Adam from './svgs/SvgAdam'
 import Compa from './svgs/SvgCompa';
 import Amgoth from './svgs/SvgAmgoth';
 
+import AdamJpg from './adam.jpg';
+import CompaJpg from './compa.jpg';
+import AmgothJpg from './amgoth.jpg';
+
 class Portrait extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +41,8 @@ class Portrait extends Component {
       hexDict: hexDict,
       mixDict: mixDict,
       paintedCells: {},
-      totalCells: -1
+      totalCells: -1,
+      isFinshed: false
     }
 
     this.svgRef = React.createRef();
@@ -86,6 +91,7 @@ class Portrait extends Component {
 
   showNumber(e, id) {
     var arr = e.target.parentElement.children
+
     for (var i = 0; i < arr.length; i++) {
       if (arr[i].id === "text_" + id) {
         if (arr[i].getAttribute('display') === 'none')
@@ -181,7 +187,9 @@ class Portrait extends Component {
     }), () => {
       console.log(Object.keys(this.state.paintedCells).length + " " + this.state.totalCells)
       if (Object.keys(this.state.paintedCells).length === this.state.totalCells && this.verifyPainting) {
-        alert("YOU DID IT!")
+        this.setState({
+          isFinshed: true
+        })
       }
     })
   }
@@ -207,19 +215,34 @@ class Portrait extends Component {
 
   render() {
     var Portraits = {
-      'SvgCompa.js': Compa,
-      'SvgAdam.js': Adam,
-      'SvgAmgoth.js': Amgoth
+      'SvgCompa.js': {
+        js: Compa,
+        jpg: CompaJpg
+      },
+      'SvgAdam.js': {
+        js: Adam,
+        jpg: AdamJpg
+      },
+      'SvgAmgoth.js': {
+        js: Amgoth,
+        jpg: AmgothJpg
+      }
     }
-    var Portrait = Portraits[this.props.portrait.file]
+    var Portrait = Portraits[this.props.portrait.file].js
+    var Image = Portraits[this.props.portrait.file].jpg
 
     return (
       <div>
-        <Portrait
-          svgRef={this.svgRef} {...this.props}
-          handlePaint={this.handlePaint}
-          handleErase={this.handleErase}
-          onContextMenu={(e)=> e.preventDefault()} />
+        {
+          !this.state.isFinshed ?
+            <Portrait
+              svgRef={this.svgRef} {...this.props}
+              handlePaint={this.handlePaint}
+              handleErase={this.handleErase}
+              onContextMenu={(e)=> e.preventDefault()} /> :
+            <img src={Image} />
+        }
+
       </div>
     );
   }

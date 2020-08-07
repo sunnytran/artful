@@ -1,5 +1,7 @@
 working on
 
+facts don't update whatn you click new picture
+
 header overflow
 
 psql

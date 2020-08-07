@@ -89,7 +89,7 @@ class App extends Component {
           this.state.currentPortrait ?
             <div>
               <div class="container">
-                <div style={{paddingTop: '1.75%', marginLeft: '-8%', display: 'inline-block', position: 'fixed', top: 0, clear: 'left'}}>
+                <div style={{paddingTop: '1.75%', marginLeft: '-8%', display: 'inline-block', position: 'fixed'}}>
                   <h1 class="title is-1" style={{marginBottom: '2px'}}>artful</h1>
                   <p class="is-pulled-right">color by numbers</p><br />
                   <p class="is-pulled-right">for masterpieces</p><br />
@@ -107,11 +107,11 @@ class App extends Component {
                       by {this.state.currentPortrait.artist}
                     </span>
                     <span class="is-pulled-right">
-                      <Factoid facts={this.state.currentPortrait.facts} />
+                      <Factoid key={this.state.currentPortrait.facts} facts={this.state.currentPortrait.facts} />
                     </span>
                     
                     <Portrait
-                      key = {this.state.currentPortrait.name}
+                      key={this.state.currentPortrait.name}
                       currentColor={this.state.currentColor}
                       colors={this.state.colors}
                       portrait={this.state.currentPortrait} />
