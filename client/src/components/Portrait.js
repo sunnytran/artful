@@ -1,8 +1,9 @@
 
 import React, { Component, Suspense } from 'react';
 
-import Adam from './SvgAdam'
-import Compa from './SvgCompa';
+import Adam from './svgs/SvgAdam'
+import Compa from './svgs/SvgCompa';
+import Amgoth from './svgs/SvgAmgoth';
 
 class Portrait extends Component {
   constructor(props) {
@@ -207,7 +208,8 @@ class Portrait extends Component {
   render() {
     var Portraits = {
       'SvgCompa.js': Compa,
-      'SvgAdam.js': Adam
+      'SvgAdam.js': Adam,
+      'SvgAmgoth.js': Amgoth
     }
     var Portrait = Portraits[this.props.portrait.file]
 

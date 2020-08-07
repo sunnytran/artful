@@ -4,8 +4,6 @@ header overflow
 
 psql
 
-amgoth
-scale the svg
 fade into the real painting when finished
 
 ==================================================
@@ -39,3 +37,5 @@ new portrait should clear the painting's cells
 
 
 scramble up facts every time
+
+amgoth

@@ -167,6 +167,28 @@ app.get('/api/portraits', (req, res) => {
         "Michelangelo didn't see the entire painting for four years until he was done",
         "Michaelangelo dissected a lot of bodies so he could know how to paint bodies perfectly"
       ]
+    },
+    {
+      name: 'American Gothic',
+      artist: 'Grant Wood',
+      file: 'SvgAmgoth.js',
+      colors: [
+        'black',
+        'cream',
+        'light gray',
+        'dark gray',
+        'red',
+        'light brown',
+        'dark brown',
+        'light blue',
+        'peach',
+        'green'
+      ],
+      facts: [
+        "The model for the farmer was a dentist",
+        "The female model was going to be Wood's mother, but his sister sat in instead",
+        "The painting won a bronze medal and a $300 prize"
+      ]
     }
   ]
 
@@ -176,21 +198,3 @@ app.get('/api/portraits', (req, res) => {
 const port = 5000;
 
 app.listen(port, () => `Server running on port ${port}`);
-
-// {
-//   name: 'American Gothic',
-//   artist: 'Grant Wood',
-//   file: 'amgoth.svg',
-//   colors: [
-//     'black',
-//     'cream',
-//     'light gray',
-//     'dark gray',
-//     'red',
-//     'light brown',
-//     'dark brown',
-//     'light blue',
-//     'peach',
-//     'green'
-//   ]
-// }
