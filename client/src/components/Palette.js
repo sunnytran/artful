@@ -13,6 +13,9 @@ class Palette extends Component {
   }
 
   handleClick(i) {
+    if (this.props.isFinished())
+      return
+
     this.setState({
       currentColor: i
     })

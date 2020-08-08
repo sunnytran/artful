@@ -44,7 +44,6 @@ class Portrait extends Component {
       mixDict: mixDict,
       paintedCells: {},
       totalCells: -1,
-      isFinshed: false
     }
 
     this.svgRef = React.createRef();
@@ -112,7 +111,7 @@ class Portrait extends Component {
   }
 
   handlePaint(e) {
-    if (this.state.isFinshed)
+    if (this.props.isFinished())
       return
 
     if(!this.props.currentColor || !e.target.attributes.getNamedItem('fill'))
@@ -192,15 +191,13 @@ class Portrait extends Component {
     }), () => {
       console.log(Object.keys(this.state.paintedCells).length + " " + this.state.totalCells)
       if (Object.keys(this.state.paintedCells).length === this.state.totalCells && this.verifyPainting) {
-        this.setState({
-          isFinshed: true
-        })
+        this.props.finish()
       }
     })
   }
 
   handleErase(e) {
-    if (this.state.isFinshed)
+    if (this.props.isFinished())
       return
 
     var id = e.target.id.substr(e.target.id.indexOf("_") + 1)
@@ -252,18 +249,8 @@ class Portrait extends Component {
     return (
       <div>
         <img src={Image} alt="Placeholder image" />
-
-        <PortraitStyled>
-          <Portrait
-            class="is-overlay"
-            svgRef={this.svgRef} {...this.props}
-            handlePaint={this.handlePaint}
-            handleErase={this.handleErase}
-            onContextMenu={(e)=> e.preventDefault()} />
-        </PortraitStyled>
-
-        {/* {
-          this.state.isFinshed ?
+        {
+          this.props.isFinished() ?
             <PortraitStyled>
               <Portrait
                 class="is-overlay"
@@ -278,8 +265,7 @@ class Portrait extends Component {
             handlePaint={this.handlePaint}
             handleErase={this.handleErase}
             onContextMenu={(e)=> e.preventDefault()} />
-        } */}
-
+        }
       </div>
     );
   }

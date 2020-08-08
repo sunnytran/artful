@@ -17,9 +17,12 @@ class App extends Component {
       colors: {},
       portraits: [],
       currentPortrait: null,
-      currentColor: null
+      currentColor: null,
+      finished: false
     }
 
+    this.finish = this.finish.bind(this)
+    this.isFinished = this.isFinished.bind(this)
     this.handleNewPortrait = this.handleNewPortrait.bind(this)
     this.handleNewColor = this.handleNewColor.bind(this)
     this.renderKey = this.renderKey.bind(this)
@@ -46,10 +49,21 @@ class App extends Component {
     })
   }
 
+  finish() {
+    this.setState({
+      finished: true
+    })
+  }
+
+  isFinished() {
+    return this.state.finished
+  }
+
   getNewPortrait() {
     var portrait = PortraitGenerator.generatePortrait(this.state.colors, this.state.portraits, this.state.currentPortrait)
     this.setState({
-      currentPortrait: portrait
+      currentPortrait: portrait,
+      finished: false
     })
   }
 
@@ -88,13 +102,6 @@ class App extends Component {
         {
           this.state.currentPortrait ?
             <div>
-            <Portrait
-              key={this.state.currentPortrait.name}
-              currentColor={this.state.currentColor}
-              colors={this.state.colors}
-              portrait={this.state.currentPortrait} />
-
-
               <div class="container">
                 <div style={{paddingTop: '1.75%', marginLeft: '-8%', display: 'inline-block', position: 'fixed'}}>
                   <h1 class="title is-1" style={{marginBottom: '2px'}}>artful</h1>
@@ -117,11 +124,13 @@ class App extends Component {
                       <Factoid key={this.state.currentPortrait.facts} facts={this.state.currentPortrait.facts} />
                     </span>
                     
-                    {/* <Portrait
+                    <Portrait
                       key={this.state.currentPortrait.name}
                       currentColor={this.state.currentColor}
                       colors={this.state.colors}
-                      portrait={this.state.currentPortrait} /> */}
+                      portrait={this.state.currentPortrait} 
+                      finish={this.finish} 
+                      isFinished={this.isFinished} />
 
                     <div class="columns">
                       <div class="column">
@@ -136,7 +145,7 @@ class App extends Component {
                         { this.renderKey() }
                       </div>
                       <div class="column is-half">
-                        <Palette portrait={this.state.currentPortrait} colors={this.state.colors} handleClick={this.handleNewColor} />
+                        <Palette portrait={this.state.currentPortrait} colors={this.state.colors} handleClick={this.handleNewColor} isFinished={this.isFinished} />
                       </div>
                     </div>
 
@@ -152,3 +161,11 @@ class App extends Component {
 }
 
 export default App;
+
+{/* <Portrait
+key={this.state.currentPortrait.name}
+currentColor={this.state.currentColor}
+colors={this.state.colors}
+portrait={this.state.currentPortrait} 
+finish={this.finish} 
+isFinished={this.isFinished} /> */}
