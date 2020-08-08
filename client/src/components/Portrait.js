@@ -1,6 +1,8 @@
 
 import React, { Component, Suspense } from 'react';
 
+import styled, { keyframes } from 'styled-components'
+
 import Adam from './svgs/SvgAdam'
 import Compa from './svgs/SvgCompa';
 import Amgoth from './svgs/SvgAmgoth';
@@ -110,6 +112,9 @@ class Portrait extends Component {
   }
 
   handlePaint(e) {
+    if (this.state.isFinshed)
+      return
+
     if(!this.props.currentColor || !e.target.attributes.getNamedItem('fill'))
       return
 
@@ -195,6 +200,9 @@ class Portrait extends Component {
   }
 
   handleErase(e) {
+    if (this.state.isFinshed)
+      return
+
     var id = e.target.id.substr(e.target.id.indexOf("_") + 1)
 
     if (!e.target.attributes.getNamedItem('fill'))
@@ -231,18 +239,29 @@ class Portrait extends Component {
     var Portrait = Portraits[this.props.portrait.file].js
     var Image = Portraits[this.props.portrait.file].jpg
 
+    const Fade = keyframes`
+      0% { opacity: 1; }
+      20% { opacity: 0.9; }
+      40% { opacity: 0.5; }
+      60% { opacity: 0.3; }
+      80% { opacity: 0; }
+      100% { opacity: 0; }
+    `
+    const PortraitStyled = styled.div`
+      animation: ${Fade} 2s linear infinite;
+    `
+
     return (
       <div>
-        {
-          !this.state.isFinshed ?
-            <Portrait
-              svgRef={this.svgRef} {...this.props}
-              handlePaint={this.handlePaint}
-              handleErase={this.handleErase}
-              onContextMenu={(e)=> e.preventDefault()} /> :
-            <img src={Image} />
-        }
-
+        <img src={Image} alt="Placeholder image" />
+        <PortraitStyled>
+          <Portrait
+            class="is-overlay"
+            svgRef={this.svgRef} {...this.props}
+            handlePaint={this.handlePaint}
+            handleErase={this.handleErase}
+            onContextMenu={(e)=> e.preventDefault()} />
+        </PortraitStyled>
       </div>
     );
   }

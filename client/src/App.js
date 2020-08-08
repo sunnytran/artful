@@ -88,6 +88,13 @@ class App extends Component {
         {
           this.state.currentPortrait ?
             <div>
+            <Portrait
+              key={this.state.currentPortrait.name}
+              currentColor={this.state.currentColor}
+              colors={this.state.colors}
+              portrait={this.state.currentPortrait} />
+
+
               <div class="container">
                 <div style={{paddingTop: '1.75%', marginLeft: '-8%', display: 'inline-block', position: 'fixed'}}>
                   <h1 class="title is-1" style={{marginBottom: '2px'}}>artful</h1>
@@ -110,11 +117,11 @@ class App extends Component {
                       <Factoid key={this.state.currentPortrait.facts} facts={this.state.currentPortrait.facts} />
                     </span>
                     
-                    <Portrait
+                    {/* <Portrait
                       key={this.state.currentPortrait.name}
                       currentColor={this.state.currentColor}
                       colors={this.state.colors}
-                      portrait={this.state.currentPortrait} />
+                      portrait={this.state.currentPortrait} /> */}
 
                     <div class="columns">
                       <div class="column">

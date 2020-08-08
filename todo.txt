@@ -1,11 +1,10 @@
 working on
 
-facts don't update whatn you click new picture
+adam is off
 
 header overflow
 
 psql
-
 fade into the real painting when finished
 
 ==================================================
@@ -13,6 +12,8 @@ fade into the real painting when finished
 done
 
 bug with double brown for adam?
+
+facts don't update whatn you click new picture
 
 fetch portrait no dupes
 global colors???
