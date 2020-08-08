@@ -1,11 +1,15 @@
 working on
 
 adam is off
+amgoth eyes
+
+tooltips
 
 header overflow
 
 psql
 fade into the real painting when finished
+
 
 ==================================================
 

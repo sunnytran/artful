@@ -240,20 +240,19 @@ class Portrait extends Component {
     var Image = Portraits[this.props.portrait.file].jpg
 
     const Fade = keyframes`
-      0% { opacity: 1; }
-      20% { opacity: 0.9; }
-      40% { opacity: 0.5; }
-      60% { opacity: 0.3; }
-      80% { opacity: 0; }
-      100% { opacity: 0; }
+      from { opacity: 1; }
+      to { opacity: 0; }
     `
     const PortraitStyled = styled.div`
       animation: ${Fade} 2s linear infinite;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
     `
 
     return (
       <div>
         <img src={Image} alt="Placeholder image" />
+
         <PortraitStyled>
           <Portrait
             class="is-overlay"
@@ -262,6 +261,25 @@ class Portrait extends Component {
             handleErase={this.handleErase}
             onContextMenu={(e)=> e.preventDefault()} />
         </PortraitStyled>
+
+        {/* {
+          this.state.isFinshed ?
+            <PortraitStyled>
+              <Portrait
+                class="is-overlay"
+                svgRef={this.svgRef} {...this.props}
+                handlePaint={this.handlePaint}
+                handleErase={this.handleErase}
+                onContextMenu={(e)=> e.preventDefault()} />
+            </PortraitStyled> :
+          <Portrait
+            class="is-overlay"
+            svgRef={this.svgRef} {...this.props}
+            handlePaint={this.handlePaint}
+            handleErase={this.handleErase}
+            onContextMenu={(e)=> e.preventDefault()} />
+        } */}
+
       </div>
     );
   }
