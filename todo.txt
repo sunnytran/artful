@@ -5,13 +5,13 @@ fixed header
 psql
 put pics in db
 
-tooltips
-
 
 
 ==================================================
 
 done
+
+tooltips
 
 header overflow
 
