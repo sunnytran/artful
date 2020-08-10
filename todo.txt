@@ -1,11 +1,10 @@
 working on
 
+fixed header
 
 psql
 
 adam is off
-amgoth eyes
-gaps of alpha in compa
 
 tooltips
 
@@ -55,3 +54,6 @@ amgoth
 fade into the real painting when finished
 
     - amgoth red bug???
+
+amgoth eyes
+gaps of alpha in compa

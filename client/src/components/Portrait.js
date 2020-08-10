@@ -248,7 +248,8 @@ class Portrait extends Component {
 
     return (
       <div style={{position:'relative', display:'inline-block'}}>
-        <img src={Image} alt="Placeholder image" style={{display:'block', height:'auto'}}/>
+        <img src={Image} alt="Placeholder image"
+          style={{visibility: this.props.isFinished() ? '' : 'hidden', height:'auto'}}/>
         {
           this.props.isFinished() ?
             <PortraitStyled>
