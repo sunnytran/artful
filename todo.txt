@@ -3,8 +3,7 @@ working on
 fixed header
 
 psql
-
-adam is off
+put pics in db
 
 tooltips
 
@@ -16,6 +15,7 @@ done
 
 header overflow
 
+adam is off
 
 overlay correctly
 
