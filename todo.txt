@@ -1,19 +1,24 @@
 working on
 
+
+psql
+
 adam is off
 amgoth eyes
+gaps of alpha in compa
 
 tooltips
 
-header overflow
-
-psql
-fade into the real painting when finished
 
 
 ==================================================
 
 done
+
+header overflow
+
+
+overlay correctly
 
 bug with double brown for adam?
 
@@ -46,3 +51,7 @@ new portrait should clear the painting's cells
 scramble up facts every time
 
 amgoth
+
+fade into the real painting when finished
+
+    - amgoth red bug???

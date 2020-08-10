@@ -247,20 +247,20 @@ class Portrait extends Component {
     `
 
     return (
-      <div>
-        <img src={Image} alt="Placeholder image" />
+      <div style={{position:'relative', display:'inline-block'}}>
+        <img src={Image} alt="Placeholder image" style={{display:'block', height:'auto'}}/>
         {
           this.props.isFinished() ?
             <PortraitStyled>
               <Portrait
-                class="is-overlay"
+                style={{position: 'absolute', top: 0, left: 0}}
                 svgRef={this.svgRef} {...this.props}
                 handlePaint={this.handlePaint}
                 handleErase={this.handleErase}
                 onContextMenu={(e)=> e.preventDefault()} />
             </PortraitStyled> :
           <Portrait
-            class="is-overlay"
+            style={{position: 'absolute', top: 0, left: 0}}
             svgRef={this.svgRef} {...this.props}
             handlePaint={this.handlePaint}
             handleErase={this.handleErase}
