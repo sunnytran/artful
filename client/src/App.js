@@ -105,7 +105,7 @@ class App extends Component {
               <div class="columns">
                 <div class="column" style={{paddingRight: '10px'}}>
                   <div class="is-pulled-right" style={{paddingTop: '20px'}}>
-                    <div>
+                    <div style={{position: 'fixed', left: '150px'}}>
                       <h1 class="title is-1" style={{marginBottom: '5px'}}>artful</h1>
                       <div class="has-text-right">
                         <p>color by numbers</p>

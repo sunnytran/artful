@@ -1,11 +1,7 @@
 working on
 
-fixed header
-
 psql
 put pics in db
-
-
 
 ==================================================
 
@@ -57,3 +53,5 @@ fade into the real painting when finished
 
 amgoth eyes
 gaps of alpha in compa
+
+fixed header
