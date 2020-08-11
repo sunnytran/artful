@@ -7,9 +7,9 @@ import Adam from './svgs/SvgAdam'
 import Compa from './svgs/SvgCompa';
 import Amgoth from './svgs/SvgAmgoth';
 
-import AdamJpg from './adam.jpg';
-import CompaJpg from './compa.jpg';
-import AmgothJpg from './amgoth.jpg';
+import AdamJpg from '../images/adam.jpg';
+import CompaJpg from '../images/compa.jpg';
+import AmgothJpg from '../images/amgoth.jpg';
 
 class Portrait extends Component {
   constructor(props) {
