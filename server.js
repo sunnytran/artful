@@ -3,128 +3,142 @@ const fs = require('fs');
 const path = require('path')
 
 const app = express();
+const pool = require('./db');
 
-app.get('/api/colors', (req, res) => {
-  colors = {
-    'black': {
-      'hex': '#000000',
-      'mixOf': null
-    },
-    'white': {
-      'hex': '#ffffff',
-      'mixOf': null
-    },
-    'gray': {
-      'hex': '#808080',
-      'mixOf': [
-        'black',
-        'white'
-      ]
-    },
-    'light gray': {
-      'hex': '#bababa',
-      'mixOf': [
-        'gray',
-        'white'
-      ]
-    },
-    'dark gray': {
-      'hex': '#555555',
-      'mixOf': [
-        'gray',
-        'black'
-      ]
-    },
-    'red': {
-      'hex': '#ff3333',
-      'mixOf': null
-    },
-    'pink': {
-      'hex': '#ffc0cb',
-      'mixOf': [
-        'red',
-        'white'
-      ]
-    },
-    'orange': {
-      'hex': '#ffa500',
-      'mixOf': [
-        'red',
-        'yellow'
-      ]
-    },
-    'brown': {
-      'hex': '#8b4513',
-      'mixOf': null
-    },
-    'light brown': {
-      'hex': '#e08b3e',
-      'mixOf': [
-        'brown',
-        'white'
-      ]
-    },
-    'dark brown': {
-      'hex': '#785027',
-      'mixOf': [
-        'brown',
-        'black'
-      ]
-    },
-    'yellow': {
-      'hex': '#ffea00',
-      'mixOf': null
-    },
-    'cream': {
-      'hex': '#ffe6d0',
-      'mixOf': [
-        'yellow',
-        'white'
-      ]
-    },
-    'peach': {
-      'hex': '#ffe5b4',
-      'mixOf': [
-        'red',
-        'white',
-        'yellow'
-      ]
-    },
-    'green': {
-      'hex': '#1d771d',
-      'mixOf': [
-        'blue',
-        'yellow'
-      ]
-    },
-    'light green': {
-      'hex': '#adff2f',
-      'mixOf': [
-        'green',
-        'white'
-      ]
-    },
-    'blue': {
-      'hex': '#1a1aff',
-      'mixOf': null
-    },
-    'light blue': {
-      'hex': '#c1e1ec',
-      'mixOf': [
-        'blue',
-        'white'
-      ]
-    },
-    'dark blue': {
-      'hex': '#000058',
-      'mixOf': [
-        'blue',
-        'black'
-      ]
-    },
+app.get('/api/colors', async (req, res) => {
+  const query = await pool.query("SELECT * FROM colors")
+  var rows = query.rows;
+  var colors = {}
+  for (var i = 0; i < rows.length; i++) {
+    var name = rows[i].name
+    colors[name] = {
+      'hex': rows[i].hex,
+      'mixOf': rows[i].mixof
+    }
   }
-
+  
   res.json(colors)
+
+  // colors = {
+  //   'black': {
+  //     'hex': '#000000',
+  //     'mixOf': null
+  //   },
+  //   'white': {
+  //     'hex': '#ffffff',
+  //     'mixOf': null
+  //   },
+  //   'gray': {
+  //     'hex': '#808080',
+  //     'mixOf': [
+  //       'black',
+  //       'white'
+  //     ]
+  //   },
+  //   'light gray': {
+  //     'hex': '#bababa',
+  //     'mixOf': [
+  //       'gray',
+  //       'white'
+  //     ]
+  //   },
+  //   'dark gray': {
+  //     'hex': '#555555',
+  //     'mixOf': [
+  //       'gray',
+  //       'black'
+  //     ]
+  //   },
+  //   'red': {
+  //     'hex': '#ff3333',
+  //     'mixOf': null
+  //   },
+  //   'pink': {
+  //     'hex': '#ffc0cb',
+  //     'mixOf': [
+  //       'red',
+  //       'white'
+  //     ]
+  //   },
+  //   'orange': {
+  //     'hex': '#ffa500',
+  //     'mixOf': [
+  //       'red',
+  //       'yellow'
+  //     ]
+  //   },
+  //   'brown': {
+  //     'hex': '#8b4513',
+  //     'mixOf': null
+  //   },
+  //   'light brown': {
+  //     'hex': '#e08b3e',
+  //     'mixOf': [
+  //       'brown',
+  //       'white'
+  //     ]
+  //   },
+  //   'dark brown': {
+  //     'hex': '#785027',
+  //     'mixOf': [
+  //       'brown',
+  //       'black'
+  //     ]
+  //   },
+  //   'yellow': {
+  //     'hex': '#ffea00',
+  //     'mixOf': null
+  //   },
+  //   'cream': {
+  //     'hex': '#ffe6d0',
+  //     'mixOf': [
+  //       'yellow',
+  //       'white'
+  //     ]
+  //   },
+  //   'peach': {
+  //     'hex': '#ffe5b4',
+  //     'mixOf': [
+  //       'red',
+  //       'white',
+  //       'yellow'
+  //     ]
+  //   },
+  //   'green': {
+  //     'hex': '#1d771d',
+  //     'mixOf': [
+  //       'blue',
+  //       'yellow'
+  //     ]
+  //   },
+  //   'light green': {
+  //     'hex': '#adff2f',
+  //     'mixOf': [
+  //       'green',
+  //       'white'
+  //     ]
+  //   },
+  //   'blue': {
+  //     'hex': '#1a1aff',
+  //     'mixOf': null
+  //   },
+  //   'light blue': {
+  //     'hex': '#c1e1ec',
+  //     'mixOf': [
+  //       'blue',
+  //       'white'
+  //     ]
+  //   },
+  //   'dark blue': {
+  //     'hex': '#000058',
+  //     'mixOf': [
+  //       'blue',
+  //       'black'
+  //     ]
+  //   },
+  // }
+
+  // res.json(colors)
 })
 
 app.get('/api/portraits', (req, res) => {
