@@ -1,9 +1,19 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
 const pool = require("./db");
+
+const PORT = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
 
 app.get("/api/colors", async (req, res) => {
   const query = await pool.query("SELECT * FROM colors");
@@ -29,6 +39,8 @@ app.get("/api/portraits", async (req, res) => {
   res.json(portraits);
 });
 
-const port = 5000;
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
 
-app.listen(port, () => `Server running on port ${port}`);
+app.listen(PORT, () => `Server running on port ${PORT}`);
