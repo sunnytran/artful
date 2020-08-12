@@ -12,3 +12,5 @@ This project is a color by numbers app with historical masterpieces
 	- Learn interesting facts about artists while painting
 	
 Play at [https://artful-project.herokuapp.com/](https://artful-project.herokuapp.com/)
+
+If you don't see anything on the page, please refresh once or twice
