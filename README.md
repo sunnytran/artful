@@ -1,22 +1,8 @@
-sup
-
-## Quick Start
-
-``` bash
-# Install dependencies for server
-npm install
-
-# Install dependencies for client
-npm run client-install
-
-# Run the client & server with concurrently
-npm run dev
-
-# Run the Express server only
-npm run server
-
-# Run the React client only
-npm run client
-
-# Server runs on http://localhost:5000 and client on http://localhost:3000
-```
+﻿# artful
+![enter image description here](https://i.imgur.com/3X1iLxB.png)
+This project is a color by numbers app with historical masterpieces
+	- Random number generation for a new challenge every time
+	- Mix colors
+	- Darken/lighten shades for complexity
+	- Learn interesting facts about artists while painting
+Play at [https://artful-project.herokuapp.com/](https://artful-project.herokuapp.com/)
